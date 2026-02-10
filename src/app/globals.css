@@ -1,14 +1,18 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-montserrat: var(--next-font-montserrat);
+  --font-syne: var(--next-font-syne);
+  --font-arabic: var(--next-font-tanseek);
+}
 
 @layer base {
-  :root {
-    --font-tanseek: 'TanseekModernProArabic-Book', sans-serif;
-    --font-montserrat: 'Montserrat', sans-serif;
-  }
-  
   body {
-    @apply antialiased;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: var(--font-montserrat);
   }
+
+
 }
