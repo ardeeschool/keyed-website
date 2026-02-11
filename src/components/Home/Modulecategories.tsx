@@ -59,7 +59,7 @@ const categories: ModuleCategory[] = [
 
 const ModuleCategories = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10 md:py-20 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
@@ -69,14 +69,14 @@ const ModuleCategories = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-7xl md:text-7xl font-bold text-black mb-4 font-arabic">
+          <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             Module Categories
           </h2>
           <div className="w-32 h-1 bg-[#E4A677] mx-auto"></div>
         </motion.div>
 
         {/* Categories Grid - 2x2 */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 lg:gap-16">
           {categories.map((category, index) => (
             <CategoryCard key={category.id} category={category} index={index} />
           ))}

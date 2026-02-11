@@ -6,11 +6,13 @@ import HowKeyEdAddsValues from '@/components/home/Howkeyedaddsvalues'
 import ModuleCategories from '@/components/home/Modulecategories'
 import KeyedLeadership from '@/components/home/KeyedLeadership'
 import KeyEdScore from '@/components/home/Keyedscore'
-
+import Header from '@/components/layout/Header'
+import Footer from '@/components/layout/Footer'
 export default function Home() {
   return (
-    <main>
    
+    <main>
+    <Header />
       <HeroSection />
   
        <WhatIsKeyEd />
@@ -19,6 +21,8 @@ export default function Home() {
        <ModuleCategories />
        <KeyEdScore />
        <KeyedLeadership />
+
+       <Footer />
     </main>
   )
 }

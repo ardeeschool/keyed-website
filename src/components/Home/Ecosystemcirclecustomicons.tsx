@@ -39,7 +39,7 @@ const EcosystemCircleCustomIcons = () => {
   const orbitRadius = innerCirclePercent / 1.9
 
   return (
-    <section className="flex items-center justify-center bg-[#F1F1F1] py-20">
+    <section className="hidden md:hidden lg:block flex items-center justify-center bg-[#F1F1F1] py-20">
       <div className="w-[850px] mx-auto px-4">
         <div className="relative w-full max-w-4xl mx-auto aspect-square">
 

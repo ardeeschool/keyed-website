@@ -5,7 +5,7 @@ import { ArrowRight } from 'lucide-react'
 
 const HeroSection = () => {
   return (
-      <section className="flex items-center justify-center p-32 bg-[linear-gradient(102deg,_#698EA1_4.95%,_#142833_101.24%)]">
+      <section className="flex items-center justify-center md:p-32 lg:p-32 p-8 bg-[linear-gradient(102deg,_#698EA1_4.95%,_#142833_101.24%)]">
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto text-center">
@@ -15,7 +15,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
-            className="text-5xl md:text-6xl lg:text-8xl  font-arabic font-bold text-white leading-20 tracking-tight mb-6"
+            className="text-5xl md:text-6xl lg:text-8xl  font-arabic font-bold text-white md:leading-20 lg:leading-20 leading-10 tracking-tight mb-6"
           >
             <span>One Platform. One Login.</span>
        
@@ -27,7 +27,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-white mb-8 font-medium font-montserrat"
+            className="text-md md:text-2xl text-white mb-8 font-medium font-montserrat"
           >
             Run your entire school on a single Ecosystem.
           </motion.p>
@@ -39,7 +39,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
             className="mb-6"
           >
-            <p className="text-4xl md:text-4xl font-normal  font-arabic text-white">
+            <p className="text-3xl md:text-4xl font-normal  font-arabic text-white">
               RunOnKeyEd
             </p>
           </motion.div>

@@ -60,7 +60,7 @@ const features = [
 
 const WhatIsKeyEd = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 lg:py-20 md:py-20 bg-white">
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
@@ -70,11 +70,11 @@ const WhatIsKeyEd = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-7xl md:text-7xl font-bold text-black mb-4 font-arabic">
+          <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             What is KeyEd?
           </h2>
           <div className="w-32 h-1 bg-[#E8A87C] mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
+          <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
             KeyEd is a unified operating system for modern institutions. It replaces fragmented tools
             with a single, intelligent platform that seamlessly connects admissions, learning,
             operations, and growth.
@@ -89,7 +89,7 @@ const WhatIsKeyEd = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3 gap-6"
           >
             {features.slice(0, 3).map((feature, index) => (
               <motion.div
@@ -131,7 +131,7 @@ const WhatIsKeyEd = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mt-16"
+            className="grid grid-cols-1 md:grid-cols-2  gap-6 max-w-4xl mx-auto mt-0 md:mt-16 lg:mt-16"
           >
             {features.slice(3, 5).map((feature, index) => (
               <motion.div

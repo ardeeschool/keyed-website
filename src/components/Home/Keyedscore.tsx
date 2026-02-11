@@ -24,7 +24,7 @@ const KeyEdScore = () => {
   const strokeDashoffset = circumference - (scorePercentage / 100) * circumference
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 md:py-20 lg:py-20 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         {/* Header */}
         <motion.div
@@ -34,7 +34,7 @@ const KeyEdScore = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-           <h2 className="text-7xl md:text-7xl font-bold text-black mb-4 font-arabic">
+           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             KeyEd Score
           </h2>
           <div className="w-32 h-1 bg-[#E4A677] mx-auto"></div>
@@ -59,7 +59,7 @@ const KeyEdScore = () => {
 </svg>
             </div>
             <div>
-              <h3 className="text-6xl font-bold text-black font-arabic">KeyEd Score</h3>
+              <h3 className="text-5xl font-bold text-black font-arabic">KeyEd Score</h3>
               <p className="text-[#486776] text-sm">Overall Campus Health Score</p>
             </div>
           </div>

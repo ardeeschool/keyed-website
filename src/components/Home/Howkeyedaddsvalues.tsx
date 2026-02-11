@@ -80,7 +80,7 @@ const values: ValueCard[] = [
 
 const HowKeyEdAddsValues = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-10  md:py-20 lg:py-20 bg-gray-50">
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
@@ -90,11 +90,11 @@ const HowKeyEdAddsValues = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-7xl md:text-7xl font-bold text-black mb-4 font-arabic">
+          <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             How KeyEd Adds Values?
           </h2>
           <div className="w-32 h-1 bg-[#E4A677] mx-auto mb-8"></div>
-           <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
+           <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
             By unifying academics, operations, and growth into a single intelligent ecosystem, KeyEd
             delivers measurable value across the entire institutional lifecycle.
           </p>
@@ -108,7 +108,7 @@ const HowKeyEdAddsValues = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-14"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-14 md:lg-14"
           >
             {values.slice(0, 3).map((value, index) => (
               <ValueCardComponent key={value.id} value={value} index={index} />
@@ -121,7 +121,7 @@ const HowKeyEdAddsValues = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-10"
+            className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-14 md:lg-14"
           >
             {values.slice(3, 6).map((value, index) => (
               <ValueCardComponent key={value.id} value={value} index={index + 3} />
@@ -134,7 +134,7 @@ const HowKeyEdAddsValues = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.6 }}
-            className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto"
+            className="grid grid-cols-1 md:grid-cols-2  max-w-3xl mx-auto gap-5 md:gap-14 md:lg-14"
           >
             {values.slice(6, 8).map((value, index) => (
               <ValueCardComponent key={value.id} value={value} index={index + 6} />

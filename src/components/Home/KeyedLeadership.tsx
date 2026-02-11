@@ -92,7 +92,7 @@ const leaderships = [
 
 const KeyedLeadership = () => {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-10 md;py-20 lg:py-20 bg-white">
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
@@ -102,11 +102,11 @@ const KeyedLeadership = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-7xl md:text-7xl font-bold text-black mb-4 font-arabic">
+          <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             KeyEd Leadership
           </h2>
           <div className="w-32 h-1 bg-[#E8A87C] mx-auto mb-8"></div>
-          <p className="text-lg md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
+          <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
            Command Center & Top Management Intelligence
           </p>
         </motion.div>
@@ -118,7 +118,7 @@ const KeyedLeadership = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+            className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 lg:gap-12"
           >
             {leaderships.map((leadership, index) => (
               <motion.div
@@ -137,7 +137,7 @@ const KeyedLeadership = () => {
                   {leadership.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-black mb-1">
+                  <h3 className="text-md md:text-l lg:text-xl font-semibold text-black mb-1">
                     {leadership.title}
                   </h3>
                   <p className="text-black text-xs leading-relaxed font-normal">
