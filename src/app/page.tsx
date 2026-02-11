@@ -1,11 +1,11 @@
-import HeroSection from '@/components/Home/HeroSection'
-import EcosystemCircle from '@/components/Home/EcosystemCircle'
-import EcosystemCircleCustomIcons from '@/components/Home/Ecosystemcirclecustomicons'
-import WhatIsKeyEd from '@/components/Home/WhatIsKeyEd'
-import HowKeyEdAddsValues from '@/components/Home/Howkeyedaddsvalues'
-import ModuleCategories from '@/components/Home/Modulecategories'
-import KeyedLeadership from '@/components/Home/KeyedLeadership'
-import KeyEdScore from '@/components/Home/Keyedscore'
+import HeroSection from '@/components/home/HeroSection'
+import EcosystemCircle from '@/components/home/EcosystemCircle'
+import EcosystemCircleCustomIcons from '@/components/home/Ecosystemcirclecustomicons'
+import WhatIsKeyEd from '@/components/home/WhatIsKeyEd'
+import HowKeyEdAddsValues from '@/components/home/Howkeyedaddsvalues'
+import ModuleCategories from '@/components/home/Modulecategories'
+import KeyedLeadership from '@/components/home/KeyedLeadership'
+import KeyEdScore from '@/components/home/Keyedscore'
 
 export default function Home() {
   return (
