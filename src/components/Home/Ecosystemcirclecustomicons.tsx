@@ -78,7 +78,7 @@ const EcosystemCircleCustomIcons = () => {
             }}
             whileTap={{ scale: 0.96 }}
             onClick={handleCenterClick}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#008081] text-white flex flex-col items-center justify-center shadow-2xl transition-shadow duration-300 cursor-pointer"
+            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 md:w-56 md:h-56 rounded-full bg-[#486776] text-white flex flex-col items-center justify-center shadow-2xl transition-shadow duration-300 cursor-pointer"
             style={{ zIndex: 5 }}
           >
             <h2 className="text-2xl md:text-3xl font-bold mb-1">KeyEd</h2>
@@ -128,7 +128,7 @@ const EcosystemCircleCustomIcons = () => {
                   transform: 'translate(-50%, -50%)',
                   zIndex: 10,
                 }}
-                className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#008081] text-white flex flex-col items-center justify-center shadow-lg transition-colors duration-300 cursor-pointer group hover:bg-[#006e6f]"
+                className="w-24 h-24 md:w-28 md:h-28 rounded-full bg-[#486776] text-white flex flex-col items-center justify-center shadow-lg transition-colors duration-300 cursor-pointer group hover:bg-[#006e6f]"
               >
                 {/* Icon */}
                 <div className="mb-1 w-7 h-7 md:w-8 md:h-8 bg-white rounded-md flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
