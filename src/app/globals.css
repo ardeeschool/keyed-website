@@ -4,6 +4,40 @@
   --font-montserrat: var(--next-font-montserrat);
   --font-syne: var(--next-font-syne);
   --font-arabic: var(--next-font-tanseek);
+  
+  /* === COLOR VARIABLES === */
+  /* Primary Colors */
+  --color-primary: #486776;
+  --color-primary-dark: #3a5360;
+  --color-primary-light: #5a7b8c;
+  
+  /* Secondary Colors */
+  --color-secondary: #E5A97C;
+  --color-secondary-dark: #d89560;
+  --color-secondary-light: #ebb98e;
+  
+  /* Text Colors */
+  --color-text-black: #000000;
+  --color-text-white: #ffffff;
+  --color-text-gray: #374151;
+  --color-text-gray-light: #6b7280;
+  
+  /* Background Colors */
+  --color-bg-white: #ffffff;
+  --color-bg-gray: #F1F1F1;
+  --color-bg-gray-light: #F4F4F4;
+  
+  /* Border Colors */
+  --color-border-primary: #486776;
+  --color-border-secondary: #E5A97C;
+  --color-border-light: #e5e7eb;
+  --color-border-medium: #d1d5db;
+  
+  /* Status Colors */
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-warning: #f59e0b;
+  --color-info: #3b82f6;
 }
 
 @layer base {
@@ -13,10 +47,10 @@
     font-feature-settings: "rlig" 1, "calt" 1;
     font-family: var(--font-montserrat);
   }
-@media (min-width: 80rem) {
-  .container {
-    max-width: 90rem !important;
+  
+  @media (min-width: 80rem) {
+    .container {
+      max-width: 90rem !important;
+    }
   }
-}
-
 }
