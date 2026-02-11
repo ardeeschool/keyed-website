@@ -6,6 +6,7 @@ import HowKeyEdAddsValues from '@/components/home/Howkeyedaddsvalues'
 import ModuleCategories from '@/components/home/Modulecategories'
 import KeyedLeadership from '@/components/home/KeyedLeadership'
 import KeyEdScore from '@/components/home/Keyedscore'
+import MobileModuleCarousel from '@/components/home/MobileModuleCarousel'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
        <WhatIsKeyEd />
        <HowKeyEdAddsValues />
             <EcosystemCircleCustomIcons />
+            <MobileModuleCarousel />
        <ModuleCategories />
        <KeyEdScore />
        <KeyedLeadership />

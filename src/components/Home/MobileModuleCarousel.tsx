@@ -63,10 +63,10 @@ const MobileModuleCarousel = () => {
   }, [isPaused, controls, TOTAL_WIDTH])
 
   return (
-    <section className="py-12 bg-white md:hidden overflow-hidden">
+    <section className="py-10 bg-white md:hidden overflow-hidden">
       {/* Header */}
       <div className="mb-8 px-4">
-        <h2 className="text-3xl font-bold text-center text-gray-900 mb-2 font-arabic">
+        <h2 className="text-4xl font-bold text-center text-gray-900 mb-2 font-arabic">
           13 Module. One Ecosystem
         </h2>
         <div className="w-24 h-1 bg-secondary mx-auto"></div>

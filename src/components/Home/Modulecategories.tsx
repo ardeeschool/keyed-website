@@ -69,7 +69,7 @@ const ModuleCategories = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
+          <h2 className="text-4xl md:text-7xl font-bold text-black mb-4 font-arabic">
             Module Categories
           </h2>
           <div className="w-32 h-1 bg-[#E4A677] mx-auto"></div>

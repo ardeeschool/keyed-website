@@ -92,7 +92,7 @@ const leaderships = [
 
 const KeyedLeadership = () => {
   return (
-    <section className="py-10 md;py-20 lg:py-20 bg-white">
+    <section className="py-10 md;py-20 lg:py-20 bg-[#1428330A]">
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div

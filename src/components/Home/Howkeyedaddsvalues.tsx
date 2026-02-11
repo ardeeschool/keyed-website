@@ -88,7 +88,7 @@ const HowKeyEdAddsValues = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             How KeyEd Adds Values?
@@ -101,7 +101,7 @@ const HowKeyEdAddsValues = () => {
         </motion.div>
 
         {/* Values Grid */}
-        <div className="space-y-14">
+        <div className="space-y-6 md:space-y-14">
           {/* Top Row - 3 Cards */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -160,7 +160,7 @@ const ValueCardComponent = ({ value, index }: ValueCardComponentProps) => {
       transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
       className="group"
     >
-     <div className="h-full p-6 rounded-2xl border border-black/20 bg-white 
+     <div className="h-full p-3 md:p-6 rounded-lg md:rounded-2xl  border border-black/20 bg-white 
                 hover:bg-[#E4A677] 
                 transition-all duration-300 ease-in-out 
                 hover:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
@@ -168,16 +168,16 @@ const ValueCardComponent = ({ value, index }: ValueCardComponentProps) => {
 
         {/* Icon Box */}
         <div className="mb-4">
-          <div className="flex-shrink-0 w-14 h-14 rounded-md flex items-center justify-center bg-[#486776] text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#E5A97C]">
+          <div className="flex-shrink-0 w-14 h-14  rounded-md flex items-center justify-center bg-[#486776] text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#E5A97C]">
   {value.icon}
 </div>
         </div>
 
         {/* Content */}
-        <h3 className="text-xl font-semibold text-black group-hover:text-white mb-3 transition-colors duration-300">
+        <h3 className="text-md md:text-xl font-semibold text-black group-hover:text-white mb-1 md:mb-3 transition-colors duration-300">
           {value.title}
         </h3>
-        <p className="text-sm text-gray-600 group-hover:text-white/90 leading-relaxed transition-colors duration-300">
+        <p className="text-xs md:text-sm text-gray-600 group-hover:text-white/90 leading-relaxed transition-colors duration-300">
           {value.description}
         </p>
       </div>

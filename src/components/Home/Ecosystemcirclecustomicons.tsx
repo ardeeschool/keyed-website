@@ -55,7 +55,6 @@ const EcosystemCircleCustomIcons = () => {
   }, [isInView])
 
   return (
-    
     <>
       <style>{`
         @keyframes orbit {
@@ -94,8 +93,9 @@ const EcosystemCircleCustomIcons = () => {
           animation: border-breathe 4s ease-in-out infinite;
         }
       `}</style>
-
-      <section ref={sectionRef} className="flex items-center justify-center bg-white py-20 hidden md-block">
+<section ref={sectionRef} className="hidden lg:block">
+      <div  className="flex items-center justify-center bg-white py-20">
+          
         <div
           style={{
             position: 'relative',
@@ -273,8 +273,8 @@ const EcosystemCircleCustomIcons = () => {
             })}
           </div>
         </div>
+        </div>
       </section>
-      
     </>
   )
 }

@@ -68,13 +68,13 @@ const WhatIsKeyEd = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             What is KeyEd?
           </h2>
           <div className="w-32 h-1 bg-[#E8A87C] mx-auto mb-8"></div>
-          <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
+          <p className="text-sm md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
             KeyEd is a unified operating system for modern institutions. It replaces fragmented tools
             with a single, intelligent platform that seamlessly connects admissions, learning,
             operations, and growth.
@@ -103,16 +103,16 @@ const WhatIsKeyEd = () => {
               >
                  <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
 
-                 <div className="absolute top-0 right-6 text-6xl font-bold text-[#F4F4F4] font-arabic">
+                 <div className="absolute top-0 right-6 text-4xl md:text-6xl font-bold text-[#F4F4F4] font-arabic">
                     {feature.number}
                     </div>
                 <div
-                  className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
+                  className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14  rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
                 >
                   {feature.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-black mb-1">
+                  <h3 className="text-md md:text-xl font-semibold text-black mb-1">
                     {feature.title}
                   </h3>
                   <p className="text-black text-xs leading-relaxed font-medium">
@@ -131,7 +131,7 @@ const WhatIsKeyEd = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.5 }}
-            className="grid grid-cols-1 md:grid-cols-2  gap-6 max-w-4xl mx-auto mt-0 md:mt-16 lg:mt-16"
+            className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2  gap-6 max-w-4xl mx-auto mt-0 md:mt-8 lg:mt-16"
           >
             {features.slice(3, 5).map((feature, index) => (
               <motion.div
@@ -144,17 +144,17 @@ const WhatIsKeyEd = () => {
                     className="group relative"
               >
                  <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
-                      <div className="absolute top-0 right-6 text-6xl font-bold text-[#F4F4F4] font-arabic">
+                      <div className="absolute top-0 right-6  text-4xl md:text-6xl font-bold text-[#F4F4F4] font-arabic">
                     {feature.number}
                     </div>
   <div
-    className="flex-shrink-0 w-14 h-14 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
+    className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
   >
     {feature.icon}
   </div>
 
   <div>
-    <h3 className="text-xl font-semibold text-black mb-1">
+    <h3 className="text-md md:text-xl font-semibold text-black mb-1">
       {feature.title}
     </h3>
     <p className="text-black text-xs leading-relaxed font-medium">
