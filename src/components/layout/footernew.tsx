@@ -1,0 +1,188 @@
+"use client";
+
+const navLinks = [
+  { label: "Home", href: "/" },
+  { label: "Solutions", href: "/solutions" },
+  { label: "AI & Intelligence", href: "/ai-intelligence" },
+  { label: "KeyEd Score", href: "/keyed-score" },
+  { label: "Pricing", href: "/pricing" },
+  { label: "Who We Are", href: "/who-we-are" },
+];
+
+export default function Footer() {
+  return (
+    <footer
+      className="relative w-full text-white overflow-hidden"
+      style={{
+        background: "linear-gradient(135deg, #1a3a5c 0%, #0c2440 40%, #071828 100%)",
+      }}
+    >
+
+      {/* Wave top — matches page bg */}
+      <div className="w-full overflow-hidden leading-none">
+        <svg
+          viewBox="0 0 1440 72"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-full block"
+          preserveAspectRatio="none"
+          style={{ height: "clamp(40px, 5vw, 72px)" }}
+        >
+          <path
+            d="M0,36 C320,72 560,0 720,32 C880,64 1120,8 1440,36 L1440,0 L0,0 Z"
+            fill="#f5f5f0"
+          />
+        </svg>
+      </div>
+
+      {/* Decorative background text */}
+      <div
+        className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden"
+        aria-hidden="true"
+      >
+        <span
+          className="text-white font-thin leading-none pr-4 sm:pr-8"
+          style={{
+            fontSize: "clamp(60px, 11vw, 180px)",
+            opacity: 0.06,
+            letterSpacing: "-0.03em",
+            whiteSpace: "nowrap",
+            fontFamily: "'Georgia', serif",
+          }}
+        >
+          The Power
+          <br />
+          of Learning
+        </span>
+      </div>
+
+      {/* Orange accent line */}
+      <div className="w-full h-[2px] bg-gradient-to-r from-orange-500 via-orange-400 to-transparent" />
+
+      {/* Main content */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-12 pb-10">
+        <div className="flex flex-col lg:flex-row items-start gap-16 flex-wrap">
+
+          {/* LEFT — Brand + Quick Links side by side */}
+          <div className="flex flex-row items-start gap-16">
+
+            {/* Brand block */}
+            <div className="flex flex-col gap-4 max-w-xs">
+              {/* Logo */}
+              <div className="flex items-baseline gap-0.5">
+                <span
+                  className="font-bold text-[28px] text-white tracking-tight"
+                  style={{ fontFamily: "'Georgia', serif" }}
+                >
+                  KeyEd
+                </span>
+                <span
+                  className="font-bold text-[12px] text-orange-400 align-super leading-none ml-0.5"
+                  style={{ fontFamily: "'Georgia', serif" }}
+                >
+                  ™
+                </span>
+              </div>
+
+              <p className="text-[11px] font-semibold tracking-[0.2em] text-slate-400 uppercase">
+                An Ardee Venture
+              </p>
+
+              <p className="text-[14px] text-slate-300 leading-relaxed">
+                Learning creates value.{" "}
+                <span className="text-white font-medium">Value unlocks access.</span>
+              </p>
+
+              <p className="text-[13px] text-slate-400 leading-relaxed">
+                KeyEd — An Ardee Education Initiative
+                <br />
+                20+ Years in Education Leadership
+              </p>
+
+              {/* Orange dash */}
+              <div className="flex items-center gap-2 mt-1">
+                <div className="w-10 h-[3px] rounded-full bg-orange-500" />
+                <div className="w-4 h-[3px] rounded-full bg-orange-400 opacity-40" />
+              </div>
+            </div>
+
+            {/* Quick Links — right beside brand */}
+            <div className="flex flex-col gap-3">
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
+                Quick Links
+              </h4>
+              <ul className="flex flex-col gap-3 list-none p-0 m-0">
+                {navLinks.map((link) => (
+                  <li key={link.href}>
+                    <a
+                      href={link.href}
+                      className="group flex items-center gap-2 text-[14px] text-slate-300 hover:text-white transition-colors duration-150 no-underline"
+                    >
+                      <span className="w-1 h-1 rounded-full bg-orange-500 opacity-0 group-hover:opacity-100 transition-opacity duration-150 flex-shrink-0" />
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Get In Touch — beside Quick Links */}
+            <div className="flex flex-col gap-4">
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-slate-400 mb-1">
+                Get In Touch
+              </h4>
+
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-orange-500 hover:bg-orange-600 text-white text-[14px] font-semibold rounded-lg transition-colors duration-200 no-underline w-fit"
+              >
+                Talk to Us
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                  <path d="M3 7h8M8 4l3 3-3 3" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+
+              {/* Social icons */}
+              <div className="flex items-center gap-2 mt-1">
+                <a href="#" aria-label="Instagram"
+                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-slate-400 hover:text-white hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-200 no-underline">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
+                <a href="#" aria-label="Facebook"
+                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-slate-400 hover:text-white hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-200 no-underline">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                  </svg>
+                </a>
+                <a href="#" aria-label="X"
+                  className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-slate-400 hover:text-white hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-200 no-underline">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+
+          </div>{/* end all columns */}
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-[13px] text-slate-500">
+            © 2026 KeyED. All rights reserved.
+          </p>
+          <div className="flex items-center gap-1.5">
+            <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
+            <span className="text-[12px] text-slate-500">
+              Empowering learners worldwide
+            </span>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+  );
+}
