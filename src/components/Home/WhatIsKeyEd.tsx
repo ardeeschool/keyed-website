@@ -61,6 +61,60 @@ const features = [
 const WhatIsKeyEd = () => {
   return (
     <section className="py-10 lg:py-20 md:py-20 bg-white">
+      <div className="container mx-auto px-4 max-w-8xl text-center">
+        <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
+            The Problem Schools Face Today
+          </h2>
+          <p className="text-sm md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">Schools today run on disconnected systems</p>
+      </div>
+          <div className="container mx-auto px-4 max-w-8xl flex flex-col gap-6 py-10 lg:py-20 md:py-20">
+
+      <div className="flex items-center gap-5 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#142833] text-white font-semibold">
+          1
+        </div>
+        <p className="text-lg text-gray-700">
+          Admissions in spreadsheets
+        </p>
+      </div>
+
+      <div className="flex items-center gap-5 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#142833] text-white font-semibold">
+          2
+        </div>
+        <p className="text-lg text-gray-700">
+          Attendance in another software
+        </p>
+      </div>
+
+      <div className="flex items-center gap-5 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#142833] text-white font-semibold">
+          3
+        </div>
+        <p className="text-lg text-gray-700">
+          Fees in accounting tools
+        </p>
+      </div>
+
+      <div className="flex items-center gap-5 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#142833] text-white font-semibold">
+          4
+        </div>
+        <p className="text-lg text-gray-700">
+          Academics tracked manually
+        </p>
+      </div>
+
+      <div className="flex items-center gap-5 bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition">
+        <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#142833] text-white font-semibold">
+          5
+        </div>
+        <p className="text-lg text-gray-700">
+          Leadership without real-time data
+        </p>
+      </div>
+
+    </div>
       <div className="container mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
@@ -73,11 +127,10 @@ const WhatIsKeyEd = () => {
           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             What is KeyEd?
           </h2>
-          <div className="w-32 h-1 bg-[#E8A87C] mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-[#f15a24] mx-auto mb-8"></div>
           <p className="text-sm md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
-            KeyEd is a unified operating system for modern institutions. It replaces fragmented tools
-            with a single, intelligent platform that seamlessly connects admissions, learning,
-            operations, and growth.
+            KeyEd is an integrated operating platform for educational institutions, bringing academics, operations, finance, growth, and analytics into a single ecosystem.
+
           </p>
         </motion.div>
 
@@ -101,13 +154,13 @@ const WhatIsKeyEd = () => {
                 whileHover={{ boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
                   className="group relative"
               >
-                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
+                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#f15a24] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
 
                  <div className="absolute top-0 right-6 text-4xl md:text-6xl font-bold text-[#F4F4F4] font-arabic">
                     {feature.number}
                     </div>
                 <div
-                  className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14  rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
+                  className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14  rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#f15a24]"
                 >
                   {feature.icon}
                 </div>
@@ -143,12 +196,12 @@ const WhatIsKeyEd = () => {
                     whileHover={{ y: -5, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}
                     className="group relative"
               >
-                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
+                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#f15a24] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
                       <div className="absolute top-0 right-6  text-4xl md:text-6xl font-bold text-[#F4F4F4] font-arabic">
                     {feature.number}
                     </div>
   <div
-    className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
+    className="flex-shrink-0 w-12 h-12 md:w-14 md:h-14 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#f15a24]"
   >
     {feature.icon}
   </div>

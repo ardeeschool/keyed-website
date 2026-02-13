@@ -103,11 +103,11 @@ const KeyedLeadership = () => {
           className="text-center mb-16"
         >
           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
-            KeyEd Leadership
+           Leadership Intelligence Dashboard
           </h2>
-          <div className="w-32 h-1 bg-[#E8A87C] mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-[#f15a24] mx-auto mb-8"></div>
           <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
-           Command Center & Top Management Intelligence
+           Leadership sees real-time performance across campuses, departments, and teams — enabling proactive decisions instead of reactive management.
           </p>
         </motion.div>
 
@@ -129,10 +129,10 @@ const KeyedLeadership = () => {
                 transition={{ duration: 0.5, delay: 0.1 + index * 0.1 }}
                   className="group relative"
               >
-                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
+                 <div className="flex items-start gap-4 p-4 rounded-xl border-[0.3px] border-[#486776] bg-white  hover:border-1 hover:border-[#f15a24] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
 
                 <div
-                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#E5A97C]"
+                  className="flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-white bg-[#486776] transition-all duration-300 group-hover:bg-[#f15a24]"
                 >
                   {leadership.icon}
                 </div>
@@ -163,7 +163,7 @@ const KeyedLeadership = () => {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-[#E5A97C] hover:bg-[#000000] text-[#ffffff] font-semibold px-8 py-4 rounded-md text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:text-white"
+              className="inline-flex items-center gap-2 bg-[#f15a24] hover:bg-[#000000] text-[#ffffff] font-semibold px-8 py-4 rounded-md text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:text-white"
             href="">
               Learn More
              <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none">
@@ -172,6 +172,7 @@ const KeyedLeadership = () => {
             </motion.a>
           </motion.div>
       </div>
+      
     </section>
   )
 }

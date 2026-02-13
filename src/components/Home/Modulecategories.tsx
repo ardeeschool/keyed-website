@@ -15,7 +15,7 @@ const categories: ModuleCategory[] = [
   {
     id: 'core',
     number: '01',
-    title: 'Core Platform',
+    title: 'Academic & Experience Layer',
     description: 'Essential modules for the daily teaching and learning lifecycle, connecting students, teachers, and parents.',
     tags: ['Access', 'Enroll', 'Teach', 'Learner', 'Family'],
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="46" height="28" viewBox="0 0 46 28" fill="none">
@@ -25,7 +25,7 @@ const categories: ModuleCategory[] = [
   {
     id: 'operations',
     number: '02',
-    title: 'Operations Layer',
+    title: 'Campus Operations',
     description: 'The administrative backbone managing physical and digital assets, logistics, and compliance.',
     tags: ['Infra', 'People', 'Finance', 'Tech', 'Transit', 'Library', 'Events'],
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="40" height="42" viewBox="0 0 40 42" fill="none">
@@ -36,7 +36,7 @@ const categories: ModuleCategory[] = [
   {
     id: 'intelligence',
     number: '03',
-    title: 'Intelligence Layer',
+    title: 'AI & Analytics',
     description: 'Advanced decision-making support powered by AI, analytics, and the proprietary KeyEd Score.',
     tags: ['Leadership', 'Intelligence Core', 'KeyEd Score Metric'],
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="41" height="42" viewBox="0 0 41 42" fill="none">
@@ -47,7 +47,7 @@ const categories: ModuleCategory[] = [
   {
     id: 'growth',
     number: '04',
-    title: 'Growth Engines',
+    title: 'Admissions & Marketing Growth',
     description: 'Tools to expand reach, improve enrollment yield, and foster a thriving educational community.',
     tags: ['Marketing', 'Marketplace'],
     icon: <svg xmlns="http://www.w3.org/2000/svg" width="39" height="41" viewBox="0 0 39 41" fill="none">
@@ -72,7 +72,7 @@ const ModuleCategories = () => {
           <h2 className="text-4xl md:text-7xl font-bold text-black mb-4 font-arabic">
             Module Categories
           </h2>
-          <div className="w-32 h-1 bg-[#E4A677] mx-auto"></div>
+          <div className="w-32 h-1 bg-[#f15a24] mx-auto"></div>
         </motion.div>
 
         {/* Categories Grid - 2x2 */}
@@ -100,7 +100,7 @@ const CategoryCard = ({ category, index }: CategoryCardProps) => {
       transition={{ duration: 0.6, delay: index * 0.1 }}
       className="group relative"
     >
-      <div className="h-full p-8 bg-white border-[0.3px] border-[#486776] rounded-[14px] hover:border-1 hover:border-[#E4A677] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
+      <div className="h-full p-8 bg-white border-[0.3px] border-[#486776] rounded-[14px] hover:border-1 hover:border-[#f15a24] shadow-[3px_7px_11px_0_rgba(0,0,0,0)] hover:shadow-[3px_7px_11px_0_rgba(0,0,0,0.13)] transition-all duration-300">
         {/* Number in top right corner */}
         <div className="absolute top-6 right-6 text-7xl font-bold text-[#F4F4F4] font-arabic">
           {category.number}
@@ -108,7 +108,7 @@ const CategoryCard = ({ category, index }: CategoryCardProps) => {
 
         {/* Icon */}
         <div className="mb-6 relative z-10">
-          <div className="w-16 h-16 rounded-xl bg-[#486776] group-hover:bg-[#E4A677] flex items-center justify-center transition-colors duration-300">
+          <div className="w-16 h-16 rounded-xl bg-[#486776] group-hover:bg-[#f15a24] flex items-center justify-center transition-colors duration-300">
             {/* Placeholder for icon - replace with your SVG */}
             {category.icon ? (
               category.icon

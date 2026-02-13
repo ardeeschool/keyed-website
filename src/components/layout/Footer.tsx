@@ -14,10 +14,11 @@ export default function Footer() {
               <hr className="border-[#fff] m-1 w-[105]" />
               <p className="text-sm text-gray-300 mb-1">AN ARDEE VENTURE</p>
               <p className="text-sm mt-4">Learning creates value. Value unlocks access.</p>
+              <p className="text-sm mt-4">KeyEd — An Ardee Education Initiative 20+ Years in Education Leadership</p>
             </div>
 
             {/* Orange Divider */}
-            <div className="w-24 h-1 bg-[rgba(229,169,124,1)]
+            <div className="w-24 h-1 bg-[#f15a24]
  mb-8"></div>
 
             {/* Menu Columns */}

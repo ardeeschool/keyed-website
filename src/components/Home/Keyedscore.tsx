@@ -10,10 +10,13 @@ interface ScoreComponent {
 }
 
 const scoreComponents: ScoreComponent[] = [
-  { label: 'Academic Excellence', score: 88, max: 100 },
-  { label: 'Operational Efficiency', score: 92, max: 100 },
-  { label: 'Financial Stability', score: 76, max: 100 },
-  { label: 'Engagement Index', score: 81, max: 100 },
+  { label: 'Academic performance', score: 88, max: 100 },
+  { label: 'Operational efficiency', score: 92, max: 100 },
+  { label: 'Financial stability', score: 76, max: 100 },
+  { label: 'Enrollment growth', score: 81, max: 100 },
+  { label: 'Parent & student engagement', score: 76, max: 100 },
+  { label: 'Teacher retention', score: 85, max: 100 },
+  { label: 'TInfrastructure efficiency', score: 71, max: 100 },
 ]
 
 const KeyEdScore = () => {
@@ -35,9 +38,11 @@ const KeyEdScore = () => {
           className="text-center mb-16"
         >
            <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
-            KeyEd Score
+            Meet India’s First Campus Health Score
           </h2>
-          <div className="w-32 h-1 bg-[#E4A677] mx-auto"></div>
+          <div className="w-32 h-1 bg-[#f15a24] mx-auto"></div>
+          <p>KeyEd Score gives leadership a real-time health indicator of their institution across:</p>
+          
         </motion.div>
 
         {/* Main Score Section */}
@@ -76,7 +81,7 @@ const KeyEdScore = () => {
                     cx="135"
                     cy="135"
                     r="100"
-                    stroke="#E5A97C"
+                    stroke="#f15a24"
                     strokeWidth="12"
                     fill="none"
                   />
@@ -100,7 +105,7 @@ const KeyEdScore = () => {
                     cx="135"
                     cy="135"
                     r="100"
-                    stroke="#E5A97C"
+                    stroke="#f15a24"
                     strokeWidth="12"
                     fill="none"
                     strokeLinecap="round"
@@ -144,6 +149,8 @@ const KeyEdScore = () => {
               {/* Description */}
               <p className="text-center text-sm text-[#486776] max-w-xs">
                 Composite intelligence metric reflecting overall institutional health (0–100), refreshed in near real-time.
+                AI continuously predicts risks and improvement areas.
+
               </p>
             </div>
 

@@ -18,7 +18,7 @@ const Header = () => {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="flex lg:justify-center md:gap-[90px] justify-evenly items-center px-5 lg:px-10 py-5 max-w-[1400px] mx-auto text-[#142833]">
+      <div className="flex lg:justify-center md:gap-[90px] justify-between items-center px-5 lg:px-10 py-5 max-w-[1400px] mx-auto text-[#142833]">
         
         {/* Left Side - Navigation (Desktop) */}
         <nav className="hidden lg:flex items-center gap-10">
@@ -63,11 +63,11 @@ const Header = () => {
         </nav>
 
         {/* Center - Logo */}
-        <Link href="/" className="flex flex-col gap-0.5  left-1/2 -translate-x-1/2 lg:relative lg:left-auto lg:translate-x-0">
+        <Link href="/" className=" lg:relative lg:left-auto lg:translate-x-0">
           <h1 className="text-3xl lg:text-5xl font-bold tracking-tight leading-none text-center">
             KeyEd
           </h1>
-          <hr className="border-[#142833] m-1" />
+          <hr className="border-[#f15a24] m-1" />
           <p className="text-[10px] lg:text-[12px] font-semibold tracking-[2px] uppercase text-center">
             AN ARDEE VENTURE
           </p>
@@ -166,7 +166,7 @@ const Header = () => {
                 className="bg-[#142833] text-white px-6 py-2.5 rounded-lg font-medium  transition-colors block text-center"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                Enquiry
+                Talk to Us
               </Link>
             </li>
           </ul>

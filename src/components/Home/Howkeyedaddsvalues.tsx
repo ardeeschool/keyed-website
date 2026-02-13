@@ -93,7 +93,7 @@ const HowKeyEdAddsValues = () => {
           <h2 className="text-5xl md:text-7xl font-bold text-black mb-4 font-arabic">
             How KeyEd Adds Values?
           </h2>
-          <div className="w-32 h-1 bg-[#E4A677] mx-auto mb-8"></div>
+          <div className="w-32 h-1 bg-[#f15a24] mx-auto mb-8"></div>
            <p className="text-md md:text-xl text-black max-w-4xl mx-auto leading-relaxed font-montserrat">
             By unifying academics, operations, and growth into a single intelligent ecosystem, KeyEd
             delivers measurable value across the entire institutional lifecycle.
@@ -161,14 +161,14 @@ const ValueCardComponent = ({ value, index }: ValueCardComponentProps) => {
       className="group"
     >
      <div className="h-full p-3 md:p-6 rounded-lg md:rounded-2xl  border border-black/20 bg-white 
-                hover:bg-[#E4A677] 
+                hover:bg-[#f15a24] 
                 transition-all duration-300 ease-in-out 
                 hover:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
 
 
         {/* Icon Box */}
         <div className="mb-4">
-          <div className="flex-shrink-0 w-14 h-14  rounded-md flex items-center justify-center bg-[#486776] text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#E5A97C]">
+          <div className="flex-shrink-0 w-14 h-14  rounded-md flex items-center justify-center bg-[#486776] text-white transition-all duration-300 group-hover:bg-white group-hover:text-[#f15a24]">
   {value.icon}
 </div>
         </div>

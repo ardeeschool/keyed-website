@@ -29,7 +29,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.2, ease: 'easeOut' }}
             className="text-md md:text-2xl text-white mb-8 font-medium font-montserrat"
           >
-            Run your entire school on a single Ecosystem.
+            Run your entire institution on a single intelligent platform — academics, operations, finance, admissions, analytics, and growth in one ecosystem.
           </motion.p>
 
           {/* Brand Name */}
@@ -40,7 +40,7 @@ const HeroSection = () => {
             className="mb-6"
           >
             <p className="text-3xl md:text-4xl font-normal  font-arabic text-white">
-              RunOnKeyEd
+              Built from 20+ years of running real schools.
             </p>
           </motion.div>
 
@@ -55,7 +55,7 @@ const HeroSection = () => {
               whileTap={{ scale: 0.95 }}
               className="inline-flex items-center gap-2 bg-white hover:bg-[#000000] text-[#172C37] font-semibold px-8 py-4 rounded-lg text-lg transition-colors duration-300 shadow-lg hover:shadow-xl hover:text-white"
             href="">
-              Book a Demo
+              Request Demo
               <ArrowRight className="w-5 h-5" />
             </motion.a>
           </motion.div>
