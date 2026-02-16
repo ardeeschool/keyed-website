@@ -30,7 +30,7 @@ const dashboardModules = [
     id: 'enrollment',
     label: 'Enrollment',
     icon: TrendingUp,
-    iconColor: 'text-[#F97316]',
+    iconColor: 'text-[#5f5f5f]',
     bg: 'bg-secondary/10',
   },
   {
@@ -65,7 +65,7 @@ const Homecomp = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#f973161a] border border-secondary/30 text-[#EA580C] px-4 py-2 rounded-full text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 bg-[#5f5f5f1a] border border-secondary/30 text-[#EA580C] px-4 py-2 rounded-full text-sm font-medium mb-6"
             >
               <ShieldCheck className="w-4 h-4" />
               Trusted by Leading Institutions
@@ -83,11 +83,11 @@ const Homecomp = () => {
               <span className="text-[#0A2540]">One Login.</span>
               <br />
               <span  style={{
-  background: 'linear-gradient(135deg, #F97316 0%, #FBBF24 100%)',
+  background: 'linear-gradient(135deg, #5f5f5f 0%, #FBBF24 100%)',
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-}}>One Source of Truth</span>
+}}>One Source of Truth.</span>
             </motion.h1>
 
             {/* Description */}
@@ -111,7 +111,7 @@ const Homecomp = () => {
             >
               <Link
                 href="/demo"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-[#F97316] hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors"
+                className="inline-flex items-center gap-2 px-7 py-4 bg-[#5f5f5f] hover:bg-secondary-dark text-white font-semibold rounded-lg transition-colors"
               >
                 Request Demo
                 <ArrowRight className="w-4 h-4" />
@@ -145,7 +145,7 @@ const Homecomp = () => {
               {stats.map((stat, index) => (
                 <div key={stat.label} className="flex items-center gap-8">
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-[#F97316]">{stat.value}</div>
+                    <div className="text-2xl font-bold text-[#5f5f5f]">{stat.value}</div>
                     <div className="text-xs text-[#718096] mt-0.5 whitespace-nowrap">{stat.label}</div>
                   </div>
                   {index < stats.length - 1 && (
