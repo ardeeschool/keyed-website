@@ -152,8 +152,8 @@ export default function BuiltForInstitutions() {
           }}
         >
           <h2 className="text-[32px] sm:text-[42px] font-bold text-[#0d1b35] leading-tight">
-            Built for Institutions,{" "}
-            <span className="text-orange-500">Not Just Demos</span>
+            Built for Institutions
+          
           </h2>
           <p className="mt-3 text-[15px] text-gray-400">
             KeyEd is designed for long-term institutional reliability.

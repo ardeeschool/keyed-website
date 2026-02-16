@@ -29,7 +29,7 @@ const comingSoon = [
 
 export default function BuiltByEducators() {
   return (
-    <section className="py-20" style={{ background: '#f5f5f5' }}>
+    <section className="py-20 mt-10" style={{ background: '#f5f5f533' }}>
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Heading */}
