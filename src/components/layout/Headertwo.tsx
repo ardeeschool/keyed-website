@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
@@ -14,18 +14,31 @@ const navLinks = [
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="w-full bg-white border-b border-gray-200 sticky top-0 z-50">
+    <nav className="w-full bg-white border-b border-[#e7ebf0] sticky top-0 z-50">
       {/* Main bar */}
-      <div className="w-full px-[55px] h-[90px] flex items-center justify-between">
+      <div className="w-full px-[55px] h-[80px] flex items-center justify-between">
 
         {/* LEFT — Logo */}
         <Link href="/" className="flex items-baseline gap-0.5 flex-shrink-0 no-underline">
-          <span className="font-serif font-bold text-[22px] text-[#0d1b35] tracking-tight">
+          <span className="font-bold text-[30px] text-[#0d1b35] tracking-tight font-montserrat">
             KeyEd
           </span>
-          <span className="font-serif font-bold text-[11px] text-[#f4821f] align-super leading-none ml-px">
+          <span className="font-bold text-[11px] text-[#f4821f] align-super leading-none ml-px">
             ™
           </span>
         </Link>
@@ -37,7 +50,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="px-3.5 py-2 text-[15px] font-semibold text-[#1a2c4e] rounded-md hover:bg-gray-100 hover:text-[#0d1b35] transition-colors duration-150 whitespace-nowrap no-underline"
+                  className="px-3.5 py-2 text-[15px] font-normal text-[#1a2c4e] rounded-md hover:bg-gray-100 hover:text-[#0d1b35] transition-colors duration-150 whitespace-nowrap no-underline"
                 >
                   {link.label}
                 </Link>
@@ -64,6 +77,18 @@ export default function Navbar() {
           <span className={`block w-6 h-0.5 bg-[#0d1b35] rounded-sm transition-all duration-200 ${menuOpen ? "opacity-0" : ""}`} />
           <span className={`block w-6 h-0.5 bg-[#0d1b35] rounded-sm transition-all duration-200 ${menuOpen ? "-translate-y-[7px] -rotate-45" : ""}`} />
         </button>
+      </div>
+
+      {/* Scroll progress line */}
+      <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-transparent">
+        <div
+          className="h-full transition-all duration-75 ease-out"
+          style={{
+            width: `${scrollProgress}%`,
+            background: 'linear-gradient(90deg, #f4821f, #FBBF24)',
+            opacity: scrollProgress > 0 ? 1 : 0,
+          }}
+        />
       </div>
 
       {/* Mobile dropdown menu */}

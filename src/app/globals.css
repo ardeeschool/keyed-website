@@ -40,6 +40,28 @@
   --color-info: #3b82f6;
 }
 
+
+.transform-bg-polygon-top {
+    width: 55%;
+    background: #FAFAFA;
+    position: absolute;
+    height: 58px;
+    display: block;
+    clip-path: polygon(0 0, 92.5% 0, 97% 100%, 0 100%);
+    bottom: -1px;
+    left: 0;
+}
+.transform-bg-polygon-bottom {
+    width: 50%;
+    background: #fff;
+    position: absolute;
+    height: 58px;
+    display: block;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 4% 100%);
+    top: -1px;
+    left: 50%;
+    z-index: 1;
+}
 @layer base {
   body {
     font-synthesis-weight: none;

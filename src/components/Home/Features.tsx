@@ -337,16 +337,15 @@ const sections: Section[] = [
 // z-index increments so each new card covers the previous.
 export default function Features() {
   return (
-    <section className="bg-[#fff3eb] py-20">
+    <section className="bg-[#f5f5f582] py-20">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
 
           {/* Header */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-3">
-              Everything Your Institution Runs On
+              Everything Your Institution <span className='text-primary'>Runs On</span>
             </h2>
-            <div className="w-24 h-1 bg-secondary rounded-full mx-auto mb-4" />
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
               One ecosystem covering academics, operations, finance, and intelligence.
             </p>
@@ -359,9 +358,9 @@ export default function Features() {
                 key={section.number}
                 style={{
                   position: 'sticky',
-                  top: '32px',
+                  top: '110px',
                   zIndex: index + 1,
-                  paddingBottom: index === sections.length - 1 ? '0' : '30px',
+                  paddingBottom: index === sections.length - 1 ? '0' : '80px',
                 }}
               >
                 <motion.div
@@ -369,7 +368,7 @@ export default function Features() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true, margin: '-60px' }}
                   transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-                  className="bg-white rounded-3xl overflow-hidden shadow-lg"
+                  className="bg-white rounded-3xl overflow-hidden shadow-lg border border-[#ffe0cc]"
                 >
                   <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
 
@@ -386,7 +385,7 @@ export default function Features() {
                       <ul className="space-y-3">
                         {section.bullets.map((bullet) => (
                           <li key={bullet} className="flex items-start gap-3">
-                            <div className="w-5 h-5 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <div className="w-5 h-5 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xl">
                               <Check className="w-3 h-3 text-secondary" strokeWidth={2.5} />
                             </div>
                             <span className="text-gray-600 text-sm leading-relaxed">{bullet}</span>

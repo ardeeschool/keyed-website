@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
    <html lang="en" className={`${tanseek.variable} ${montserrat.variable} ${syne.variable}`}>
-      <body>{children}</body>
+       <body style={{ overflowX: 'hidden' }}>{children}</body>
     </html>
   );
 }

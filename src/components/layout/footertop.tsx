@@ -12,7 +12,7 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer
-      className="relative w-full text-white overflow-hidden"
+      className="relative w-full text-white overflow-hidden pt-24"
       style={{
         background: "#F6F6F6",
       }}
