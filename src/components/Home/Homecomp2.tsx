@@ -154,14 +154,53 @@ function AnimatedCounter({
     </div>
   )
 }
+function AnimatedCounter94({
+  target,
+  suffix,
+  delay = 0,
+}: {
+  target: number
+  suffix: string
+  delay?: number
+}) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLDivElement>(null)
+  const hasAnimated = useRef(false)
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasAnimated.current) {
+          hasAnimated.current = true
+          const controls = animate(0, target, {
+            duration: 1.8,
+            delay,
+            ease: [0.16, 1, 0.3, 1],
+            onUpdate: (v) => setCount(Math.round(v)),
+          })
+          return () => controls.stop()
+        }
+      },
+      { threshold: 0.5 }
+    )
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [target, delay])
+
+  return (
+    <div ref={ref} className="text-7xl font-bold text-[#F97316]">
+      {count}
+      {suffix}
+    </div>
+  )
+}
 // ─────────────────────────────────────────────
 // Main Hero Component
 // ─────────────────────────────────────────────
 const Homecomp2 = () => {
   return (
     <section
-      className="min-h-screen flex items-center pt-20 overflow-hidden"
+      className="p-20 flex items-center"
       style={{ background: '#FAF7F2' }}
     >
       <div className="container mx-auto px-6 max-w-6xl">
@@ -306,14 +345,14 @@ const Homecomp2 = () => {
                   className="text-center mb-6"
                 >
                   <p className="text-gray-400 text-sm mb-1">Institutional Health</p>
-                  <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 1 }}
-                    className="text-7xl font-bold text-[#FB923C] leading-none"
-                  >
-                    94
-                  </motion.div>
+                  <div className="text-7xl font-bold text-[#FB923C] leading-none">
+                  <AnimatedCounter94
+                      target={94}
+                      suffix={''}
+                      delay={0.6}
+                    />
+                    </div>
+                  
                 </motion.div>
 
                 {/* 2x2 Module Cards */}

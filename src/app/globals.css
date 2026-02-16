@@ -7,12 +7,12 @@
   
   /* === COLOR VARIABLES === */
   /* Primary Colors */
-  --color-primary: #486776;
+  --color-primary: #f05a26;
   --color-primary-dark: #3a5360;
   --color-primary-light: #5a7b8c;
   
   /* Secondary Colors */
-  --color-secondary: #E5A97C;
+  --color-secondary: #0c2440;
   --color-secondary-dark: #d89560;
   --color-secondary-light: #ebb98e;
   
@@ -28,8 +28,8 @@
   --color-bg-gray-light: #F4F4F4;
   
   /* Border Colors */
-  --color-border-primary: #486776;
-  --color-border-secondary: #E5A97C;
+  --color-border-primary: #f05a26;
+  --color-border-secondary: #0c2440;
   --color-border-light: #e5e7eb;
   --color-border-medium: #d1d5db;
   

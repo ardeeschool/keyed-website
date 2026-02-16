@@ -87,7 +87,7 @@ const Homecomp = () => {
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   backgroundClip: 'text',
-}}>One Source of Truth</span>
+}}>One Source of Truth.</span>
             </motion.h1>
 
             {/* Description */}
