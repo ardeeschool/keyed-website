@@ -10,6 +10,8 @@ import BuiltByEducators from '@/components/home/BuiltByEducators'
 import KeyEdScoreSection from '@/components/home/Keyedscoresection';
 import ValueSection from '@/components/home/Valuesection';
 import CTASection from '@/components/home/Ctasection';
+import ProblemSection from '@/components/home/ProblemSection';
+
 export const metadata: Metadata = {
   title: 'Home | KeyEd',
   description: 'Run your entire school on a single ecosystem.',
@@ -29,7 +31,7 @@ export default function Home2Page() {
               <ValueSection />
      <Features />
    
-   
+   <ProblemSection />
     
        <InstitutionModules />
        <CTASection />
