@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Montserrat } from "next/font/google";
 import { Syne } from "next/font/google";
+import { Inter_Tight } from 'next/font/google'
+
 import "./globals.css";
 
 const tanseek = localFont({
@@ -22,7 +24,11 @@ const syne = Syne({
   weight: ["400","500","600","700"],
   variable: "--next-font-syne",        // renamed
 });
-
+const interTight = Inter_Tight({
+  subsets: ['latin'],
+  weight: ['300','400','500','600','700','800'],
+  variable: '--next-inter-tight', // optional CSS variable
+})
 export const metadata: Metadata = {
   title: "KeyEd",
   description: "School platform",
@@ -30,7 +36,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-   <html lang="en" className={`${tanseek.variable} ${montserrat.variable} ${syne.variable}`}>
+   <html lang="en" className={`${tanseek.variable} ${montserrat.variable} ${interTight.variable} ${syne.variable}`} >
        <body style={{ overflowX: 'hidden' }}>{children}</body>
     </html>
   );

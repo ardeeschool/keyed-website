@@ -10,6 +10,7 @@ const config: Config = {
         montserrat: ["var(--font-montserrat)"],
         syne: ["var(--font-syne)"],
         arabic: ["var(--font-tanseek)"],
+        interTight: ["var(--font-interTight)"],
       },
       colors: {
         // Primary color (#486776)

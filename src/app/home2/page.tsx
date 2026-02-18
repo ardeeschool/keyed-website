@@ -12,6 +12,10 @@ import ValueSection from '@/components/home/Valuesection';
 import CTASection from '@/components/home/Ctasection';
 import ProblemSection from '@/components/home/ProblemSection';
 
+import Ctatop from '@/components/home/Ctatop';
+
+import Footertop from '@/components/layout/footertop'
+
 export const metadata: Metadata = {
   title: 'Home | KeyEd',
   description: 'Run your entire school on a single ecosystem.',
@@ -34,8 +38,8 @@ export default function Home2Page() {
    <ProblemSection />
     
        <InstitutionModules />
-       <CTASection />
-        <Footernew />
+       <Ctatop />
+        <Footertop />
     </main>
   )
 }

@@ -4,6 +4,7 @@
   --font-montserrat: var(--next-font-montserrat);
   --font-syne: var(--next-font-syne);
   --font-arabic: var(--next-font-tanseek);
+  --font-interTight: var(--next-font-interTight);
   
   /* === COLOR VARIABLES === */
   /* Primary Colors */
@@ -62,6 +63,25 @@
     left: 50%;
     z-index: 1;
 }
+
+.background-overlayscore{
+      background-image: url('/keyEdScoretext.svg');
+    background-position: 50% 300px;
+    background-repeat: no-repeat;
+    opacity: 1;
+        height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+}
+
+   .bluecta{
+
+   background-color: #fff0;
+    background-image: linear-gradient(135deg, #0d1b35 0%, #112444 40%, #1a3260 70%, #0d2040 100%);
+   }
 @layer base {
   body {
     font-synthesis-weight: none;
