@@ -193,8 +193,8 @@ const keyedModules = [
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ProblemSection() {
   return (
-    <section className="w-full bg-[#FAF7F2] py-24 px-6 overflow-hidden">
-      <div className="max-w-6xl mx-auto">
+    <section className="w-full bg-[#FAF7F2] py-24 px-20 overflow-hidden">
+      <div className="">
 
         {/* ── Header ── */}
         <motion.div
@@ -241,7 +241,7 @@ export default function ProblemSection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.2 }}
-                className="text-[10px] font-bold text-red-400 uppercase tracking-widest mt-8"
+                className="text-[10px] font-bold text-red-400 uppercase tracking-widest mt-18"
               >
                 No connection
               </motion.p>

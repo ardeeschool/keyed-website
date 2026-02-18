@@ -6,10 +6,11 @@ import Link from "next/link";
 const navLinks = [
   { label: "Home", href: "/" },
   { label: "Solutions", href: "/solutions" },
+  { label: "Who We Are", href: "/who-we-are" },
   { label: "AI & Intelligence", href: "/ai-intelligence" },
   { label: "KeyEd Score", href: "/keyed-score" },
   { label: "Pricing", href: "/pricing" },
-  { label: "Who We Are", href: "/who-we-are" },
+  
 ];
 
 export default function Navbar() {
