@@ -145,7 +145,7 @@ export default function HeroBanner() {
           display: flex;
           align-items: center;
           justify-content: center;
-          background: #faf8f5;
+          background: linear-gradient(135deg, var(--beige) 0%, var(--white) 100%);
           overflow: hidden;
           padding: 80px 24px 90px;
         }
