@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home", href: "/" },
+  { label: "Home2", href: "/" },
   { label: "Solutions", href: "/solution" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "AI & Intelligence", href: "/ai" },
@@ -60,7 +60,7 @@ export default function Navbar() {
           </ul>
 
           <Link
-            href="/contact"
+            href="/contact-us"
             className="ml-4 inline-flex items-center justify-center px-5 py-2.5 bg-[#0d1b35] text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] hover:-translate-y-px active:translate-y-0 transition-all duration-150 whitespace-nowrap no-underline flex-shrink-0"
           >
             Talk to Us

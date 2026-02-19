@@ -199,7 +199,7 @@ function NetworkBackground() {
 export default function AIPrinciples() {
   return (
     <section
-      className="relative w-full flex flex-col items-center text-center px-6 py-24 overflow-hidden"
+      className="relative w-full flex flex-col items-center text-center px-6 py-24 overflow-hidden mb-20"
       style={{
         background: "#0f1e35",
       }}
