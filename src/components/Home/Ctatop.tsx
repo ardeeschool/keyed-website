@@ -10,6 +10,13 @@ const perks = [
   { icon: ClipboardList, label: 'Custom Implementation Plan' },
 ]
 
+
+const blackButtonStyle = {
+  background:
+    "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #3f3f46, #3f3f46)",
+  boxShadow:
+    "0px -3px 0px 0px #27272a inset, 0px 1px 0px 0px rgba(255, 255, 255, 0.2) inset, 0px 2.77px 2.21px 0px rgba(0, 0, 0, 0.12), 0px 6.65px 5.32px 0px rgba(0, 0, 0, 0.13)",
+};
 export default function CTASectiontop() {
   return (
     // sticky + z-index so the NEXT section slides over this one
@@ -17,10 +24,12 @@ export default function CTASectiontop() {
       <section
         className="relative w-full overflow-hidden py-12 flex items-center justify-center max-w-5xl mx-auto mb-[-100px] z-1 rounded-4xl"
         style={{
-          background: 'linear-gradient(135deg, #0d1b35 0%, #112444 40%, #1a3260 70%, #0d2040 100%)',
+          background: 'linear-gradient(135deg, #6f6f6f 0%, #000000 40%, #3c3c3c 70%, #000000 100%)',
          
         }}
       >
+
+       
         {/* Subtle dot texture */}
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.04]"
@@ -45,10 +54,9 @@ export default function CTASectiontop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl lg:text-3xl font-bold text-white leading-tight mb-5"
+            className="text-3xl lg:text-3xl font-medium text-white leading-tight mb-5 font-interTight"
           >
-            See How KeyEd Fits{' '}
-            <span className="text-[#F97316]">Your Institution</span>
+            See How KeyEd Fits Your Institution
           </motion.h2>
 
           {/* Subtext */}
@@ -88,7 +96,8 @@ export default function CTASectiontop() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-3 px-10 py-3 bg-[#F97316] text-white text-[15px] font-bold rounded-xl hover:bg-[#ea6c0a] hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline shadow-lg shadow-orange-900/30"
+              className="inline-flex items-center gap-3 px-10 py-4  text-black text-[15px] font-bold rounded-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline shadow-lg shadow-orange-900/30  bg-[linear-gradient(0deg,#9d9d9d,#ffffff),radial-gradient(62.56%_62.56%_at_28.14%_-10.42%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]
+  shadow-[inset_0px_-3px_0px_#080808,inset_0px_1px_0px_rgba(255,255,255,0.302),0px_2.77px_2.21px_rgba(0,0,0,0.121),0px_6.65px_5.32px_rgba(0,0,0,0.129),0px_12.52px_10.02px_rgba(0,0,0,0.133),0px_22.34px_17.87px_rgba(0,0,0,0.141),0px_41.78px_33.42px_rgba(0,0,0,0.149),0px_100px_80px_rgba(0,0,0,0.149),0px_3px_3px_rgba(0,0,0,0.141),0px_2.77px_2.21px_rgba(0,0,0,0.121)]"
             >
               Book Leadership Demo
               <span className="text-xl">→</span>
@@ -101,7 +110,7 @@ export default function CTASectiontop() {
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="mt-3 text-sm text-blue-200/35"
+            className="mt-3 text-sm text-white/60"
           >
             No credit card required. No sales pressure. Just a conversation about your institution.
           </motion.p>

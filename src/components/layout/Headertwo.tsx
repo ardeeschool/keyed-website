@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const navLinks = [
-  { label: "Home2", href: "/" },
+  { label: "Home", href: "/home2" },
   { label: "Solutions", href: "/solution" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "AI & Intelligence", href: "/ai" },
@@ -39,7 +39,7 @@ export default function Navbar() {
           <span className="font-bold text-[30px] text-[#0d1b35] tracking-tight font-montserrat">
             KeyEd
           </span>
-          <span className="font-bold text-[11px] text-[#f4821f] align-super leading-none ml-px">
+          <span className="font-bold text-[11px] text-[#000] align-super leading-none ml-px">
             ™
           </span>
         </Link>
@@ -86,7 +86,7 @@ export default function Navbar() {
           className="h-full transition-all duration-75 ease-out"
           style={{
             width: `${scrollProgress}%`,
-            background: 'linear-gradient(90deg, #f4821f, #FBBF24)',
+            background: 'linear-gradient(90deg, #272727, #000000)',
             opacity: scrollProgress > 0 ? 1 : 0,
           }}
         />

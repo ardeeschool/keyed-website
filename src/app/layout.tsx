@@ -24,10 +24,13 @@ const syne = Syne({
   weight: ["400","500","600","700"],
   variable: "--next-font-syne",        // renamed
 });
+
+
 const interTight = Inter_Tight({
-  subsets: ['latin'],
-  weight: ['300','400','500','600','700','800'],
-  variable: '--next-inter-tight', // optional CSS variable
+  subsets: ["latin"],
+  weight: ["300","400","500","600","700","800"],
+  variable: "--next-font-interTight", // ✅ FIXED
+  display: "swap",
 })
 export const metadata: Metadata = {
   title: "KeyEd",
