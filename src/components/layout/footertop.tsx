@@ -162,14 +162,14 @@ export default function Footer() {
 
 
 
-<div className="mt-12 p-6 border-t border-white/10  bg-secondary">
+<div className="mt-12 p-6 border-t border-white/10  bg-black">
 <div className="relative z-10 max-w-7xl mx-auto px-6  flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-[#81a1bf]">
+          <p className="text-[13px] text-white/60">
             © 2026 KeyEd. All rights reserved. Built by educators, for educators.
           </p>
           <div className="flex items-center gap-1.5">
             <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-[12px] text-[#81a1bf]">
+            <span className="text-[12px] text-white/60">
               Empowering learners worldwide
             </span>
           </div>
