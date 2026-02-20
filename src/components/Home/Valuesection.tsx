@@ -138,8 +138,8 @@ function Globe() {
 // ── Main Component ────────────────────────────────────────
 export default function ValueSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0A1E37] py-24 pt-10">
-<div class="transform-bg-polygon-bottom"></div>
+    <section className="relative overflow-hidden bg-[#0A1E37] py-24">
+
       {/* Subtle grid texture */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -152,7 +152,7 @@ export default function ValueSection() {
       <div className="relative max-w-7xl mx-auto px-6">
 
         {/* ── Top: Left text + Right globe ── */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 mb-10">
+        <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
 
           {/* Left */}
           <div className="lg:w-1/2">
@@ -164,8 +164,8 @@ export default function ValueSection() {
               transition={{ duration: 0.5 }}
               className="flex items-center gap-2 mb-6"
             >
-              <div className="w-1.5 h-4 bg-[#4199ea] rounded-full" />
-              <p className="text-xs font-bold tracking-[0.2em] text-[#b6d3ee] uppercase">
+              <div className="w-1.5 h-4 bg-secondary rounded-full" />
+              <p className="text-xs font-bold tracking-[0.2em] text-white uppercase">
                 Why KeyEd
               </p>
             </motion.div>
@@ -176,10 +176,10 @@ export default function ValueSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold text-[#b6d3ee] leading-tight mb-4"
+              className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
             >
               How KeyEd{' '}
-              <span className="text-primary">Adds Value</span>
+              <span className="text-white">Adds Value</span>
             </motion.h2>
 
             <motion.p
@@ -187,7 +187,7 @@ export default function ValueSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-[#81a1bf] mb-10 text-base"
+              className="text-blue-200/60 mb-10 text-base"
             >
               KeyEd enables institutions to:
             </motion.p>
@@ -196,8 +196,9 @@ export default function ValueSection() {
             <div className="relative pl-6">
               {/* Left bracket — orange curved line */}
               <div
-                className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full"
-                style={{ background: 'linear-gradient(to bottom, #F97316, #FBBF24)' }}
+                className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full bg-gradient-to-br
+      from-primary
+      to-secondary"
               />
               <div className="space-y-4">
                 {values.map((item, i) => (
@@ -209,10 +210,10 @@ export default function ValueSection() {
                     transition={{ duration: 0.4, delay: i * 0.07 }}
                     className="flex items-center gap-3"
                   >
-                    <div className="w-6 h-6 rounded-full bg-secondary flex items-center justify-center flex-shrink-0">
-                      <Check className="w-3.5 h-3.5 text-white" strokeWidth={3} />
+                    <div className="w-6 h-6 rounded-full bg-gray-100 shadow-2xl flex items-center justify-center flex-shrink-0">
+                      <Check className="w-3.5 h-3.5 text-black" strokeWidth={3} />
                     </div>
-                    <p className="text-[#81a1bf] text-sm font-medium">{item}</p>
+                    <p className="text-white/80 text-sm font-medium">{item}</p>
                   </motion.div>
                 ))}
               </div>
@@ -247,19 +248,18 @@ export default function ValueSection() {
               {/* Accent line — alternating orange/blue */}
               <div
                 className="absolute top-0 left-0 right-0 h-[2px] rounded-t-xl"
-                style={{ background: i % 2 === 0 ? '#F97316' : '#3B82F6' }}
+                style={{ background: i % 2 === 0 ? '#0456c9' : '#b7b7b7' }}
               />
-              <p className="text-[10px] font-bold tracking-[0.18em] text-white/30 uppercase mb-1">
+              <p className="text-[10px] font-bold tracking-[0.18em] text-white/70 uppercase mb-1">
                 {stat.prefix}{' '}
-                <span className="text-secondary">{stat.highlight}</span>
+                <span className="text-white">{stat.highlight}</span>
               </p>
-              <p className="text-xs text-white/50 leading-relaxed">{stat.desc}</p>
+              <p className="text-xs text-white/80 leading-relaxed">{stat.desc}</p>
             </motion.div>
           ))}
         </div>
 
       </div>
-      <div className='transform-bg-polygon-top'></div>
     </section>
   )
 }

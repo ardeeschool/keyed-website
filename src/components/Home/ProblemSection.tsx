@@ -20,9 +20,6 @@ const tools = [
     name: "Excel / Sheets",
     use: "Admissions tracking",
     Icon: FileSpreadsheet,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-    border: "#BBF7D0",
     pos: "top-0 left-[8%]",
     delay: 0.1,
   },
@@ -30,9 +27,6 @@ const tools = [
     name: "WhatsApp",
     use: "Parent communication",
     Icon: MessageSquare,
-    color: "#15803D",
-    bg: "#F0FDF4",
-    border: "#BBF7D0",
     pos: "top-0 right-[8%]",
     delay: 0.2,
   },
@@ -40,9 +34,6 @@ const tools = [
     name: "Tally / QuickBooks",
     use: "Fee & accounts",
     Icon: Calculator,
-    color: "#B45309",
-    bg: "#FFFBEB",
-    border: "#FDE68A",
     pos: "top-[38%] left-0",
     delay: 0.3,
   },
@@ -50,9 +41,6 @@ const tools = [
     name: "Paper Registers",
     use: "Attendance & grades",
     Icon: ClipboardList,
-    color: "#B91C1C",
-    bg: "#FEF2F2",
-    border: "#FECACA",
     pos: "top-[38%] right-0",
     delay: 0.4,
   },
@@ -60,9 +48,6 @@ const tools = [
     name: "Manual HR Files",
     use: "Staff management",
     Icon: UserCheck,
-    color: "#6D28D9",
-    bg: "#F5F3FF",
-    border: "#DDD6FE",
     pos: "bottom-0 left-[8%]",
     delay: 0.5,
   },
@@ -70,9 +55,6 @@ const tools = [
     name: "No Dashboard",
     use: "Leadership reporting",
     Icon: WifiOff,
-    color: "#64748B",
-    bg: "#F8FAFC",
-    border: "#E2E8F0",
     pos: "bottom-0 right-[8%]",
     delay: 0.6,
   },
@@ -98,7 +80,7 @@ function BrokenLines() {
         <motion.path
           key={i}
           d={d}
-          stroke="#EF4444"
+          stroke="#000000"
           strokeWidth="1.5"
           strokeDasharray="6 5"
           fill="none"
@@ -113,7 +95,7 @@ function BrokenLines() {
       {/* Centre broken/X indicator */}
       <motion.circle
         cx="250" cy="190" r="22"
-        fill="#FEF2F2" stroke="#FCA5A5" strokeWidth="1.5"
+        fill="#000" stroke="#000" strokeWidth="1.5"
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
@@ -149,22 +131,20 @@ function ToolNode({
       className={`absolute ${pos} w-[140px]`}
     >
       <div
-        className="rounded-xl p-3 border-2 shadow-md text-center"
-        style={{ background: bg, borderColor: border }}
+        className="rounded-xl p-3 border-2 shadow-md text-center bg-primary-dark border-gray-50"
       >
         {/* Error badge */}
         <div className="relative inline-block mb-2">
           <div
             className="w-10 h-10 rounded-lg flex items-center justify-center mx-auto"
-            style={{ background: `${color}18` }}
           >
-            <Icon style={{ color }} className="w-5 h-5" strokeWidth={1.8} />
+            <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
           </div>
-          <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
-            <X className="w-2.5 h-2.5 text-white" strokeWidth={3} />
+          <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-white rounded-full flex items-center justify-center">
+            <X className="w-2.5 h-2.5 text-primary" strokeWidth={3} />
           </div>
         </div>
-        <p className="text-[11px] font-bold text-gray-800 leading-tight">{name}</p>
+        <p className="text-[11px] font-bold text-gray-50 leading-tight">{name}</p>
         <p className="text-[9px] text-gray-400 mt-0.5 leading-tight">{use}</p>
       </div>
     </motion.div>
@@ -182,18 +162,18 @@ const painPoints = [
 
 // ─── KeyEd unified modules (solution side) ───────────────────────────────────
 const keyedModules = [
-  { label: "Academics", color: "#3B82F6" },
-  { label: "Admissions", color: "#F97316" },
-  { label: "Finance", color: "#EAB308" },
-  { label: "Operations", color: "#22C55E" },
-  { label: "People", color: "#A855F7" },
-  { label: "Analytics", color: "#F97316" },
+  { label: "Academics", color: "#ffffff" },
+  { label: "Admissions", color: "#ffffff" },
+  { label: "Finance", color: "#ffffff" },
+  { label: "Operations", color: "#ffffff" },
+  { label: "People", color: "#ffffff" },
+  { label: "Analytics", color: "#ffffff" },
 ];
 
 // ─── Main Section ─────────────────────────────────────────────────────────────
 export default function ProblemSection() {
   return (
-    <section className="w-full bg-[#FAF7F2] py-24 px-20 overflow-hidden">
+    <section className="w-full bg-white py-24 px-20 overflow-hidden">
       <div className="">
 
         {/* ── Header ── */}
@@ -204,20 +184,14 @@ export default function ProblemSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="inline-flex items-center gap-2 bg-red-50 border border-red-200 text-red-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
+          <div className="inline-flex items-center gap-2 bg-primary border-primary text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-4">
             <AlertTriangle className="w-3.5 h-3.5" />
             The Reality Today
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#1a2b4a] leading-tight mb-4">
-            The Problem Schools{" "}
-            <span style={{
-              background: "linear-gradient(90deg, #F97316, #EF4444)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}>
+          <h2 className="text-4xl lg:text-5xl font-extrabold text-primary-dark leading-tight mb-4">
+            The Problem Schools 
               Face Today
-            </span>
+          
           </h2>
           <p className="text-[#6b7a8d] text-lg max-w-xl mx-auto">
             Schools run on <strong className="text-gray-700">6+ disconnected tools</strong> that never talk to each other — creating chaos, blind spots, and wasted hours.
@@ -241,7 +215,7 @@ export default function ProblemSection() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: 1.2 }}
-                className="text-[10px] font-bold text-red-400 uppercase tracking-widest mt-18"
+                className="text-[10px] font-bold text-primary-dark uppercase tracking-widest mt-18"
               >
                 No connection
               </motion.p>
@@ -258,12 +232,12 @@ export default function ProblemSection() {
               className="bg-white rounded-2xl border border-red-100 p-8 shadow-sm"
             >
               <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 bg-red-50 rounded-xl flex items-center justify-center">
-                  <AlertTriangle className="w-5 h-5 text-red-500" />
+                <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center">
+                  <AlertTriangle className="w-5 h-5 text-primary-dark" />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-red-400 uppercase tracking-widest">The consequence</p>
-                  <p className="text-base font-bold text-gray-800">What this costs you daily</p>
+                  <p className="text-xs font-bold text-primary-dark uppercase tracking-widest">The consequence</p>
+                  <p className="text-base font-bold text-primary-dark">What this costs you daily</p>
                 </div>
               </div>
 
@@ -275,12 +249,12 @@ export default function ProblemSection() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: 0.4 + i * 0.08 }}
-                    className="flex items-start gap-3 p-3 rounded-xl bg-red-50/50 border border-red-100"
+                    className="flex items-start gap-3 p-3 rounded-xl bg-primary/15 border border-gray-100"
                   >
-                    <div className="w-5 h-5 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <X className="w-3 h-3 text-red-500" strokeWidth={3} />
+                    <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <X className="w-3 h-3 text-primary-black" strokeWidth={3} />
                     </div>
-                    <p className="text-sm font-medium text-gray-700 leading-snug">{point}</p>
+                    <p className="text-sm font-medium text-black leading-snug">{point}</p>
                   </motion.div>
                 ))}
               </div>
@@ -291,7 +265,7 @@ export default function ProblemSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.9 }}
-                className="mt-6 p-4 rounded-xl border-2 border-dashed border-orange-300 bg-orange-50 text-center"
+                className="mt-6 p-4 rounded-xl border-2 border-dashed border-primary/20 bg-gray-100 text-center"
               >
                 <p className="text-sm font-bold text-gray-800">Result: <span className="text-gray-900">No single view of school health.</span></p>
                 <p className="text-xs text-gray-500 mt-1">Leadership makes decisions without reliable data.</p>
@@ -312,9 +286,9 @@ export default function ProblemSection() {
             animate={{ y: [0, 6, 0] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
           >
-            <ArrowDown className="w-8 h-8 text-[#F97316]" strokeWidth={2.5} />
+            <ArrowDown className="w-8 h-8 text-primary-dark" strokeWidth={2.5} />
           </motion.div>
-          <p className="text-sm font-bold text-[#F97316] uppercase tracking-widest">KeyEd fixes this</p>
+          <p className="text-sm font-bold text-primary-dark uppercase tracking-widest">KeyEd fixes this</p>
         </motion.div>
 
         {/* ── Solution: KeyEd unified hub ── */}
@@ -323,7 +297,7 @@ export default function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative bg-[#0A1E37] rounded-3xl p-10 overflow-hidden"
+          className="relative bg-black rounded-3xl p-10 overflow-hidden"
         >
           {/* BG dot grid */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -337,10 +311,10 @@ export default function ProblemSection() {
 
             {/* Left text */}
             <div className="lg:w-1/2">
-              <p className="text-xs font-bold text-[#F97316] uppercase tracking-widest mb-3">The KeyEd Way</p>
+              <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">The KeyEd Way</p>
               <h3 className="text-3xl font-extrabold text-white leading-tight mb-4">
                 One platform.<br />
-                <span className="text-[#F97316]">Everything connected.</span>
+                <span className="text-white">Everything connected.</span>
               </h3>
               <p className="text-blue-200/60 text-base mb-6">
                 KeyEd replaces all disconnected tools with a single intelligent operating system — where every module shares live data, and leadership always has a real-time view.
@@ -360,7 +334,7 @@ export default function ProblemSection() {
                     transition={{ delay: 0.4 + i * 0.08 }}
                     className="flex items-center gap-2.5"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-[#F97316] flex-shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-white flex-shrink-0" />
                     <p className="text-sm text-white/80 font-medium">{item}</p>
                   </motion.div>
                 ))}
@@ -383,7 +357,7 @@ export default function ProblemSection() {
                       <motion.line
                         key={i}
                         x1={cx} y1={cy} x2={x} y2={y}
-                        stroke="#F97316" strokeWidth="1.5" strokeOpacity="0.35"
+                        stroke="#000000" strokeWidth="1.5" strokeOpacity="0.35"
                         initial={{ pathLength: 0 }}
                         whileInView={{ pathLength: 1 }}
                         viewport={{ once: true }}
@@ -427,11 +401,14 @@ export default function ProblemSection() {
                   whileInView={{ scale: 1, opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 160 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full flex flex-col items-center justify-center"
-                  style={{ background: "linear-gradient(135deg, #F97316, #FBBF24)", boxShadow: "0 0 30px rgba(249,115,22,0.4)" }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full flex flex-col items-center justify-center bg-gradient-to-br
+      from-secondary
+      to-primary"
+                  style={{  boxShadow: "0 0 30px rgba(248,248,22,0.4)" }}
                 >
+                  
                   <p className="text-white font-extrabold text-sm leading-none">KeyEd</p>
-                  <p className="text-white/70 text-[9px] mt-0.5">Core</p>
+                 
                 </motion.div>
 
               </div>

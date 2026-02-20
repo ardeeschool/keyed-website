@@ -10,7 +10,11 @@ const perks = [
   { icon: ClipboardList, label: 'Custom Implementation Plan' },
 ]
 
-
+const iconStyle = {
+  backgroundColor: "#272727",
+  boxShadow:
+    "0px -3px 0px 0px #080808 inset, 0px 1px 0px 0px rgba(255,255,255,0.302) inset, 0px 2.77px 2.21px 0px rgba(0,0,0,0.122), 0px 3px 3px 0px rgba(0,0,0,0.141), 0px 12.52px 10.02px 0px rgba(0,0,0,0.133), 0px 22.34px 17.87px 0px rgba(0,0,0,0.141), 0px 41.78px 33.42px 0px rgba(0,0,0,0.149), 0px 100px 80px 0px rgba(0,0,0,0.149)",
+};
 const blackButtonStyle = {
   background:
     "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, #3f3f46, #3f3f46)",
@@ -81,7 +85,13 @@ export default function CTASectiontop() {
           >
             {perks.map(({ icon: Icon, label }) => (
               <div key={label} className="flex items-center gap-2">
-                <Icon className="w-5 h-5 text-[#F97316] flex-shrink-0" strokeWidth={1.8} />
+                 <div
+        className="w-12 h-12 rounded-xl flex items-center justify-center"
+        style={iconStyle}
+      >
+        <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
+      </div>
+
                 <span className="text-white font-semibold text-[15px]">{label}</span>
               </div>
             ))}

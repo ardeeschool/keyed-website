@@ -40,7 +40,7 @@ export default function Footer() {
         aria-hidden="true"
       >
         <span
-          className="text-secondary font-thin leading-none pr-4 sm:pr-8"
+          className="text-primary font-thin leading-none pr-4 sm:pr-8"
           style={{
             fontSize: "clamp(60px, 11vw, 180px)",
             opacity: 0.06,
@@ -70,7 +70,7 @@ export default function Footer() {
               {/* Logo */}
               <div className="flex items-baseline gap-0.5">
                 <span
-                  className="font-bold text-[28px] text-secondary tracking-tight"
+                  className="font-bold text-[28px] text-primary tracking-tight"
                 >
                   KeyEd
                 </span>
@@ -85,7 +85,7 @@ export default function Footer() {
                 An Ardee Venture
               </p>
 
-              <p className="text-[14px] text-secondary leading-relaxed">
+              <p className="text-[14px] text-primary leading-relaxed">
                The unified operating system for modern educational institutions.
               </p>
 
@@ -97,8 +97,8 @@ export default function Footer() {
 
               {/* Orange dash */}
               <div className="flex items-center gap-2 mt-1">
-                <div className="w-10 h-[3px] rounded-full bg-orange-500" />
-                <div className="w-4 h-[3px] rounded-full bg-orange-400 opacity-40" />
+                <div className="w-10 h-[3px] rounded-full bg-secondary" />
+                <div className="w-4 h-[3px] rounded-full bg-secondary/30 opacity-40" />
               </div>
 
 
@@ -128,7 +128,7 @@ export default function Footer() {
 
             {/* Quick Links — right beside brand */}
             <div className="flex flex-col gap-3">
-              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-secondary mb-1">
+              <h4 className="text-[11px] font-bold uppercase tracking-[0.2em] text-primary mb-1">
                 Quick Links
               </h4>
               <ul className="flex flex-col gap-3 list-none p-0 m-0">
@@ -136,9 +136,9 @@ export default function Footer() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="group flex items-center gap-2 text-[14px] text-secondary hover:text-primary transition-colors duration-150 no-underline"
+                      className="group flex items-center gap-2 text-[14px] text-primary hover:text-primary transition-colors duration-150 no-underline"
                     >
-                      <span className="w-1 h-1 rounded-full bg-orange-500 opacity-50 group-hover:opacity-100 transition-opacity duration-150 flex-shrink-0" />
+                      <span className="w-1 h-1 rounded-full bg-secondary/75 opacity-50 group-hover:opacity-100 transition-opacity duration-150 flex-shrink-0" />
                       {link.label}
                     </a>
                   </li>

@@ -35,11 +35,11 @@ export default function Navbar() {
       <div className="w-full px-[55px] h-[80px] flex items-center justify-between">
 
         {/* LEFT — Logo */}
-        <Link href="/" className="flex items-baseline gap-0.5 flex-shrink-0 no-underline">
+        <Link href="/home2" className="flex items-baseline gap-0.5 flex-shrink-0 no-underline">
           <span className="font-bold text-[30px] text-[#0d1b35] tracking-tight font-montserrat">
             KeyEd
           </span>
-          <span className="font-bold text-[11px] text-[#000] align-super leading-none ml-px">
+          <span className="font-bold text-[11px] text-primary-dark] align-super leading-none ml-px">
             ™
           </span>
         </Link>
@@ -51,7 +51,7 @@ export default function Navbar() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="px-3.5 py-2 text-[15px] font-normal text-[#1a2c4e] rounded-md hover:bg-gray-100 hover:text-[#0d1b35] transition-colors duration-150 whitespace-nowrap no-underline"
+                  className="px-3.5 py-2 text-[15px] font-normal text-primary rounded-md hover:bg-gray-100 hover:text-[#0d1b35] transition-colors duration-150 whitespace-nowrap no-underline"
                 >
                   {link.label}
                 </Link>
@@ -61,7 +61,7 @@ export default function Navbar() {
 
           <Link
             href="/contact-us"
-            className="ml-4 inline-flex items-center justify-center px-5 py-2.5 bg-[#0d1b35] text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] hover:-translate-y-px active:translate-y-0 transition-all duration-150 whitespace-nowrap no-underline flex-shrink-0"
+            className="ml-4 inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] hover:-translate-y-px active:translate-y-0 transition-all duration-150 whitespace-nowrap no-underline flex-shrink-0"
           >
             Talk to Us
           </Link>

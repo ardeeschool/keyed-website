@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useRef, useEffect, useState } from "react";
 import { Sparkles } from 'lucide-react'
 
 const metrics = [
@@ -20,63 +21,84 @@ const metrics = [
 ]
 
 // ── Circular Progress SVG ─────────────────────────────────
-function CircularProgress({ value }: { value: number }) {
-  const radius = 110
-  const stroke = 13
-  const normalised = radius - stroke / 2
-  const circumference = Math.PI * normalised
-  const progress = (value / 100) * circumference
-  const cx = 150
+function DashedCircleProgress({ score = 94 }: { score?: number }) {
+  const SIZE = 220;
+  const DASH_COUNT = 60;
+  const R = 96;
+  const [animFilled, setAnimFilled] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+  const wrapperRef = useRef<HTMLDivElement>(null);
+  const filledDashes = Math.round((score / 100) * DASH_COUNT);
+
+  // ── Trigger only when scrolled into view ──
+  useEffect(() => {
+    const el = wrapperRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [hasStarted]);
+
+  // ── rAF counter ──
+  useEffect(() => {
+    if (!hasStarted) return;
+    let frame: number;
+    let start: number | null = null;
+    const duration = 1800;
+    const tick = (ts: number) => {
+      if (!start) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      const ease = 1 - Math.pow(1 - p, 3);
+      setAnimFilled(Math.round(ease * filledDashes));
+      if (p < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [hasStarted, filledDashes]);
+
+  const dashes = Array.from({ length: DASH_COUNT }, (_, i) => {
+    const angle = (i / DASH_COUNT) * 360 - 90;
+    const rad = (angle * Math.PI) / 180;
+    const cx = SIZE / 2, cy = SIZE / 2;
+    const inner = R - 7, outer = R + 7;
+    return (
+      <line
+        key={i}
+        x1={cx + inner * Math.cos(rad)}
+        y1={cy + inner * Math.sin(rad)}
+        x2={cx + outer * Math.cos(rad)}
+        y2={cy + outer * Math.sin(rad)}
+        strokeWidth="5"
+        strokeLinecap="round"
+        stroke={i < animFilled ? "#1a1a1c" : "#E5E7EB"}
+        style={{ transition: "stroke 0.05s ease" }}
+      />
+    );
+  });
 
   return (
-    <div className="relative flex flex-col items-center">
-      <svg width="300" height="180" viewBox="0 0 300 180" className="overflow-visible">
-        {/* Track */}
-        <path
-          d={`M ${cx - normalised} ${cx + 40} A ${normalised} ${normalised} 0 0 1 ${cx + normalised} ${cx + 40}`}
-          fill="none"
-          stroke="#E5E7EB"
-          strokeWidth={stroke}
-          strokeLinecap="round"
-        />
-        {/* Filled */}
-        <motion.path
-          d={`M ${cx - normalised} ${cx + 40} A ${normalised} ${normalised} 0 0 1 ${cx + normalised} ${cx + 40}`}
-          fill="none"
-          stroke="url(#scoreGrad)"
-          strokeWidth={stroke}
-          strokeLinecap="round"
-          strokeDasharray={circumference}
-          initial={{ strokeDashoffset: circumference }}
-          whileInView={{ strokeDashoffset: circumference - progress }}
-          viewport={{ once: true }}
-          transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
-        />
-        <defs>
-          <linearGradient id="scoreGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#FBBF24" />
-            <stop offset="100%" stopColor="#F97316" />
-          </linearGradient>
-        </defs>
-      </svg>
-
-      {/* Score number */}
-      <div className="absolute bottom-1 text-center">
-        <motion.p
-          initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-5xl font-bold text-[#F97316] leading-none"
-        >
-          {value}
-        </motion.p>
-        <p className="text-sm text-gray-400 mt-2 font-medium">KeyEd Score™</p>
+    <div
+      ref={wrapperRef}
+      className="relative flex items-center justify-center"
+      style={{ width: SIZE, height: SIZE }}
+    >
+      <svg width={SIZE} height={SIZE} className="absolute inset-0">{dashes}</svg>
+      <div className="flex flex-col items-center justify-center text-center z-10">
+        <p className="text-gray-400 text-[10px] font-semibold uppercase tracking-widest mb-1">KeyEd Score™</p>
+        <p className="text-[#1a1a1c] font-black text-6xl leading-none">{score}</p>
+        <p className="text-gray-400 text-[11px] mt-2">out of 100</p>
       </div>
     </div>
-  )
+  );
 }
-
 
 // ── Metric Card — 2-per-row, screenshot style ─────────────
 function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: number }) {
@@ -94,7 +116,7 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
       {/* Label + score */} 
       <div className="flex items-center justify-between mb-3">
         <p className="text-lg font-bold text-gray-800 leading-tight">{metric.label}</p>
-        <span className="text-lg font-bold text-[#F97316] tabular-nums">{metric.value}</span>
+        <span className="text-lg font-bold text-primary tabular-nums">{metric.value}</span>
       </div>
 
       {/* Progress bar */}
@@ -104,15 +126,16 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
           whileInView={{ width: `${metric.value}%` }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, delay: index * 0.05 + 0.2 }}
-          className="h-full rounded-full"
-          style={{ background: 'linear-gradient(90deg, #FBBF24, #F97316)' }}
+          className="h-full rounded-full bg-gradient-to-br
+      from-primary
+      to-secondary"
         />
       </div>
 
       {/* Divider with centre dot — from screenshot */}
       <div className="flex items-center gap-2 mb-3">
         <div className="flex-1 h-px bg-gray-100" />
-        <div className="w-2 h-2 rounded-full border-2 border-[#F97316]" />
+        <div className="w-2 h-2 rounded-full border-2 border-primary" />
         <div className="flex-1 h-px bg-gray-100" />
       </div>
 
@@ -146,7 +169,7 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#F973161A] border border-secondary/20 text-secondary px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
+              className="inline-flex items-center gap-2 bg-primary border border-primary-dark text-white px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
             >
               <Sparkles className="w-3.5 h-3.5" />
               Your Unique Selling Proposition
@@ -158,10 +181,10 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl font-bold text-[#0A2540] leading-tight mb-4"
+              className="text-4xl font-bold text-primary leading-tight mb-4"
             >
               Meet India's First{' '}
-              <span className="text-secondary">Campus Health Score</span>
+              <span className="text-primary-dark">Campus Health Score</span>
             </motion.h2>
 
             {/* Subtext */}
@@ -184,7 +207,7 @@ export default function KeyEdScoreSection() {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex justify-center mb-8"
             >
-              <CircularProgress value={94} />
+              <DashedCircleProgress score={94} />
             </motion.div>
 
             {/* AI note */}
@@ -193,7 +216,7 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex items-start gap-3 bg-[#0A2540] rounded-2xl px-5 py-4 mt-20"
+              className="flex items-start gap-3 bg-primary rounded-2xl px-5 py-4 mt-20"
             >
               <Sparkles className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
               <p className="text-xs text-gray-300 leading-relaxed">

@@ -40,19 +40,26 @@ function TypewriterCycle() {
   }, [displayed, phase, wordIndex])
 
   return (
-    <span className="inline-block" style={{
-      background: 'linear-gradient(135deg, #F97316 0%, #FBBF24 100%)',
-      WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
-      backgroundClip: 'text', minWidth: '2ch',
-    }}>
+    <span className="inline-block bg-gradient-to-br
+      from-primary
+      to-secondary
+      bg-clip-text
+      text-transparent
+      min-w-[2ch]">
       {displayed}
-      <span className="inline-block ml-0.5 w-[3px] h-[0.85em] align-middle rounded-sm animate-pulse"
-        style={{ background: '#F97316', verticalAlign: 'middle' }} />
+      <span className="inline-block
+        ml-0.5
+        w-[3px]
+        h-[0.85em]
+        align-middle
+        rounded-sm
+        animate-pulse
+        bg-primary" />
     </span>
   )
 }
 
-function AnimatedCounter({ target, suffix, delay = 0, className = 'text-2xl font-bold text-[#F97316]' }:
+function AnimatedCounter({ target, suffix, delay = 0, className = 'text-2xl font-bold text-primary' }:
   { target: number; suffix: string; delay?: number; className?: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
@@ -121,7 +128,7 @@ const Homecomp = () => {
           <div>
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-[#f973161a] border border-secondary/30 text-[#EA580C] px-4 py-2 rounded-full text-sm font-medium mb-6">
+              className="inline-flex items-center gap-2 bg-white shadow-sm border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShieldCheck className="w-4 h-4" />
               Trusted by Leading Institutions
             </motion.div>
@@ -129,7 +136,7 @@ const Homecomp = () => {
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-[#0A2540]">One </span>
+              <span className="text-primary">One </span>
               <TypewriterCycle />
             </motion.h1>
 
@@ -144,7 +151,7 @@ const Homecomp = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-start gap-4 mb-6">
               <Link href="/demo"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-secondary hover:bg-[#EA580C] text-white font-semibold rounded-lg transition-colors">
+                className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors">
                 Request Demo <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/overview"
@@ -166,7 +173,7 @@ const Homecomp = () => {
                 <div key={stat.label} className="flex items-center gap-8">
                   <div className="text-center">
                     <AnimatedCounter target={stat.value} suffix={stat.suffix} delay={0.6 + index * 0.15} />
-                    <div className="text-xs text-[#718096] mt-0.5 whitespace-nowrap">{stat.label}</div>
+                    <div className="text-xs text-primary mt-0.5 whitespace-nowrap">{stat.label}</div>
                   </div>
                   {index < stats.length - 1 && <div className="w-px h-8 bg-gray-200" />}
                 </div>
@@ -195,8 +202,8 @@ const Homecomp = () => {
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 w-52">
                 <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">Institutional Health</p>
                 <div className="flex items-end gap-1 mb-3">
-                  <span className="text-5xl font-bold text-[#F97316] leading-none">94</span>
-                  <span className="text-xs font-semibold text-green-500 mb-1">↑ +2.4%</span>
+                  <span className="text-5xl font-bold text-primary-dark leading-none">94</span>
+                  <span className="text-xs font-semibold text-secondary mb-1">↑ +2.4%</span>
                 </div>
                 <div className="flex items-end gap-1 mb-3" style={{ height: 36 }}>
                   {[55, 70, 48, 85, 65, 90, 78].map((h, i) => (
@@ -213,8 +220,8 @@ const Homecomp = () => {
                 <div className="flex justify-between text-[8px] text-gray-300">
                   {['M','T','W','T','F','S','S'].map(d => <span key={d}>{d}</span>)}
                 </div>
-                <div className="mt-3 px-3 py-1.5 bg-[#F97316]/10 rounded-lg text-center">
-                  <p className="text-[10px] font-bold text-[#F97316]">KeyEd Score™</p>
+                <div className="mt-3 px-3 py-1.5 bg-primary-dark rounded-lg text-center">
+                  <p className="text-[10px] font-bold text-white">KeyEd Score™</p>
                 </div>
               </div>
             </FloatCard>
@@ -229,25 +236,25 @@ const Homecomp = () => {
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-[10px] font-bold text-gray-700">Attendance</p>
-                  <span className="text-[8px] bg-green-100 text-green-600 px-1.5 py-0.5 rounded-full font-semibold">Live</span>
+                  <span className="text-[8px] bg-gray-50 text-secondary px-1.5 py-0.5 rounded-full font-semibold">Live</span>
                 </div>
-                {[{ label: 'Students', pct: 94, color: '#F97316' }, { label: 'Teachers', pct: 97, color: '#0A2540' }].map(r => (
+                {[{ label: 'Students', pct: 94 }, { label: 'Teachers', pct: 97 }].map(r => (
                   <div key={r.label} className="mb-2">
                     <div className="flex justify-between mb-0.5">
                       <p className="text-[9px] text-gray-500">{r.label}</p>
-                      <p className="text-[9px] font-bold" style={{ color: r.color }}>{r.pct}%</p>
+                      <p className="text-[9px] font-bold text-primary">{r.pct}%</p>
                     </div>
                     <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }} animate={{ width: `${r.pct}%` }}
                         transition={{ duration: 1, delay: 1.1, ease: [0.22, 1, 0.36, 1] }}
-                        className="h-full rounded-full" style={{ background: r.color }}
+                        className="h-full rounded-full bg-primary"
                       />
                     </div>
                   </div>
                 ))}
                 <div className="flex items-center gap-1.5 mt-2 bg-gray-50 rounded-lg p-1.5">
-                  <div className="w-5 h-5 rounded-full bg-[#0A2540] flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-primary-dark flex items-center justify-center">
                     <span className="text-[8px] font-bold text-white">A</span>
                   </div>
                   <div>
@@ -265,10 +272,10 @@ const Homecomp = () => {
               floatY={12} floatDuration={5.5} floatDelay={1}
               positionStyle={{ top: '5%', right: '2%', zIndex: 7, rotate: '4deg' }}
             >
-              <div className="bg-[#0A2540] rounded-2xl shadow-xl p-4 w-44">
+              <div className="bg-primary-dark rounded-2xl shadow-xl p-4 w-44">
                 <p className="text-[10px] font-bold text-white/60 mb-1">Fee Collection</p>
                 <p className="text-xl font-bold text-white leading-none mb-0.5">₹1,28,400</p>
-                <p className="text-[9px] text-green-400 mb-3">↑ 12% vs last month</p>
+                <p className="text-[9px] text-white/60 mb-3">↑ 12% vs last month</p>
                 <div className="flex items-end gap-0.5" style={{ height: 32 }}>
                   {[40, 60, 35, 75, 55, 88].map((h, i) => (
                     <div key={i} className="flex-1 rounded-t-sm relative overflow-hidden bg-white/10">
@@ -282,13 +289,13 @@ const Homecomp = () => {
                   ))}
                 </div>
                 <div className="flex gap-1.5 mt-3">
-                  <div className="flex-1 bg-green-500/20 rounded-lg p-1.5 text-center">
-                    <p className="text-[9px] font-bold text-green-400">92%</p>
-                    <p className="text-[7px] text-white/40">Collected</p>
+                  <div className="flex-1 bg-gray-50 rounded-lg p-1.5 text-center">
+                    <p className="text-[9px] font-bold text-black">92%</p>
+                    <p className="text-[7px] text-black">Collected</p>
                   </div>
-                  <div className="flex-1 bg-red-500/20 rounded-lg p-1.5 text-center">
+                  <div className="flex-1 bg-gray-50 rounded-lg p-1.5 text-center">
                     <p className="text-[9px] font-bold text-red-400">8%</p>
-                    <p className="text-[7px] text-white/40">Pending</p>
+                    <p className="text-[7px] text-black">Pending</p>
                   </div>
                 </div>
               </div>
@@ -304,7 +311,7 @@ const Homecomp = () => {
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-[10px] font-bold text-gray-700">Admissions</p>
-                  <span className="text-[8px] bg-[#F97316]/10 text-[#F97316] px-1.5 py-0.5 rounded-full font-semibold">2025</span>
+                  <span className="text-[8px] bg-primary-dark text-white px-1.5 py-0.5 rounded-full font-semibold">2025</span>
                 </div>
                 {[
                   { stage: 'Inquiries', n: 340, w: '100%' },
@@ -320,12 +327,12 @@ const Homecomp = () => {
                       <motion.div
                         initial={{ width: 0 }} animate={{ width: r.w }}
                         transition={{ duration: 0.9, delay: 1.3, ease: [0.22, 1, 0.36, 1] }}
-                        className="h-full bg-[#F97316] rounded-full"
+                        className="h-full bg-primary-light rounded-full"
                       />
                     </div>
                   </div>
                 ))}
-                <p className="text-[8px] text-gray-400 mt-2">Conv. rate <strong className="text-[#F97316]">15.9%</strong></p>
+                <p className="text-[8px] text-gray-400 mt-2">Conv. rate <strong className="text-primary">15.9%</strong></p>
               </div>
             </FloatCard>
 
@@ -341,7 +348,7 @@ const Homecomp = () => {
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="w-6 h-6 rounded-full bg-[#F97316] flex items-center justify-center flex-shrink-0"
+                    className="w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center flex-shrink-0"
                   >
                     <span className="text-white text-[10px] font-bold">AI</span>
                   </motion.div>
@@ -349,7 +356,7 @@ const Homecomp = () => {
                 </div>
                 <p className="text-[9px] text-gray-500 leading-tight mb-2">Fee default risk rising in Grade 8 · Act now</p>
                 <div className="flex gap-1">
-                  <span className="text-[8px] bg-[#F97316] text-white px-2 py-0.5 rounded font-semibold">Review</span>
+                  <span className="text-[8px] bg-primary text-white px-2 py-0.5 rounded font-semibold">Review</span>
                   <span className="text-[8px] bg-gray-100 text-gray-500 px-2 py-0.5 rounded font-semibold">Snooze</span>
                 </div>
               </div>
@@ -362,18 +369,18 @@ const Homecomp = () => {
               floatY={6} floatDuration={3} floatDelay={2}
               positionStyle={{ top: '44%', right: '1%', zIndex: 6 }}
             >
-              <div className="bg-[#0A2540] rounded-xl shadow-lg px-3 py-2 flex items-center gap-2">
+              <div className="bg-gray-50 rounded-xl shadow-lg px-3 py-2 flex items-center gap-2">
                 <div className="flex -space-x-1.5">
                   {['S','R','P'].map((l, i) => (
-                    <div key={i} className="w-5 h-5 rounded-full border border-[#0A2540] flex items-center justify-center text-[7px] font-bold text-white"
-                      style={{ background: ['#F97316','#FBBF24','#486776'][i] }}>
+                    <div key={i} className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-[7px] font-bold text-white"
+                      style={{ background: ['#000','#0456c9','#1D1D1F'][i] }}>
                       {l}
                     </div>
                   ))}
                 </div>
                 <div>
-                  <p className="text-[8px] font-bold text-white leading-none">80 Staff</p>
-                  <p className="text-[7px] text-white/40">Active today</p>
+                  <p className="text-[8px] font-bold text-primary leading-none">80 Staff</p>
+                  <p className="text-[7px] text-primary-dark">Active today</p>
                 </div>
               </div>
             </FloatCard>

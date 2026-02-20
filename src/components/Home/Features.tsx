@@ -32,8 +32,8 @@ const AcademicMockup = () => (
       <div className="space-y-3">
         {[
           { time: '8:00 AM', subject: 'Mathematics', room: 'Room 201', color: 'bg-blue-100 text-blue-600' },
-          { time: '10:00 AM', subject: 'Science Lab', room: 'Lab 3', color: 'bg-green-100 text-green-600' },
-          { time: '1:00 PM', subject: 'English Lit', room: 'Room 105', color: 'bg-purple-100 text-purple-600' },
+          { time: '10:00 AM', subject: 'Science Lab', room: 'Lab 3', color: 'bg-black text-white' },
+          { time: '1:00 PM', subject: 'English Lit', room: 'Room 105', color: 'bg-secondary text-white' },
         ].map((item) => (
           <div key={item.subject} className="flex items-center gap-3 p-2 rounded-xl bg-gray-50">
             <span className={`text-xs font-semibold px-2 py-1 rounded-lg ${item.color}`}>{item.time}</span>
@@ -45,15 +45,15 @@ const AcademicMockup = () => (
         ))}
       </div>
       <div className="mt-4 flex items-center gap-2 p-3 bg-secondary/10 rounded-xl">
-        <GraduationCap className="w-5 h-5 text-secondary" />
+        <GraduationCap className="w-5 h-5 text-primary" />
         <div>
           <p className="text-xs font-semibold text-gray-700">Class Average</p>
-          <p className="text-sm font-bold text-secondary">84.2%</p>
+          <p className="text-sm font-bold text-primary">84.2%</p>
         </div>
       </div>
     </div>
     <div className="absolute bottom-12 right-4 z-20 bg-[#1a2540] rounded-xl shadow-lg p-3 flex items-center gap-2">
-      <Award className="w-5 h-5 text-secondary" />
+      <Award className="w-5 h-5 text-white" />
       <div>
         <p className="text-xs text-gray-300">Top Performer</p>
         <p className="text-sm font-bold text-white">Grade 10-A</p>
@@ -68,7 +68,7 @@ const OperationsMockup = () => (
     <div className="relative z-10 bg-white rounded-2xl shadow-xl p-5 w-72 ml-[-40px]">
       <div className="flex items-center justify-between mb-4">
         <p className="text-xs text-gray-400 font-medium">Staff Overview</p>
-        <span className="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-medium">Live</span>
+        <span className="text-xs bg-black text-white px-2 py-0.5 rounded-full font-medium">Live</span>
       </div>
       <div className="space-y-3">
         {[
@@ -81,7 +81,7 @@ const OperationsMockup = () => (
           return (
             <div key={item.name} className="flex items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-secondary/10 flex items-center justify-center flex-shrink-0">
-                <Icon className="w-4 h-4 text-secondary" />
+                <Icon className="w-4 h-4 text-primary" />
               </div>
               <div className="flex-1">
                 <div className="flex justify-between mb-1">
@@ -89,7 +89,7 @@ const OperationsMockup = () => (
                   <p className="text-xs text-gray-500">{item.present}/{item.count}</p>
                 </div>
                 <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                  <div className="h-full bg-secondary rounded-full" style={{ width: `${pct}%` }} />
+                  <div className="h-full bg-primary-dark rounded-full" style={{ width: `${pct}%` }} />
                 </div>
               </div>
             </div>
@@ -115,26 +115,26 @@ const FinanceMockup = () => (
       <div className="flex gap-2 mb-4">
         {['Jan','Feb','Mar','Apr','May','Jun'].map((m, i) => (
           <div key={m} className="flex-1 flex flex-col items-center gap-1">
-            <div className="w-full rounded-t-md bg-secondary/20" style={{ height: `${[60,75,50,90,70,85][i]}px` }}>
-              <div className="w-full rounded-t-md bg-secondary" style={{ height: `${[80,90,65,100,75,95][i]}%` }} />
+            <div className="w-full rounded-t-md bg-primary/20" style={{ height: `${[60,75,50,90,70,85][i]}px` }}>
+              <div className="w-full rounded-t-md bg-primary" style={{ height: `${[80,90,65,100,75,95][i]}%` }} />
             </div>
             <p className="text-[10px] text-gray-400">{m}</p>
           </div>
         ))}
       </div>
       <div className="grid grid-cols-2 gap-2">
-        <div className="bg-green-50 rounded-xl p-3">
+        <div className="bg-primary rounded-xl p-3">
           <p className="text-[10px] text-gray-400">Collected</p>
-          <p className="text-sm font-bold text-green-600">92%</p>
+          <p className="text-sm font-bold text-white">92%</p>
         </div>
-        <div className="bg-red-50 rounded-xl p-3">
+        <div className="bg-gray-50 rounded-xl p-3">
           <p className="text-[10px] text-gray-400">Pending</p>
-          <p className="text-sm font-bold text-red-500">8%</p>
+          <p className="text-sm font-bold text-black-50">8%</p>
         </div>
       </div>
     </div>
     <div className="absolute bottom-12 right-4 z-20 bg-[#1a2540] rounded-xl shadow-lg p-3 flex items-center gap-2">
-      <CreditCard className="w-4 h-4 text-secondary" />
+      <CreditCard className="w-4 h-4 text-white" />
       <p className="text-xs text-white font-medium">Auto-reminders sent</p>
     </div>
   </div>
@@ -145,12 +145,12 @@ const AnalyticsMockup = () => (
     <div className="absolute right-0 top-8 bottom-8 w-3/4 rounded-3xl bg-secondary" />
     <div className="relative z-10 bg-white rounded-2xl shadow-xl p-5 w-72 ml-[-40px]">
       <div className="flex items-center justify-between mb-4">
-        <p className="text-xs text-gray-400 font-medium">KeyEd Score</p>
-        <TrendingUp className="w-4 h-4 text-green-500" />
+        <p className="text-xs text-black font-medium">KeyEd Score</p>
+        <TrendingUp className="w-4 h-4 text-primary" />
       </div>
       <div className="text-center mb-5">
-        <p className="text-5xl font-bold text-secondary">94</p>
-        <p className="text-xs text-green-500 font-medium mt-1">↑ +2.4% this term</p>
+        <p className="text-5xl font-bold text-primary-dark">94</p>
+        <p className="text-xs text-primary font-medium mt-1">↑ +2.4% this term</p>
       </div>
       <div className="space-y-3">
         {[
@@ -170,7 +170,7 @@ const AnalyticsMockup = () => (
                 whileInView={{ width: `${item.value}%` }}
                 transition={{ duration: 1, delay: 0.3 }}
                 viewport={{ once: true }}
-                className="h-full bg-secondary rounded-full"
+                className="h-full bg-primary rounded-full"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ const AnalyticsMockup = () => (
       </div>
     </div>
     <div className="absolute bottom-12 right-4 z-20 bg-white rounded-xl shadow-lg p-3 border border-gray-100 flex items-center gap-2">
-      <PieChart className="w-4 h-4 text-secondary" />
+      <PieChart className="w-4 h-4 text-primary" />
       <p className="text-xs font-semibold text-gray-700">AI-powered insights</p>
     </div>
   </div>
@@ -190,15 +190,15 @@ const AdmissionsMockup = () => (
     <div className="relative z-10 bg-white rounded-2xl shadow-xl p-5 w-72 ml-[-40px]">
       <div className="flex items-center justify-between mb-4">
         <p className="text-xs text-gray-400 font-medium">Admissions Funnel</p>
-        <span className="text-xs bg-secondary/10 text-secondary px-2 py-0.5 rounded-full font-medium">Live</span>
+        <span className="text-xs bg-secondary/10 text-primary-dark px-2 py-0.5 rounded-full font-medium">Live</span>
       </div>
       {/* Funnel stages */}
       <div className="space-y-2 mb-4">
         {[
-          { stage: 'Inquiries', count: 340, pct: 100, color: 'bg-secondary' },
-          { stage: 'Applications', count: 210, pct: 62, color: 'bg-secondary/80' },
-          { stage: 'Shortlisted', count: 98, pct: 40, color: 'bg-secondary/60' },
-          { stage: 'Enrolled', count: 54, pct: 25, color: 'bg-secondary/40' },
+          { stage: 'Inquiries', count: 340, pct: 100, color: 'bg-primary' },
+          { stage: 'Applications', count: 210, pct: 62, color: 'bg-primary/80' },
+          { stage: 'Shortlisted', count: 98, pct: 40, color: 'bg-primary/60' },
+          { stage: 'Enrolled', count: 54, pct: 25, color: 'bg-primary/40' },
         ].map((item) => (
           <div key={item.stage}>
             <div className="flex justify-between mb-1">
@@ -214,16 +214,16 @@ const AdmissionsMockup = () => (
       <div className="grid grid-cols-2 gap-2">
         <div className="bg-secondary/10 rounded-xl p-3">
           <p className="text-[10px] text-gray-400">Conversion</p>
-          <p className="text-sm font-bold text-secondary">15.9%</p>
+          <p className="text-sm font-bold text-primary-dark">15.9%</p>
         </div>
-        <div className="bg-green-50 rounded-xl p-3">
+        <div className="bg-gray-50 rounded-xl p-3">
           <p className="text-[10px] text-gray-400">vs Last Year</p>
-          <p className="text-sm font-bold text-green-600">↑ +12%</p>
+          <p className="text-sm font-bold text-black">↑ +12%</p>
         </div>
       </div>
     </div>
     <div className="absolute bottom-12 right-4 z-20 bg-[#1a2540] rounded-xl shadow-lg p-3 flex items-center gap-2">
-      <TrendingUp className="w-4 h-4 text-secondary" />
+      <TrendingUp className="w-4 h-4 text-white" />
       <div>
         <p className="text-xs text-gray-300">New lead today</p>
         <p className="text-sm font-bold text-white">+8 inquiries</p>
@@ -234,11 +234,11 @@ const AdmissionsMockup = () => (
 
 const PeopleMockup = () => (
   <div className="relative w-full h-full flex items-center justify-center p-6">
-    <div className="absolute right-0 top-8 bottom-8 w-3/4 rounded-3xl bg-primary" />
+    <div className="absolute right-0 top-8 bottom-8 w-3/4 rounded-3xl bg-secondary" />
     <div className="relative z-10 bg-white rounded-2xl shadow-xl p-5 w-72 ml-[-40px]">
       <div className="flex items-center justify-between mb-4">
         <p className="text-xs text-gray-400 font-medium">People Overview</p>
-        <span className="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full font-medium">Active</span>
+        <span className="text-xs bg-primary text-white px-2 py-0.5 rounded-full font-medium">Active</span>
       </div>
       {/* Staff cards */}
       <div className="space-y-3 mb-4">
@@ -381,12 +381,12 @@ export default function Features() {
                         {section.title}
                       </h2>
                       <p className="text-gray-500 text-sm mb-6">{section.subtitle}</p>
-                      <div className="w-16 h-[2px] bg-secondary rounded-full mb-6" />
+                      <div className="w-16 h-[2px] bg-primary rounded-full mb-6" />
                       <ul className="space-y-3">
                         {section.bullets.map((bullet) => (
                           <li key={bullet} className="flex items-start gap-3">
-                            <div className="w-5 h-5 rounded-full bg-secondary/15 flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xl">
-                              <Check className="w-3 h-3 text-secondary" strokeWidth={2.5} />
+                            <div className="w-5 h-5 rounded-full bg-primary-dark flex items-center justify-center flex-shrink-0 mt-0.5 shadow-2xl">
+                              <Check className="w-3 h-3 text-white" strokeWidth={2.5} />
                             </div>
                             <span className="text-gray-600 text-sm leading-relaxed">{bullet}</span>
                           </li>
