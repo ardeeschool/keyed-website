@@ -36,6 +36,8 @@ const config: Config = {
         bg: {
           white: "var(--color-bg-white)",
           gray: "var(--color-bg-gray)",
+          black: "var(--color-bg-black)",
+          lightblack: "var(--color-bg-lightblack)",
           "gray-light": "var(--color-bg-gray-light)",
         },
         // Border colors

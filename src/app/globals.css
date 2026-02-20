@@ -8,14 +8,14 @@
   
   /* === COLOR VARIABLES === */
   /* Primary Colors */
-  --color-primary: #f05a26;
-  --color-primary-dark: #3a5360;
-  --color-primary-light: #5a7b8c;
+  --color-primary: #1D1D1F;
+  --color-primary-dark: #000000;
+  --color-primary-light: #999999;
   
   /* Secondary Colors */
-  --color-secondary: #0c2440;
-  --color-secondary-dark: #d89560;
-  --color-secondary-light: #ebb98e;
+  --color-secondary: #0456c9;
+  --color-secondary-dark: #0456c9;
+  --color-secondary-light: #0456c9;
   
   /* Text Colors */
   --color-text-black: #000000;
@@ -25,14 +25,16 @@
   
   /* Background Colors */
   --color-bg-white: #ffffff;
+    --color-bg-black: #ffffff;
+     --color-bg-lightblack: #1D1D1F;
   --color-bg-gray: #F1F1F1;
   --color-bg-gray-light: #F4F4F4;
   
   /* Border Colors */
-  --color-border-primary: #f05a26;
-  --color-border-secondary: #0c2440;
-  --color-border-light: #e5e7eb;
-  --color-border-medium: #d1d5db;
+  --color-border-primary: #000000;
+  --color-border-secondary: #0456c9;
+  --color-border-light: #999999;
+  --color-border-medium: #1D1D1F;
   
   /* Status Colors */
   --color-success: #10b981;
