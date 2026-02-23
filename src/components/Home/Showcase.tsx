@@ -1,0 +1,177 @@
+"use client";
+
+import { motion } from "framer-motion";
+import Image from "next/image";
+
+const cards = [
+  {
+    title: "Academic &\nExperience Layer",
+    description:
+      "Curriculum, assessments, teacher workflows, student performance and classroom intelligence.",
+    deliverables: "Curriculum management, Track attendance, assignments & grades",
+    industry: "Education",
+    image: "/keyed.png",
+  },
+  {
+    title: "Campus\nOperations",
+    description:
+      "Campus operations, facilities, inventory, IT support, transport and security workflows.",
+    deliverables: "Facilities management, Transport tracking, Security systems",
+    industry: "Operations",
+    image: "/operation.png",
+  },
+  {
+    title: "Finance &\nCompliance",
+    description:
+      "Fee management, collections, budgeting, expense tracking and financial visibility.",
+    deliverables: "Fee collection, Budget management, Financial reporting",
+    industry: "Finance",
+    image: "/finance.png",
+  },
+];
+
+function ShowcaseCard({
+  title,
+  description,
+  deliverables,
+  industry,
+  image,
+  index,
+}: (typeof cards)[0] & { index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-60px" }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.12,
+        ease: [0.16, 1, 0.3, 1],
+      }}
+      className="cardstyle rounded-3xl overflow-hidden"
+      style={{ marginBottom: 50 }}
+    >
+      {/* ── Image area ── */}
+      <div
+        className="w-full relative overflow-hidden"
+        style={{
+          height: 460,
+          background: "linear-gradient(135deg, #a9acb1 0%, #acafb7 100%)",
+        }}
+      >
+        
+          <img
+            src={image}
+            alt={title}
+            className="object-cover w-full"
+          />
+        
+      </div>
+
+      {/* ── Bottom content ── */}
+      <div className="px-10 py-8">
+        {/* Dots */}
+        <div className="flex items-center gap-2 mb-6">
+          <span
+            className="w-2.5 h-2.5 rounded-full"
+            style={{ background: "#ef4444" }}
+          />
+          <span
+            className="w-2.5 h-2.5 rounded-full"
+            style={{ background: "rgba(0,0,0,0.12)" }}
+          />
+          <span
+            className="w-2.5 h-2.5 rounded-full"
+            style={{ background: "rgba(0,0,0,0.12)" }}
+          />
+          <span
+            className="w-2.5 h-2.5 rounded-full"
+            style={{ background: "rgba(0,0,0,0.12)" }}
+          />
+        </div>
+
+        {/* Info row */}
+        <div
+          className="grid items-start gap-8"
+          style={{ gridTemplateColumns: "1.2fr 1.5fr 1.2fr 0.6fr" }}
+        >
+          {/* Title */}
+          <h3
+            className="font-interTight text-2xl font-bold text-[#1a1a1c] leading-tight whitespace-pre-line"
+          >
+            {title}
+          </h3>
+
+          {/* Description */}
+          <div>
+            <p
+              className="text-xs font-semibold uppercase tracking-wider mb-2"
+              style={{ color: "#9ca3af" }}
+            >
+              Description
+            </p>
+            <p className="text-sm text-[#6b7a8d] leading-relaxed">
+              {description}
+            </p>
+          </div>
+
+          {/* Deliverables */}
+          <div>
+            <p
+              className="text-xs font-semibold uppercase tracking-wider mb-2"
+              style={{ color: "#9ca3af" }}
+            >
+              Deliverables
+            </p>
+            <p className="text-sm text-[#6b7a8d] leading-relaxed">
+              {deliverables}
+            </p>
+          </div>
+
+          {/* Industry */}
+          <div>
+            <p
+              className="text-xs font-semibold uppercase tracking-wider mb-2"
+              style={{ color: "#9ca3af" }}
+            >
+              Industry
+            </p>
+            <p className="text-sm text-[#6b7a8d]">{industry}</p>
+          </div>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+export default function Showcase() {
+  return (
+    <section className="bg-white py-24 px-6">
+      <div className="max-w-4xl mx-auto">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+          <h2 className="font-interTight text-4xl lg:text-5xl font-extrabold text-[#1a1a1c] leading-tight mb-4">
+            Everything Your Institution Runs On
+
+          </h2>
+          <p className="text-lg text-[#6b7a8d] max-w-xl mx-auto">
+           One ecosystem covering academics, operations, finance, and intelligence.
+
+
+          </p>
+        </motion.div>
+
+        {/* Cards */}
+        {cards.map((card, i) => (
+          <ShowcaseCard key={card.title} {...card} index={i} />
+        ))}
+      </div>
+    </section>
+  );
+}

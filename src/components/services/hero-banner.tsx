@@ -207,7 +207,6 @@ export default function HeroBanner() {
           font-weight: 600;
           color: #c96a28;
           letter-spacing: 0.02em;
-          font-family: "DM Sans", "Helvetica Neue", sans-serif;
         }
 
         /* Heading wrapper */
@@ -223,7 +222,6 @@ export default function HeroBanner() {
         .line {
           display: block;
           white-space: nowrap;     /* NEVER wrap — always single line */
-          font-family: "DM Sans", "Helvetica Neue", sans-serif;
           font-weight: 800;
           letter-spacing: -0.025em;
           line-height: 1.1;
@@ -232,13 +230,13 @@ export default function HeroBanner() {
         /* Line 1 — bigger, dark navy */
         .line-dark {
           font-size: clamp(42px, 7vw, 76px);
-          color: #1a2b4a;
+          color: #000;
         }
 
         /* Line 2 — smaller, orange gradient, strictly single line */
         .line-orange {
           font-size: clamp(26px, 4vw, 50px);   /* noticeably smaller than line 1 */
-          background: linear-gradient(90deg, #f5a623 0%, #e07b39 100%);
+          background: linear-gradient(90deg, #000000 0%, #0456c9 100%);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           background-clip: text;
@@ -258,8 +256,7 @@ export default function HeroBanner() {
           max-width: 560px;
           font-size: clamp(15px, 1.6vw, 17px);
           line-height: 1.7;
-          color: #6b7a8d;
-          font-family: "DM Sans", "Helvetica Neue", sans-serif;
+          color: #1D1D1F;
           font-weight: 400;
         }
 

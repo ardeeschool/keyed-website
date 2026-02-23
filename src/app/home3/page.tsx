@@ -8,6 +8,7 @@ import WhatIsKeyEds from '@/components/home/WhatIsKeyEds'
 import BuiltByEducators from '@/components/home/BuiltByEducators'
 import KeyEdScoreSection from '@/components/home/Keyedscoresection';
 import ValueSection from '@/components/home/Valuesection';
+import Showcase from '@/components/home/Showcase';
 import Ctatop from '@/components/home/Ctatop';
 
 import Footertop from '@/components/layout/footertop'
@@ -28,11 +29,12 @@ export default function Home2Page() {
           <KeyEdScoreSection />
              <BuiltByEducators />
               <ValueSection />
-     <Features />
    
+    <Showcase />
    
     
        <InstitutionModules />
+      
        <Ctatop />
         <Footertop />
     </main>

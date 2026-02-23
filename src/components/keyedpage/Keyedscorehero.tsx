@@ -10,9 +10,6 @@ const nodes = [
     label: "Academic",
     sub: "Learning outcomes & grades",
     Icon: GraduationCap,
-    color: "#3B82F6",
-    bg: "#EFF6FF",
-    border: "#BFDBFE",
     // position on the circle (angle in degrees, 0 = top)
     angle: -90,
   },
@@ -20,43 +17,31 @@ const nodes = [
     label: "Operations",
     sub: "Attendance & facilities",
     Icon: Settings2,
-    color: "#22C55E",
-    bg: "#F0FDF4",
-    border: "#BBF7D0",
     angle: -18,
   },
   {
     label: "Finance",
     sub: "Fee & budget health",
     Icon: BadgeDollarSign,
-    color: "#EAB308",
-    bg: "#FEFCE8",
-    border: "#FDE68A",
     angle: 54,
   },
   {
     label: "Growth",
     sub: "Admissions & enrollment",
     Icon: TrendingUp,
-    color: "#F97316",
-    bg: "#FFF7ED",
-    border: "#FED7AA",
     angle: 126,
   },
   {
     label: "Engagement",
     sub: "Staff & parent satisfaction",
     Icon: Users2,
-    color: "#A855F7",
-    bg: "#FDF4FF",
-    border: "#E9D5FF",
     angle: 198,
   },
 ];
 
 // ─── Animated dashed spoke ────────────────────────────────────────────────────
 function AnimatedSpoke({
-  x1, y1, x2, y2, color, delay,
+  x1, y1, x2, y2, delay,
 }: {
   x1: number; y1: number; x2: number; y2: number;
   color: string; delay: number;
@@ -66,13 +51,13 @@ function AnimatedSpoke({
       {/* Static base line */}
       <line
         x1={x1} y1={y1} x2={x2} y2={y2}
-        stroke={color} strokeWidth="1.5" strokeOpacity="0.15"
+        stroke="#0456c9" strokeWidth="1.5" strokeOpacity="0.15"
         strokeDasharray="6 5"
       />
       {/* Animated travelling dash */}
       <motion.line
         x1={x1} y1={y1} x2={x2} y2={y2}
-        stroke={color}
+        stroke="#0456c9"
         strokeWidth="2"
         strokeDasharray="14 100"
         strokeDashoffset="120"
@@ -117,7 +102,6 @@ function HubDiagram() {
             key={n.label}
             x1={CX} y1={CY}
             x2={n.nx} y2={n.ny}
-            color={n.color}
             delay={i * 0.44}
           />
         ))}
@@ -140,12 +124,14 @@ function HubDiagram() {
           left: CX - 52, top: CY - 52,
           width: 104, height: 104,
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #F97316 0%, #FBBF24 100%)",
-          boxShadow: "0 0 0 12px rgba(249,115,22,0.12), 0 0 40px rgba(249,115,22,0.3)",
+          boxShadow: "0 0 0 12px rgba(249,236,236,0.12), 0 0 40px rgba(249,236,236,0.3)",
           display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center",
           zIndex: 20,
         }}
+        className="bg-gradient-to-br
+      from-primary
+      to-secondary"
       >
         {/* Slow pulse ring */}
         <motion.div
@@ -154,7 +140,7 @@ function HubDiagram() {
           style={{
             position: "absolute", inset: -16,
             borderRadius: "50%",
-            border: "2px solid rgba(249,115,22,0.4)",
+            border: "2px solid rgba(249,236,236,0.4)",
           }}
         />
         <span className="text-white font-extrabold text-md leading-none">KeyEd</span>
@@ -188,18 +174,16 @@ function HubDiagram() {
           
 
             <div
-              className="rounded-2xl p-3 shadow-lg border"
+              className="rounded-2xl p-3 shadow-lg border border-white/25"
               style={{
                 background: "rgba(255,255,255,0.06)",
                 backdropFilter: "blur(12px)",
-                borderColor: `${n.color}30`,
                 width: cardW,
               }}
             >
               <div className="flex items-center gap-2 mb-1">
-                <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0"
-                  style={{ background: n.bg }}>
-                  <Icon style={{ color: n.color }} className="w-4 h-4" strokeWidth={1.8} />
+                <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <Icon className="w-4 h-4 text-white" strokeWidth={1.8} />
                 </div>
                 <span className="text-white text-[12px] font-bold leading-tight">{n.label}</span>
               </div>
@@ -216,8 +200,7 @@ function HubDiagram() {
 export default function KeyEdScoreHero() {
   return (
     <section
-      className="relative w-full flex items-center overflow-hidden"
-      style={{ background: "linear-gradient(135deg, #0A1E37 0%, #0d2444 50%, #0f2a50 100%)" }}
+      className="relative w-full flex items-center overflow-hidden bg-primary-dark"
     >
       {/* Subtle dot grid */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03]"
@@ -243,11 +226,10 @@ export default function KeyEdScoreHero() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10"
-            style={{ background: "rgba(255,255,255,0.06)" }}
+            className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white shadow-sm"
           >
-            <Star className="w-3.5 h-3.5 text-yellow-400 fill-yellow-400" />
-            <span className="text-white/80 text-xs font-semibold tracking-wide">
+            <Star className="w-3.5 h-3.5 text-primary fill-primary-dark" />
+            <span className="text-primary text-xs font-bold tracking-wide">
               India's First Campus Health Score
             </span>
           </motion.div>
@@ -257,23 +239,13 @@ export default function KeyEdScoreHero() {
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.65, delay: 0.1 }}
-            className="text-5xl lg:text-5xl font-extrabold leading-[1.1] mb-5"
-          >
-            <span className="text-white">The KeyEd Score</span>
+            className="text-5xl lg:text-5xl font-medium leading-[1.1] mb-5 text-white font-interTight"
+          >The KeyEd Score
            
             <br />
-            <span
-              style={{
-                background: "linear-gradient(90deg, #F97316 0%, #FBBF24 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
               Institutional Health
               <br />
               at a Glance
-            </span>
           </motion.h1>
 
           {/* Subtitle */}
@@ -281,7 +253,7 @@ export default function KeyEdScoreHero() {
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-blue-100/55 text-lg leading-relaxed max-w-md mb-10"
+            className="text-white text-lg leading-relaxed max-w-md mb-10"
           >
             One number that tells you how healthy your institution really is —
             across <span className="text-white/80 font-medium">academics, operations, finance, growth,</span> and{" "}
@@ -296,15 +268,15 @@ export default function KeyEdScoreHero() {
             className="flex flex-col sm:flex-row items-start gap-4"
           >
             <Link
-              href="/keyed-score/demo"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-[#F97316] hover:bg-[#EA580C] text-white font-bold text-base rounded-xl transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30 no-underline"
+              href="/contact-us"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-secondary hover:bg-secondary/70 text-white font-bold text-base rounded-full transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30 no-underline"
             >
               See Your Score
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link
               href="/keyed-score"
-              className="inline-flex items-center gap-2 px-8 py-4 text-white/60 hover:text-white text-base font-medium transition-colors no-underline border border-white/10 rounded-xl hover:border-white/20"
+              className="inline-flex text-white items-center gap-2 px-8 py-4 gray-btn text-primary hover:text-white text-base font-medium transition-colors transition-all no-underline border border-white/10 rounded-full hover:-translate-y-0.5 hover:border-white/20"
             >
               How it works
             </Link>

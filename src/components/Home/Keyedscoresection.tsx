@@ -120,7 +120,7 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
       </div>
 
       {/* Progress bar */}
-      <div className="h-1 bg-gray-100 rounded-full overflow-hidden mb-3">
+      <div className="h-1 bg-gray-300 rounded-full overflow-hidden mb-3">
         <motion.div
           initial={{ width: 0 }}
           whileInView={{ width: `${metric.value}%` }}
@@ -128,7 +128,7 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
           transition={{ duration: 1.2, delay: index * 0.05 + 0.2 }}
           className="h-full rounded-full bg-gradient-to-br
       from-primary
-      to-secondary"
+      to-[#df0000]"
         />
       </div>
 

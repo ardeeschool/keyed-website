@@ -1,12 +1,13 @@
 "use client";
 
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Solutions", href: "/solutions" },
-  { label: "AI & Intelligence", href: "/ai-intelligence" },
+  { label: "Home", href: "/home2" },
+  { label: "Solutions", href: "/solution" },
+  { label: "AI & Intelligence", href: "/ai" },
   { label: "KeyEd Score", href: "/keyed-score" },
   { label: "Pricing", href: "/pricing" },
   { label: "Who We Are", href: "/who-we-are" },
+  { label: "Career", href: "/career" },
 ];
 
 export default function Footer() {

@@ -53,7 +53,7 @@ const inputs = [
 
 // ─── Animated travelling dot along a straight horizontal path ─────────────────
 function TravellingDot({
-  startX, endX, y, duration, delay, color = "#F97316",
+  startX, endX, y, duration, delay, color = "#000000",
 }: {
   startX: number; endX: number; y: number;
   duration: number; delay: number; color?: string;
@@ -100,7 +100,7 @@ function PathDot({
     ref.current.setAttribute("cy", String(point.y));
   });
 
-  return <circle ref={ref} r={3} fill="#F97316" opacity={0.9} />;
+  return <circle ref={ref} r={3} fill="#000" opacity={0.9} />;
 }
 
 // ─── Step card ────────────────────────────────────────────────────────────────
@@ -117,7 +117,7 @@ function StepCard({
     >
       {/* Step number */}
       <div className="flex items-center gap-3 w-full">
-        <div className="w-9 h-9 rounded-full bg-[#F97316] flex items-center justify-center flex-shrink-0">
+        <div className="w-9 h-9 rounded-full iconStyle flex items-center justify-center flex-shrink-0">
           <span className="text-white font-black text-sm">{n}</span>
         </div>
         <div className="flex-1 h-px bg-gray-100" />
@@ -131,7 +131,7 @@ function StepCard({
 
       {/* Connector dot (right edge, for non-last) */}
       {n < 4 && (
-        <div className="absolute -right-[9px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-[#F97316] z-10" />
+        <div className="absolute -right-[9px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-primary z-10" />
       )}
     </motion.div>
   );
@@ -163,9 +163,8 @@ export default function HowScoreWorks() {
           transition={{ duration: 0.55 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-[#1a2b4a] leading-tight mb-3">
-            How the Score{" "}
-            <span className="text-[#F97316]">Works</span>
+          <h2 className="text-4xl lg:text-5xl font-medium font-interTight text-primary leading-tight mb-3">
+            How the Score Works
           </h2>
           <p className="text-[#6b7a8d] text-base">Real-time calculation powered by AI</p>
         </motion.div>
@@ -185,10 +184,10 @@ export default function HowScoreWorks() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-center gap-2.5 bg-[#FAF7F2] border border-gray-200 rounded-xl px-3 py-2"
+                  className="flex items-center gap-2.5 bg-primary border border-gray-200 rounded-xl px-3 py-2"
                 >
-                  <Icon className="w-4 h-4 text-[#F97316]" strokeWidth={1.6} />
-                  <span className="text-[12px] font-semibold text-[#1a2b4a]">{label}</span>
+                  <Icon className="w-4 h-4 text-white" strokeWidth={1.6} />
+                  <span className="text-[12px] font-semibold text-white">{label}</span>
                 </motion.div>
               ))}
             </div>
@@ -217,7 +216,7 @@ export default function HowScoreWorks() {
             </div>
 
             {/* Step 1 node */}
-            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-[#F97316] flex flex-col items-center justify-center shadow-lg shadow-orange-200">
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-black flex flex-col items-center justify-center shadow-lg shadow-orange-200">
               <Database className="w-7 h-7 text-white" strokeWidth={1.6} />
               <span className="text-white text-[10px] font-bold mt-1">Collect</span>
             </div>
@@ -235,8 +234,8 @@ export default function HowScoreWorks() {
             </div>
 
             {/* Step 2 node */}
-            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-[#1a2b4a] flex flex-col items-center justify-center shadow-lg">
-              <BrainCircuit className="w-7 h-7 text-[#F97316]" strokeWidth={1.6} />
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-secondary flex flex-col items-center justify-center shadow-lg">
+              <BrainCircuit className="w-7 h-7 text-white" strokeWidth={1.6} />
               <span className="text-white text-[10px] font-bold mt-1">Analyse</span>
             </div>
 
@@ -253,7 +252,7 @@ export default function HowScoreWorks() {
             </div>
 
             {/* Step 3 node */}
-            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-[#F97316] flex flex-col items-center justify-center shadow-lg shadow-orange-200 z-10 relative">
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-primary-dark flex flex-col items-center justify-center shadow-lg shadow-orange-200 z-10 relative">
               <BarChart3 className="w-7 h-7 text-white" strokeWidth={1.6} />
               <span className="text-white text-[10px] font-bold mt-1">Calculate</span>
             </div>
@@ -271,8 +270,8 @@ export default function HowScoreWorks() {
             </div>
 
             {/* Score output */}
-            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-[#1a2b4a] flex flex-col items-center justify-center shadow-lg z-1 relative">
-              <Lightbulb className="w-7 h-7 text-[#FBBF24]" strokeWidth={1.6} />
+            <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-secondary flex flex-col items-center justify-center shadow-lg z-1 relative">
+              <Lightbulb className="w-7 h-7 text-white" strokeWidth={1.6} />
               <span className="text-white text-[10px] font-bold mt-1">Insights</span>
             </div>
           </div>
@@ -295,10 +294,10 @@ export default function HowScoreWorks() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 flex items-center justify-center"
           >
-            <div className="flex items-center gap-4 bg-[#FAF7F2] border border-orange-200 rounded-2xl px-8 py-4">
+            <div className="flex items-center gap-4 bg-gray-50 border border-primary-light rounded-2xl px-8 py-4">
               <div className="text-center">
                 <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">KeyEd Score™</p>
-                <p className="text-4xl font-black text-[#F97316] leading-none">94</p>
+                <p className="text-4xl font-black text-primary leading-none">94</p>
                 <p className="text-[10px] text-gray-400 mt-0.5">out of 100</p>
               </div>
               <div className="w-px h-12 bg-gray-200" />

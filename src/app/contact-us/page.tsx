@@ -5,8 +5,10 @@ import Details from "@/components/contact/details";
 import ContactForm from "@/components/contact/form";
 import CTASectiontop from '@/components/home/Ctatop';
 
-
 import Ctatop from '@/components/home/Ctatop';
+
+import Footertop from '@/components/layout/footertop'
+
 
 
 export default function contact() {
@@ -16,8 +18,8 @@ export default function contact() {
       <Banner />
       <Details />
       <ContactForm />
-      <CTASectiontop />
-        <Footernew />
+      <Ctatop />
+        <Footertop />
 
       
     </main>

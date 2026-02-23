@@ -95,6 +95,8 @@ const jobs = [
 // ── Card styles ───────────────────────────────────────────
 const cardStyle = {
   backgroundColor: "#f5f5f5",
+  boxShadow:
+    "0px 7.77px 16px 0px rgba(0,0,0,0.059), 0px 3px 3px 0px rgba(0,0,0,0.102), 0px -8px 0px 0px rgba(0,0,0,0.051) inset, 0px 4px 0px 0px rgba(255,255,255,0.6) inset",
 };
 
 const iconBoxStyle = {
@@ -114,6 +116,17 @@ const experienceOptions = [
   "6–7 years",
   "7–8 years",
   "8+ years",
+];
+
+const profileOptions = [
+  "Cloud Architect",
+  "UI/UX Designer",
+  "Front End Developer",
+  "Back End Developer",
+  "Full Stack Developer",
+  "Data Engineer",
+  "DevOps Engineer",
+  "Mobile Developer",
 ];
 
 // ── Job Card ──────────────────────────────────────────────
@@ -330,6 +343,7 @@ function FormInput({
 // ── Application Form ──────────────────────────────────────
 function ApplicationForm() {
   const [form, setForm] = useState({
+    profile: "",
     profileName: "",
     fullName: "",
     email: "",
@@ -351,6 +365,7 @@ function ApplicationForm() {
   function validate() {
     const err: Record<string, string> = {};
 
+    if (!form.profile) err.profile = "Please select a profile";
     if (!form.profileName.trim()) err.profileName = "Profile name is required";
     if (!form.fullName.trim()) err.fullName = "Full name is required";
 
@@ -423,6 +438,20 @@ function ApplicationForm() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+        {/* Select Profile */}
+        <div>
+          <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+            Select Profile
+          </label>
+          <CustomSelect
+            value={form.profile}
+            onChange={(v) => setForm((p) => ({ ...p, profile: v }))}
+            options={profileOptions}
+            placeholder="Choose a role"
+            error={errors.profile}
+          />
+        </div>
+
         <FormInput
           label="Profile Name"
           name="profileName"
@@ -619,6 +648,9 @@ export default function Career() {
   return (
     <main>
      <Header />
+      {/* ═══════════════════════════════════════════════
+       *  HERO
+       * ═══════════════════════════════════════════════ */}
       <section className="bg-white pt-32 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
@@ -692,7 +724,7 @@ export default function Career() {
        *  APPLICATION FORM
        * ═══════════════════════════════════════════════ */}
       <section
-        className="py-24 px-6"
+        className="py-24 px-6 mb-20"
         style={{ background: "#09090B" }}
       >
         <div className="max-w-5xl mx-auto">
@@ -732,10 +764,10 @@ export default function Career() {
               border: "1px solid rgba(255,255,255,0.06)",
             }}
           >
-            
+            <ApplicationForm />
           </motion.div>
         </div>
-      </section>
+     </section>
        <Ctatop />
               <Footertop />
       

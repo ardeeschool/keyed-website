@@ -374,7 +374,7 @@ export default function Features() {
 
                     {/* Left */}
                     <div className="flex flex-col justify-center px-10 lg:px-8 py-10">
-                      <div className={`w-12 h-12 rounded-2xl ${section.accent} flex items-center justify-center mb-6`}>
+                      <div className={`w-12 h-12 rounded-2xl iconStyle ${section.accent} flex items-center justify-center mb-6`}>
                         <span className="text-sm font-bold text-white">{section.number}</span>
                       </div>
                       <h2 className="text-2xl font-bold text-gray-900 mb-2 leading-tight">

@@ -98,22 +98,23 @@ export default function HeroBanner() {
           <span className="text-sm hidden" style={{ color: "#e07b39" }}>🔶</span>
           <span
             className="text-[13px] font-semibold tracking-wide hidden"
-            style={{ color: "#c96a28", fontFamily: '"DM Sans","Helvetica Neue",sans-serif' }}
+            style={{ color: "#c96a28"
+              
+             }}
           >
             Intelligent Decision Support
           </span>
         </motion.div>
 
         {/* ── Heading ── */}
-        <h1 className="m-0 flex flex-col items-center gap-1.5">
+        <h1 className="m-0 flex flex-col items-center gap-1.5 font-interTight">
 
           {/* Line 1 — large dark */}
           <span
-            className="block whitespace-nowrap font-extrabold leading-tight"
+            className="block whitespace-nowrap font-medium leading-tight"
             style={{
               fontSize: "clamp(42px, 7vw, 76px)",
-              color: "#1a2b4a",
-              fontFamily: '"DM Sans","Helvetica Neue",sans-serif',
+              color: "#1D1D1F ",
               letterSpacing: "-0.025em",
             }}
           >
@@ -133,14 +134,13 @@ export default function HeroBanner() {
 
           {/* Line 2 — smaller orange gradient */}
           <span
-            className="block whitespace-nowrap font-extrabold leading-tight"
+            className="block whitespace-nowrap font-medium leading-tight font-interTight"
             style={{
               fontSize: "clamp(26px, 4vw, 50px)",
-              background: "linear-gradient(90deg, #f5a623 0%, #e07b39 100%)",
+              background: "linear-gradient(90deg, #1D1D1F 0%, #0456C9 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
-              fontFamily: '"DM Sans","Helvetica Neue",sans-serif',
               letterSpacing: "-0.025em",
             }}
           >
@@ -149,7 +149,7 @@ export default function HeroBanner() {
               return (
                 <motion.span
                   key={`l2-${word}`}
-                  className="inline-block overflow-hidden whitespace-nowrap align-bottom"
+                  className="inline-block overflow-hidden whitespace-nowrap align-bottom font-interTight"
                   custom={globalIdx}
                   variants={wordVariants}
                   initial="hidden"
@@ -167,8 +167,7 @@ export default function HeroBanner() {
           className="m-0 max-w-xl leading-relaxed font-normal"
           style={{
             fontSize: "clamp(15px, 1.6vw, 17px)",
-            color: "#6b7a8d",
-            fontFamily: '"DM Sans","Helvetica Neue",sans-serif',
+            color: "#000",
           }}
           variants={subtitleVariants}
           initial="hidden"
@@ -187,8 +186,7 @@ export default function HeroBanner() {
           <button
             className="group inline-flex items-center gap-2.5 px-9 py-4 rounded-[14px] text-white font-bold text-base tracking-wide border-none cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.99]"
             style={{
-              fontFamily: '"DM Sans","Helvetica Neue",sans-serif',
-              background: "linear-gradient(135deg, #f5a623 0%, #e07b39 100%)",
+              background: "#0456C9",
               boxShadow: "0 4px 20px rgba(224,123,57,0.35), 0 1px 3px rgba(0,0,0,0.08)",
             }}
             onMouseEnter={(e) => {

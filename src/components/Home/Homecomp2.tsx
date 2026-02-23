@@ -203,7 +203,7 @@ const Homecomp = () => {
                 <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">Institutional Health</p>
                 <div className="flex items-end gap-1 mb-3">
                   <span className="text-5xl font-bold text-primary-dark leading-none">94</span>
-                  <span className="text-xs font-semibold text-secondary mb-1">↑ +2.4%</span>
+                  <span className="text-xs font-semibold text-green-600 mb-1">↑ +2.4%</span>
                 </div>
                 <div className="flex items-end gap-1 mb-3" style={{ height: 36 }}>
                   {[55, 70, 48, 85, 65, 90, 78].map((h, i) => (
@@ -236,7 +236,7 @@ const Homecomp = () => {
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-[10px] font-bold text-gray-700">Attendance</p>
-                  <span className="text-[8px] bg-gray-50 text-secondary px-1.5 py-0.5 rounded-full font-semibold">Live</span>
+                  <span className="text-[8px] bg-green-200 text-green-600 px-1.5 py-0.5 rounded-full font-semibold">Live</span>
                 </div>
                 {[{ label: 'Students', pct: 94 }, { label: 'Teachers', pct: 97 }].map(r => (
                   <div key={r.label} className="mb-2">
@@ -289,11 +289,11 @@ const Homecomp = () => {
                   ))}
                 </div>
                 <div className="flex gap-1.5 mt-3">
-                  <div className="flex-1 bg-gray-50 rounded-lg p-1.5 text-center">
+                  <div className="flex-1 bg-green-100 rounded-lg p-1.5 text-center">
                     <p className="text-[9px] font-bold text-black">92%</p>
                     <p className="text-[7px] text-black">Collected</p>
                   </div>
-                  <div className="flex-1 bg-gray-50 rounded-lg p-1.5 text-center">
+                  <div className="flex-1 bg-red-100 rounded-lg p-1.5 text-center">
                     <p className="text-[9px] font-bold text-red-400">8%</p>
                     <p className="text-[7px] text-black">Pending</p>
                   </div>
@@ -348,7 +348,7 @@ const Homecomp = () => {
                   <motion.div
                     animate={{ scale: [1, 1.2, 1] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="w-6 h-6 rounded-full bg-primary-dark flex items-center justify-center flex-shrink-0"
+                    className="w-6 h-6 rounded-full bg-red-700 flex items-center justify-center flex-shrink-0"
                   >
                     <span className="text-white text-[10px] font-bold">AI</span>
                   </motion.div>
@@ -373,7 +373,7 @@ const Homecomp = () => {
                 <div className="flex -space-x-1.5">
                   {['S','R','P'].map((l, i) => (
                     <div key={i} className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-[7px] font-bold text-white"
-                      style={{ background: ['#000','#0456c9','#1D1D1F'][i] }}>
+                      style={{ background: ['#000','#0456c9','#f00'][i] }}>
                       {l}
                     </div>
                   ))}

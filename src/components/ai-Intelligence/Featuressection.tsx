@@ -136,7 +136,7 @@ export default function Featuressection() {
   return (
     <section
       className="w-full flex flex-col items-center text-center px-6 py-20 overflow-hidden"
-      style={{ background: "##FAF8F6" }}
+      style={{ background: "#F8F9FB" }}
     >
       {/* ── Heading ── */}
       <h2
@@ -151,7 +151,7 @@ export default function Featuressection() {
         Intelligence That{" "}
         <span
           style={{
-            background: "linear-gradient(90deg, #f5a623 0%, #e07b39 100%)",
+            background: "linear-gradient(90deg, #1D1D1F 0%, #0456C9 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -164,7 +164,7 @@ export default function Featuressection() {
       {/* ── Subheading ── */}
       <p
         className="mt-4 mb-16 max-w-lg leading-relaxed"
-        style={{ ...font, fontSize: "clamp(15px, 1.5vw, 17px)", color: "#6b7a8d" }}
+        style={{ ...font, fontSize: "clamp(15px, 1.5vw, 17px)", color: "#000" }}
       >
         AI assists your decision-making process — never replaces it.
       </p>

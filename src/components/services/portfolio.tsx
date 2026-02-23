@@ -14,9 +14,6 @@ import {
 const modules = [
   {
     Icon: GraduationCap,
-    iconBg: "#EFF6FF",
-    iconColor: "#1D4ED8",
-    accentColor: "#3B82F6",
     title: "Academic & Experience Layer",
     description:
       "Comprehensive curriculum management, lesson planning, assessments, grading, student performance tracking, and classroom intelligence tools.",
@@ -29,9 +26,6 @@ const modules = [
   },
   {
     Icon: TrendingUp,
-    iconBg: "#FFF7ED",
-    iconColor: "#C2410C",
-    accentColor: "#F97316",
     title: "Admissions & Marketing Growth",
     description:
       "End-to-end admissions pipeline management, lead tracking, conversion optimization, enrollment forecasting, and marketing analytics.",
@@ -44,9 +38,6 @@ const modules = [
   },
   {
     Icon: Settings2,
-    iconBg: "#F0FDF4",
-    iconColor: "#15803D",
-    accentColor: "#22C55E",
     title: "Campus Operations",
     description:
       "Facilities management, transport logistics, inventory tracking, IT support, security workflows, and maintenance management.",
@@ -59,9 +50,6 @@ const modules = [
   },
   {
     Icon: BadgeDollarSign,
-    iconBg: "#FEFCE8",
-    iconColor: "#A16207",
-    accentColor: "#EAB308",
     title: "Finance & Compliance",
     description:
       "Fee management, payment collection, budget planning, expense tracking, financial reporting, and regulatory compliance management.",
@@ -74,9 +62,6 @@ const modules = [
   },
   {
     Icon: Users2,
-    iconBg: "#FDF4FF",
-    iconColor: "#7E22CE",
-    accentColor: "#A855F7",
     title: "People & Culture",
     description:
       "HR management, hiring workflows, attendance tracking, performance reviews, professional development, and retention analytics.",
@@ -89,9 +74,6 @@ const modules = [
   },
   {
     Icon: BrainCircuit,
-    iconBg: "#FFF7ED",
-    iconColor: "#C2410C",
-    accentColor: "#F97316",
     title: "AI & Analytics",
     description:
       "Real-time dashboards, predictive intelligence, institutional health monitoring, risk detection, and strategic planning insights.",
@@ -107,9 +89,6 @@ const modules = [
 // ─── Card ─────────────────────────────────────────────────────────────────────
 function ModuleCard({
   Icon,
-  iconBg,
-  iconColor,
-  accentColor,
   title,
   description,
   features,
@@ -117,7 +96,7 @@ function ModuleCard({
 }: (typeof modules)[0] & { index: number }) {
   return (
     <motion.div
-      className="relative bg-white border border-gray-100 rounded-2xl p-8 flex flex-col gap-4 cursor-default overflow-hidden"
+      className="relative cardstyle rounded-2xl p-8 flex flex-col gap-4 cursor-default overflow-hidden"
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
@@ -132,31 +111,24 @@ function ModuleCard({
         transition: { duration: 0.25, ease: [0.16, 1, 0.3, 1] },
       }}
     >
-      {/* Top accent line */}
-      <div
-        className="absolute top-0 left-0 right-0 h-[3px] rounded-t-2xl"
-        style={{ background: accentColor }}
-      />
+     
 
       {/* Icon */}
-      <div
-        className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 mt-1"
-        style={{ background: iconBg }}
-      >
-        <Icon
-          style={{ color: iconColor }}
-          className="w-6 h-6"
-          strokeWidth={1.8}
-        />
+     
+
+
+<div className="w-12 h-12 rounded-xl iconStyle flex items-center justify-center">
+        <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
       </div>
+      
 
       {/* Title */}
-      <h3 className="text-[19px] font-extrabold text-[#1a2b4a] leading-snug tracking-tight m-0">
+      <h3 className="text-md font-extrabold text-primary leading-snug tracking-tight m-0">
         {title}
       </h3>
 
       {/* Description */}
-      <p className="text-[14px] leading-relaxed text-[#6b7a8d] m-0">
+      <p className="text-[14px] leading-relaxed text-gray-500 m-0">
         {description}
       </p>
 
@@ -165,8 +137,7 @@ function ModuleCard({
         {features.map((f) => (
           <li key={f} className="flex items-center gap-2.5 text-sm font-medium text-gray-700">
             <span
-              className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 text-white"
-              style={{ background: accentColor, fontSize: 9, fontWeight: 800 }}
+              className="w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 text-primary-dark"
             >
               ✓
             </span>
@@ -191,28 +162,16 @@ export default function SolutionsPortfolio() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-[clamp(28px,4vw,42px)] font-extrabold text-[#1a2b4a] tracking-tight leading-tight">
-          Complete{" "}
-          <span
-            className="font-extrabold"
-            style={{
-              background: "linear-gradient(90deg, #f5a623 0%, #e07b39 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Solutions
-          </span>{" "}
-          Portfolio
+        <h2 className="m-0 text-5xl font-bold text-primary-dark tracking-tight leading-tight">
+          Complete  Solutions Portfolio
         </h2>
-        <p className="m-0 text-base text-[#6b7a8d] font-normal">
+        <p className="m-0 text-base text-gray-500 font-normal">
           Six integrated modules working together as one platform
         </p>
       </motion.div>
 
       {/* Grid */}
-      <div className="max-w-[1100px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
         {modules.map((mod, i) => (
           <ModuleCard key={mod.title} {...mod} index={i} />
         ))}

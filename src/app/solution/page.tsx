@@ -1,9 +1,10 @@
 import Header from '@/components/layout/Headertwo'
-import Footernew from '@/components/layout/footernew'
 import HeroBanner from "@/components/services/hero-banner";
 import SolutionsPortfolio from "@/components/services/portfolio";
 import HowItWorks from "@/components/services/keyed-work";
-import CTABanner from "@/components/services/cta";
+import CTASectiontop from '@/components/home/Ctatop';
+import Footertop from '@/components/layout/footertop'
+
 export default function SolutionPage() {
   return (
     <main>
@@ -11,8 +12,8 @@ export default function SolutionPage() {
       <HeroBanner />
       <SolutionsPortfolio />
        <HowItWorks />
-        <CTABanner />
-        <Footernew />
+        <CTASectiontop />
+        <Footertop />
 
       {/* ── Rest of your Solution page content goes here ── */}
     </main>

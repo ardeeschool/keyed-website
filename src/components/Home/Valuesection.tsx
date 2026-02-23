@@ -121,7 +121,7 @@ function Globe() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none"
       >
-        <p className="text-6xl font-bold text-white/10 select-none">KeyEd</p>
+        <p className="text-6xl font-bold text-white/50 select-none">KeyEd</p>
       </motion.div>
 
       {/* Pulsing ring */}
@@ -248,7 +248,7 @@ export default function ValueSection() {
               {/* Accent line — alternating orange/blue */}
               <div
                 className="absolute top-0 left-0 right-0 h-[2px] rounded-t-xl"
-                style={{ background: i % 2 === 0 ? '#0456c9' : '#b7b7b7' }}
+                style={{ background: i % 2 === 0 ? '#0456c9' : '#e77f34' }}
               />
               <p className="text-[10px] font-bold tracking-[0.18em] text-white/70 uppercase mb-1">
                 {stat.prefix}{' '}

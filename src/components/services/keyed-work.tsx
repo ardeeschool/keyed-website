@@ -46,7 +46,7 @@ export default function HowItWorks() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="w-full bg-[#faf8f5] py-20 px-6">
+    <section className="w-full bg-white py-20 px-6 pb-30">
 
       {/* ── Header ── */}
       <motion.div
@@ -56,20 +56,10 @@ export default function HowItWorks() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-[clamp(28px,4vw,44px)] font-extrabold text-[#1a2b4a] tracking-tight leading-tight">
-          How KeyEd{" "}
-          <span
-            style={{
-              background: "linear-gradient(90deg, #f5a623 0%, #e07b39 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
-            }}
-          >
-            Works Together
-          </span>
+        <h2 className="m-0 text-5xl font-bold text-primary tracking-tight leading-tight">
+          How KeyEd Works Together
         </h2>
-        <p className="mt-3 text-base text-[#6b7a8d] font-normal">
+        <p className="mt-3 text-base text-gray-500 font-normal">
           All modules share a single data layer for seamless operations
         </p>
       </motion.div>
@@ -88,17 +78,16 @@ export default function HowItWorks() {
                   relative w-full text-left px-7 py-6 flex items-start gap-5
                   border-b border-gray-100 last:border-b-0
                   transition-colors duration-200 cursor-pointer outline-none
-                  ${active === i ? "bg-orange-50" : "bg-white hover:bg-gray-50"}
+                  ${active === i ? "bg-primary" : "bg-white hover:bg-gray-50"}
                 `}
               >
                 {/* Active left border */}
                 {active === i && (
                   <motion.div
                     layoutId="activeBar"
-                    className="absolute left-0 top-0 h-full w-[3px] rounded-r-full"
-                    style={{
-                      background: "linear-gradient(180deg, #f5a623 0%, #e07b39 100%)",
-                    }}
+                    className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-gradient-to-br
+      from-primary
+      to-secondary"
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
                   />
                 )}
@@ -110,12 +99,12 @@ export default function HowItWorks() {
                     text-sm font-bold transition-all duration-200
                     ${active === i
                       ? "text-white shadow-md"
-                      : "bg-orange-100 text-[#f5a623]"
+                      : "bg-gradient-to-br from-primary-light to-secondary/25 text-white"
                     }
                   `}
                   style={
                     active === i
-                      ? { background: "linear-gradient(135deg, #f5a623, #e07b39)" }
+                      ? { background: "linear-gradient(135deg, #999999, #0456c9)" }
                       : {}
                   }
                 >
@@ -126,12 +115,14 @@ export default function HowItWorks() {
                 <div className="flex flex-col gap-1.5 pt-0.5">
                   <span
                     className={`text-[15px] font-bold leading-snug transition-colors duration-200 ${
-                      active === i ? "text-[#1a2b4a]" : "text-[#374151]"
+                      active === i ? "text-white" : "text-black"
                     }`}
                   >
                     {step.title}
                   </span>
-                  <span className="text-[13px] text-[#6b7a8d] leading-relaxed font-normal">
+                  <span className={`text-[13px]  leading-relaxed font-normal ${
+                      active === i ? "text-white" : "text-black"
+                    }`}>
                     {step.description}
                   </span>
                 </div>

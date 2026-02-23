@@ -95,7 +95,7 @@ function BrokenLines() {
       {/* Centre broken/X indicator */}
       <motion.circle
         cx="250" cy="190" r="22"
-        fill="#000" stroke="#000" strokeWidth="1.5"
+        fill="#fb2c36" stroke="#ddd" strokeWidth="1.5"
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true }}
@@ -105,7 +105,7 @@ function BrokenLines() {
         x="250" y="196"
         textAnchor="middle"
         fontSize="16"
-        fill="#EF4444"
+        fill="#fff"
         fontWeight="bold"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -140,8 +140,8 @@ function ToolNode({
           >
             <Icon className="w-5 h-5 text-white" strokeWidth={1.8} />
           </div>
-          <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-white rounded-full flex items-center justify-center">
-            <X className="w-2.5 h-2.5 text-primary" strokeWidth={3} />
+          <div className="absolute -top-1.5 -right-1.5 w-4 h-4 bg-red-500 rounded-full flex items-center justify-center">
+            <X className="w-2.5 h-2.5 text-white" strokeWidth={3} />
           </div>
         </div>
         <p className="text-[11px] font-bold text-gray-50 leading-tight">{name}</p>
@@ -297,7 +297,7 @@ export default function ProblemSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative bg-black rounded-3xl p-10 overflow-hidden"
+          className="relative bg-black rounded-3xl overflow-hidden"
         >
           {/* BG dot grid */}
           <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
@@ -310,7 +310,7 @@ export default function ProblemSection() {
           <div className="relative z-10 flex flex-col lg:flex-row items-center gap-10">
 
             {/* Left text */}
-            <div className="lg:w-1/2">
+            <div className="lg:w-1/2 p-10">
               <p className="text-xs font-bold text-white uppercase tracking-widest mb-3">The KeyEd Way</p>
               <h3 className="text-3xl font-extrabold text-white leading-tight mb-4">
                 One platform.<br />
@@ -343,75 +343,15 @@ export default function ProblemSection() {
 
             {/* Right — unified hub diagram */}
             <div className="lg:w-1/2 flex items-center justify-center">
-              <div className="relative" style={{ width: 280, height: 280 }}>
-
-                {/* Spokes */}
-                <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 280 280">
-                  {keyedModules.map((_, i) => {
-                    const angle = (i * 360) / keyedModules.length - 90;
-                    const rad = (angle * Math.PI) / 180;
-                    const cx = 140, cy = 140, r = 108;
-                    const x = cx + r * Math.cos(rad);
-                    const y = cy + r * Math.sin(rad);
-                    return (
-                      <motion.line
-                        key={i}
-                        x1={cx} y1={cy} x2={x} y2={y}
-                        stroke="#000000" strokeWidth="1.5" strokeOpacity="0.35"
-                        initial={{ pathLength: 0 }}
-                        whileInView={{ pathLength: 1 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.5 + i * 0.07 }}
-                      />
-                    );
-                  })}
-                </svg>
-
-                {/* Satellite module pills */}
-                {keyedModules.map((mod, i) => {
-                  const angle = (i * 360) / keyedModules.length - 90;
-                  const rad = (angle * Math.PI) / 180;
-                  const r = 108;
-                  const x = 140 + r * Math.cos(rad) - 36;
-                  const y = 140 + r * Math.sin(rad) - 14;
-                  return (
-                    <motion.div
-                      key={mod.label}
-                      initial={{ opacity: 0, scale: 0.5 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.4, delay: 0.6 + i * 0.08, type: "spring", stiffness: 200 }}
-                      style={{ position: "absolute", left: x, top: y }}
-                      className="w-[72px] h-[28px] rounded-full flex items-center justify-center"
-                      // @ts-ignore
-                    >
-                      <span
-                        className="text-[9px] font-bold px-2 py-1 rounded-full border"
-                        style={{ color: mod.color, borderColor: `${mod.color}40`, background: `${mod.color}15` }}
-                      >
-                        {mod.label}
-                      </span>
-                    </motion.div>
-                  );
-                })}
-
-                {/* Centre hub */}
-                <motion.div
-                  initial={{ scale: 0, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 160 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 rounded-full flex flex-col items-center justify-center bg-gradient-to-br
-      from-secondary
-      to-primary"
-                  style={{  boxShadow: "0 0 30px rgba(248,248,22,0.4)" }}
-                >
-                  
-                  <p className="text-white font-extrabold text-sm leading-none">KeyEd</p>
-                 
-                </motion.div>
-
-              </div>
+              
+             
+                  <img
+      src="/keyedscreen.png"
+      alt="Hero"
+      width={700}
+      height={350}
+      className="mx-auto"
+      />
             </div>
           </div>
         </motion.div>

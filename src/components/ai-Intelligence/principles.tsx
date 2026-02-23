@@ -199,10 +199,7 @@ function NetworkBackground() {
 export default function AIPrinciples() {
   return (
     <section
-      className="relative w-full flex flex-col items-center text-center px-6 py-24 overflow-hidden mb-20"
-      style={{
-        background: "#0f1e35",
-      }}
+      className="relative w-full flex flex-col items-center text-center px-6 py-24 overflow-hidden mb-20 bg-primary"
     >
       {/* ── Full-section network background ── */}
       <div className="absolute inset-0 pointer-events-none">
@@ -213,7 +210,7 @@ export default function AIPrinciples() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: "radial-gradient(ellipse at 50% 40%, rgba(13,71,161,0.45) 0%, rgba(10,61,143,0.7) 100%)",
+          background: "radial-gradient(at 50% 40%, rgb(85 85 85 / 45%) 0%, rgb(0 0 0 / 70%) 100%)",
         }}
       />
 
@@ -229,25 +226,10 @@ export default function AIPrinciples() {
           className="mb-16"
         >
           <h2
-            className="m-0 font-extrabold leading-tight"
-            style={{
-              ...font,
-              fontSize: "clamp(28px,4vw,48px)",
-              letterSpacing: "-0.025em",
-              color: "#ffffff",
-            }}
+            className="m-0 font-extrabold leading-tight text-4xl  text-white"
           >
-            Responsible{" "}
-            <span
-              style={{
-                background: "linear-gradient(90deg, #f5a623 0%, #e07b39 100%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-                backgroundClip: "text",
-              }}
-            >
-              AI Principles
-            </span>
+            Responsible AI Principles
+            
           </h2>
           <p
             className="mt-4 max-w-lg mx-auto leading-relaxed"
