@@ -43,8 +43,7 @@ const nodes = [
 function AnimatedSpoke({
   x1, y1, x2, y2, delay,
 }: {
-  x1: number; y1: number; x2: number; y2: number;
-  color: string; delay: number;
+  x1: number; y1: number; x2: number; y2: number; delay: number;
 }) {
   return (
     <>

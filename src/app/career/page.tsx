@@ -313,7 +313,7 @@ function FormInput({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+      <label className="block text-sm font-medium text-white mb-2 ml-1">
         {label}
       </label>
       <input
@@ -440,7 +440,7 @@ function ApplicationForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Select Profile */}
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+          <label className="block text-sm font-medium text-white mb-2 ml-1">
             Select Profile
           </label>
           <CustomSelect
@@ -489,7 +489,7 @@ function ApplicationForm() {
 
         {/* Experience */}
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+          <label className="block text-sm font-medium text-white mb-2 ml-1">
             Experience
           </label>
           <CustomSelect
@@ -523,7 +523,7 @@ function ApplicationForm() {
 
         {/* File Upload */}
         <div>
-          <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+          <label className="block text-sm font-medium text-white mb-2 ml-1">
             Upload CV
           </label>
           <input
@@ -580,7 +580,7 @@ function ApplicationForm() {
 
       {/* Address — full width */}
       <div className="mt-5">
-        <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+        <label className="block text-sm font-medium text-white mb-2 ml-1">
           Address
         </label>
         <input
@@ -605,7 +605,7 @@ function ApplicationForm() {
 
       {/* Message — full width */}
       <div className="mt-5">
-        <label className="block text-sm font-medium text-gray-400 mb-2 ml-1">
+        <label className="block text-sm font-medium text-white mb-2 ml-1">
           Message (Optional)
         </label>
         <textarea
@@ -631,7 +631,7 @@ function ApplicationForm() {
         className="mt-8 w-full py-4 rounded-2xl text-base font-semibold cursor-pointer transition-all"
         style={{
           background:
-            "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%), linear-gradient(0deg, #272727, #272727)",
+            "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%), linear-gradient(0deg, #000000, #000000)",
           color: "#fff",
           boxShadow:
             "0px -3px 0px 0px #080808 inset, 0px 1px 0px 0px rgba(255,255,255,0.302) inset, 0px 2.77px 2.21px 0px rgba(0,0,0,0.122), 0px 6.65px 5.32px 0px rgba(0,0,0,0.129), 0px 12.52px 10.02px 0px rgba(0,0,0,0.133)",
@@ -724,10 +724,12 @@ export default function Career() {
        *  APPLICATION FORM
        * ═══════════════════════════════════════════════ */}
       <section
-        className="py-24 px-6 mb-20"
-        style={{ background: "#09090B" }}
+        className="py-24 px-6 mb-20 w-6xl mx-auto mt-20 rounded-2xl relative bg-primary"
       >
-        <div className="max-w-5xl mx-auto">
+        <div className="light-box"></div>
+        <img className="light-top absolute top-0 w-md left-1/3" src="/light-top.png" alt=""></img>
+        <img className="light-top absolute bottom-0 w-md left-1/3" src="/light-bot.png" alt=""></img>
+        <div className="max-w-5xl mx-auto relative z-1">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -758,9 +760,8 @@ export default function Career() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl p-8 lg:p-12"
+            className="rounded-3xl p-8 lg:p-12 bg-black"
             style={{
-              background: "rgba(255,255,255,0.03)",
               border: "1px solid rgba(255,255,255,0.06)",
             }}
           >
