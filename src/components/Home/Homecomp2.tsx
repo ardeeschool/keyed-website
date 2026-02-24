@@ -150,11 +150,11 @@ const Homecomp = () => {
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-start gap-4 mb-6">
-              <Link href="/demo"
+              <Link href="/contact-us"
                 className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors">
                 Request Demo <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link href="/overview"
+              <Link href="/solution"
                 className="inline-flex items-center gap-2 px-7 py-4 border-2 border-gray-800 text-gray-800 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all">
                 <Play className="w-4 h-4 fill-current" /> Watch Overview
               </Link>
