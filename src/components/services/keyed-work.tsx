@@ -1,11 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 
-// ─── Steps Data ───────────────────────────────────────────────────────────────
-// Replace the `image` URLs with your own screenshots when ready
 const steps = [
   {
     number: 1,
@@ -41,14 +39,50 @@ const steps = [
   },
 ];
 
-// ─── Component ────────────────────────────────────────────────────────────────
+const STEP_DURATION = 3000; // ms per step
+
 export default function HowItWorks() {
   const [active, setActive] = useState(0);
+  const [isInView, setIsInView] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
+  // Observe when section enters viewport
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsInView(entry.isIntersecting),
+      { threshold: 0.3 }
+    );
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-advance steps when in view and not paused
+  useEffect(() => {
+    if (isInView && !isPaused) {
+      intervalRef.current = setInterval(() => {
+        setActive((prev) => (prev + 1) % steps.length);
+      }, STEP_DURATION);
+    } else {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    }
+    return () => {
+      if (intervalRef.current) clearInterval(intervalRef.current);
+    };
+  }, [isInView, isPaused]);
+
+  // Manual click — pause auto-play for 8s then resume
+  const handleManualClick = (i: number) => {
+    setActive(i);
+    setIsPaused(true);
+    setTimeout(() => setIsPaused(false), 8000);
+  };
 
   return (
-    <section className="w-full bg-white py-20 px-6 pb-30">
+    <section ref={sectionRef} className="w-full bg-white py-20 px-6 pb-30">
 
-      {/* ── Header ── */}
+      {/* Header */}
       <motion.div
         className="text-center mb-14"
         initial={{ opacity: 0, y: 20 }}
@@ -64,16 +98,16 @@ export default function HowItWorks() {
         </p>
       </motion.div>
 
-      {/* ── Main Card ── */}
+      {/* Main Card */}
       <div className="max-w-[1000px] mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden">
         <div className="flex flex-col lg:flex-row min-h-[460px]">
 
-          {/* ── LEFT — Steps list ── */}
+          {/* LEFT — Steps list */}
           <div className="flex flex-col lg:w-[42%] border-b lg:border-b-0 lg:border-r border-gray-100">
             {steps.map((step, i) => (
               <button
                 key={step.number}
-                onClick={() => setActive(i)}
+                onClick={() => handleManualClick(i)}
                 className={`
                   relative w-full text-left px-7 py-6 flex items-start gap-5
                   border-b border-gray-100 last:border-b-0
@@ -85,10 +119,19 @@ export default function HowItWorks() {
                 {active === i && (
                   <motion.div
                     layoutId="activeBar"
-                    className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-gradient-to-br
-      from-primary
-      to-secondary"
+                    className="absolute left-0 top-0 h-full w-[3px] rounded-r-full bg-gradient-to-br from-primary to-secondary"
                     transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+                  />
+                )}
+
+                {/* Progress bar at bottom of active step */}
+                {active === i && !isPaused && (
+                  <motion.div
+                    className="absolute bottom-0 left-0 h-[2px] bg-white"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "100%" }}
+                    transition={{ duration: STEP_DURATION / 1000, ease: "linear" }}
+                    key={`progress-${active}`}
                   />
                 )}
 
@@ -120,9 +163,9 @@ export default function HowItWorks() {
                   >
                     {step.title}
                   </span>
-                  <span className={`text-[13px]  leading-relaxed font-normal ${
-                      active === i ? "text-white" : "text-black"
-                    }`}>
+                  <span className={`text-[13px] leading-relaxed font-normal ${
+                    active === i ? "text-white" : "text-black"
+                  }`}>
                     {step.description}
                   </span>
                 </div>
@@ -130,7 +173,7 @@ export default function HowItWorks() {
             ))}
           </div>
 
-          {/* ── RIGHT — Image panel ── */}
+          {/* RIGHT — Image panel */}
           <div className="lg:w-[58%] relative overflow-hidden bg-gray-50 flex items-center justify-center min-h-[320px] lg:min-h-0">
             <AnimatePresence mode="wait">
               <motion.div
@@ -141,7 +184,6 @@ export default function HowItWorks() {
                 exit={{ opacity: 0, scale: 0.97 }}
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
               >
-                {/* Image */}
                 <Image
                   src={steps[active].image}
                   alt={steps[active].alt}
@@ -150,11 +192,8 @@ export default function HowItWorks() {
                   sizes="(max-width: 1024px) 100vw, 58vw"
                   priority={active === 0}
                 />
-
-                {/* Subtle overlay so image doesn't feel raw */}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b4a]/30 via-transparent to-transparent" />
 
-                {/* Step label on image */}
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
                   <span className="text-white text-sm font-semibold bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
                     {steps[active].title}
@@ -165,7 +204,7 @@ export default function HowItWorks() {
                     {steps.map((_, i) => (
                       <button
                         key={i}
-                        onClick={() => setActive(i)}
+                        onClick={() => handleManualClick(i)}
                         className={`rounded-full transition-all duration-300 outline-none ${
                           active === i
                             ? "w-6 h-2 bg-[#f5a623]"

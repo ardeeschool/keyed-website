@@ -2,6 +2,9 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+
 
 const navLinks = [
   { label: "Home", href: "/home2" },
@@ -16,6 +19,8 @@ const navLinks = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+   const pathname = usePathname();
+
 
   useEffect(() => {
     const onScroll = () => {
@@ -45,27 +50,48 @@ export default function Navbar() {
         </Link>
 
         {/* RIGHT — Nav links + CTA (desktop) */}
+        {/* Desktop Menu */}
         <div className="hidden lg:flex items-center gap-1">
           <ul className="flex items-center gap-1 list-none m-0 p-0">
-            {navLinks.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="px-3.5 py-2 text-[15px] font-normal text-primary rounded-md hover:bg-gray-100 hover:text-[#0d1b35] transition-colors duration-150 whitespace-nowrap no-underline"
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
+            {navLinks.map((link) => {
+              const isActive = pathname === link.href;
+
+              return (
+                <li key={link.href}>
+                  <Link
+  href={link.href}
+  className={`group relative px-3.5 py-2 text-[15px] font-normal rounded-md transition-colors duration-150 whitespace-nowrap no-underline
+  ${
+    isActive
+      ? "text-[#0d1b35]"
+      : "text-[#1a2c4e] hover:text-[#0d1b35]"
+  }`}
+>
+  {link.label}
+
+  {/* Active — always visible */}
+  {isActive && (
+    <span className="absolute left-0 -bottom-[6px] w-full h-[2px] bg-black rounded-full"></span>
+  )}
+
+  {/* Hover — animates in (only on non-active) */}
+  {!isActive && (
+    <span className="absolute left-0 -bottom-[6px] w-full h-[2px] bg-black rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out origin-left"></span>
+  )}
+</Link>
+                </li>
+              );
+            })}
           </ul>
 
           <Link
             href="/contact-us"
-            className="ml-4 inline-flex items-center justify-center px-5 py-2.5 bg-secondary text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] hover:-translate-y-px active:translate-y-0 transition-all duration-150 whitespace-nowrap no-underline flex-shrink-0"
+            className="ml-4 inline-flex items-center justify-center px-5 py-2.5 bg-[#0d1b35] text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] hover:-translate-y-px active:translate-y-0 transition-all duration-150 whitespace-nowrap no-underline flex-shrink-0"
           >
             Talk to Us
           </Link>
         </div>
+
 
         {/* RIGHT — Hamburger (mobile) */}
         <button

@@ -3,7 +3,7 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from '@/components/layout/Headertwo'
-import Ctatop from '@/components/home/Ctatop';
+
 
 import Footertop from '@/components/layout/footertop'
 
@@ -213,7 +213,7 @@ function CustomSelect({
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className={`w-full text-left px-5 py-4 rounded-2xl text-base transition-all cursor-pointer outline-none ${
+        className={`shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff]  w-full text-left px-5 py-4 rounded-2xl text-base transition-all cursor-pointer outline-none ${
           error
             ? "ring-2 ring-red-400/50"
             : "focus:ring-2 focus:ring-white/20"
@@ -221,7 +221,7 @@ function CustomSelect({
         style={{
           background: "rgba(255,255,255,0.06)",
           border: "1px solid rgba(255,255,255,0.1)",
-          color: value ? "#fff" : "rgba(255,255,255,0.35)",
+          color: value ? "#fff" : "#000",
         }}
       >
         <span>{value || placeholder}</span>
@@ -260,7 +260,7 @@ function CustomSelect({
                   color:
                     value === opt
                       ? "#fff"
-                      : "rgba(255,255,255,0.6)",
+                      : "#000",
                   background:
                     value === opt
                       ? "rgba(255,255,255,0.08)"
@@ -313,7 +313,7 @@ function FormInput({
 }) {
   return (
     <div>
-      <label className="block text-sm font-medium text-white mb-2 ml-1">
+      <label className="block text-sm font-medium text-black mb-2 ml-1">
         {label}
       </label>
       <input
@@ -322,7 +322,7 @@ function FormInput({
         placeholder={placeholder}
         value={value}
         onChange={onChange}
-        className={`w-full px-5 py-4 rounded-2xl text-base text-white placeholder-white/35 outline-none transition-all ${
+        className={`shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff]  w-full px-5 py-4 rounded-2xl text-base text-black placeholder-black/35 outline-none transition-all ${
           error
             ? "ring-2 ring-red-400/50"
             : "focus:ring-2 focus:ring-white/20"
@@ -432,7 +432,7 @@ function ApplicationForm() {
     <form onSubmit={handleSubmit} noValidate>
       <div className="flex items-center gap-3 mb-10">
         <FileText className="w-6 h-6 text-gray-400" />
-        <p className="text-lg text-gray-300 font-medium">
+        <p className="text-lg text-black-300 font-medium">
           Please fill in the following details to apply
         </p>
       </div>
@@ -440,7 +440,7 @@ function ApplicationForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
         {/* Select Profile */}
         <div>
-          <label className="block text-sm font-medium text-white mb-2 ml-1">
+          <label className="block text-sm font-medium text-black mb-2 ml-1">
             Select Profile
           </label>
           <CustomSelect
@@ -489,7 +489,7 @@ function ApplicationForm() {
 
         {/* Experience */}
         <div>
-          <label className="block text-sm font-medium text-white mb-2 ml-1">
+          <label className="block text-sm font-medium text-black mb-2 ml-1">
             Experience
           </label>
           <CustomSelect
@@ -523,7 +523,7 @@ function ApplicationForm() {
 
         {/* File Upload */}
         <div>
-          <label className="block text-sm font-medium text-white mb-2 ml-1">
+          <label className="block text-sm font-medium text-black mb-2 ml-1">
             Upload CV
           </label>
           <input
@@ -536,7 +536,7 @@ function ApplicationForm() {
           <button
             type="button"
             onClick={() => fileRef.current?.click()}
-            className={`w-full px-5 py-4 rounded-2xl text-left text-base transition-all cursor-pointer outline-none ${
+            className={`w-full shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff] px-5 py-4 rounded-2xl text-left text-base transition-all cursor-pointer outline-none ${
               errors.file
                 ? "ring-2 ring-red-400/50"
                 : "focus:ring-2 focus:ring-white/20"
@@ -544,7 +544,7 @@ function ApplicationForm() {
             style={{
               background: "rgba(255,255,255,0.06)",
               border: "1px solid rgba(255,255,255,0.1)",
-              color: file ? "#fff" : "rgba(255,255,255,0.35)",
+              color: file ? "#000" : "#000",
             }}
           >
             {file ? (
@@ -580,7 +580,7 @@ function ApplicationForm() {
 
       {/* Address — full width */}
       <div className="mt-5">
-        <label className="block text-sm font-medium text-white mb-2 ml-1">
+        <label className="block text-sm font-medium text-black mb-2 ml-1">
           Address
         </label>
         <input
@@ -588,7 +588,7 @@ function ApplicationForm() {
           placeholder="Full address"
           value={form.address}
           onChange={set("address")}
-          className={`w-full px-5 py-4 rounded-2xl text-base text-white placeholder-white/35 outline-none transition-all ${
+          className={`shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff] w-full px-5 py-4 rounded-2xl text-base text-black placeholder-black/35 outline-none transition-all ${
             errors.address
               ? "ring-2 ring-red-400/50"
               : "focus:ring-2 focus:ring-white/20"
@@ -596,6 +596,7 @@ function ApplicationForm() {
           style={{
             background: "rgba(255,255,255,0.06)",
             border: "1px solid rgba(255,255,255,0.1)",
+            
           }}
         />
         {errors.address && (
@@ -605,7 +606,7 @@ function ApplicationForm() {
 
       {/* Message — full width */}
       <div className="mt-5">
-        <label className="block text-sm font-medium text-white mb-2 ml-1">
+        <label className="block text-sm font-medium text-black mb-2 ml-1">
           Message (Optional)
         </label>
         <textarea
@@ -615,9 +616,9 @@ function ApplicationForm() {
           onChange={(e) =>
             setForm((p) => ({ ...p, message: e.target.value }))
           }
-          className="w-full px-5 py-4 rounded-2xl text-base text-white placeholder-white/35 outline-none transition-all focus:ring-2 focus:ring-white/20 resize-none"
+          className="shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff]  w-full px-5 py-4 rounded-2xl text-base text-white placeholder-black/35 outline-none transition-all focus:ring-2 focus:ring-white/20 resize-none"
           style={{
-            background: "rgba(255,255,255,0.06)",
+            background: "rgba(255, 255, 255, 0.06)",
             border: "1px solid rgba(255,255,255,0.1)",
           }}
         />
@@ -651,7 +652,7 @@ export default function Career() {
       {/* ═══════════════════════════════════════════════
        *  HERO
        * ═══════════════════════════════════════════════ */}
-      <section className="bg-white pt-32 pb-20 px-6">
+      <section className="bg-white pt-20 pb-20 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -674,7 +675,7 @@ export default function Career() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-interTight text-5xl lg:text-7xl font-extrabold text-[#1a1a1c] leading-[1.1] mb-6"
+            className="font-interTight text-5xl lg:text-7xl font-medium text-[#1a1a1c] leading-[1.1] mb-6"
           >
             Career
           </motion.h1>
@@ -694,7 +695,7 @@ export default function Career() {
       {/* ═══════════════════════════════════════════════
        *  CURRENT OPENINGS
        * ═══════════════════════════════════════════════ */}
-      <section className="bg-[#EDECEC] py-24 px-6">
+      <section className="bg-[#EDECEC] py-24 px-6 hidden">
         <div className="max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -738,10 +739,9 @@ export default function Career() {
             className="text-center mb-14"
           >
             <span
-              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full mb-6"
+              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full mb-6 text-white"
               style={{
                 background: "rgba(255,255,255,0.06)",
-                color: "rgba(255,255,255,0.5)",
               }}
             >
               <MapPin className="w-4 h-4" />
@@ -760,7 +760,7 @@ export default function Career() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-3xl p-8 lg:p-12 bg-black"
+            className="rounded-3xl p-8 lg:p-12 bg-[#eff0f3]"
             style={{
               border: "1px solid rgba(255,255,255,0.06)",
             }}
@@ -769,7 +769,7 @@ export default function Career() {
           </motion.div>
         </div>
      </section>
-       <Ctatop />
+       
               <Footertop />
       
             

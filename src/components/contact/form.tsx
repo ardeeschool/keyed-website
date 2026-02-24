@@ -51,7 +51,7 @@ export default function ContactForm() {
           </div>
 
           {/* Social Buttons */}
-          <div className="grid grid-cols-2 gap-3 mt-12 max-w-sm">
+          <div className="grid grid-cols-3 gap-3 mt-12 max-w-lg">
             {socials.map(({ label, icon: Icon, href }) => (
               <a
                 key={label}
@@ -78,10 +78,6 @@ export default function ContactForm() {
         {/* ── RIGHT — Form Card ── */}
         <div
           className="flex-1 bg-[#f0f0f0] rounded-3xl p-8 md:p-10 w-full"
-          style={{
-            boxShadow:
-              "80px 7.77px 16px 0px rgba(0, 0, 0, 0.0588235294), 0px 3px 3px 0px rgba(0, 0, 0, 0.1019607843), 0px -8px 0px 0px rgba(0, 0, 0, 0.0509803922) inset, 0px 4px 0px 0px rgba(255, 255, 255, 0.6) inset",
-          }}
         >
           <h2 className="text-2xl font-bold text-[#1a1a1a] mb-8">
             Fill this form below

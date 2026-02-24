@@ -171,7 +171,7 @@ export default function ContactPage() {
       {/* ── Main Content ── */}
       <section className="py-8 md:py-16 bg-gray-50">
         <div className="container mx-auto max-w-6xl px-4 lg:px-30">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-4 lg:gap-8 items-start">
+          <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-8 items-start">
 
             {/* ── Left: Get In Touch ── */}
             <motion.div

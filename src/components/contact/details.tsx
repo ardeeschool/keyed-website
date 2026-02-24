@@ -22,7 +22,7 @@ const contacts = [
 
 export default function Details() {
   return (
-    <section className=" flex items-center justify-center px-6 py-16 mt-30">
+    <section className=" flex items-center justify-center px-6 py-16">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl w-full">
         {contacts.map(({ icon: Icon, title, value }) => (
           <div
