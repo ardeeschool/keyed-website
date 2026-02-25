@@ -38,11 +38,13 @@ export default function BuiltByEducators() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-12"
+          className="text-3xl md:text-4xl font-bold text-center mb-4"
         >
           <span className="text-black">Built by Educators. </span>
           <span className="text-primary">Proven in Real Schools.</span>
         </motion.h2>
+
+        <p className='text-sm text-center mb-12 text-primary-light '>Designed from inside institutions — not outside them. With over 20 years of leadership experience building The Ardee Group of Schools, KeyEd was created to replace reactive reporting with continuous performance visibility.</p>
 
         {/* Three cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12">

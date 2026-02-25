@@ -5,18 +5,11 @@ import { useRef, useEffect, useState } from "react";
 import { Sparkles } from 'lucide-react'
 
 const metrics = [
-  { label: 'Academic Performance',         value: 88, description: 'Results, attendance, assessments and learning outcomes across all grades.' },
-  { label: 'Operational Efficiency',       value: 92, description: 'Campus workflows, transport, facilities and day-to-day operations running smoothly.' },
-  { label: 'Financial Stability',          value: 76, description: 'Fee collection rates, budget adherence and financial health of the institution.' },
-  { label: 'Enrollment Momentum',          value: 83, description: 'Admissions pipeline, conversion rates and student retention trends.' },
-  { label: 'Teacher Engagement',           value: 79, description: 'Staff attendance, participation in training, collaboration and satisfaction levels.' },
-  { label: 'Parent & Student Satisfaction',value: 85, description: 'Feedback scores, communication responsiveness and overall experience ratings.' },
-  { label: 'Infrastructure Readiness',     value: 71, description: 'Labs, classrooms, connectivity and physical environment standards.' },
-  { label: 'Infrastructure Readiness',     value: 71, description: 'Labs, classrooms, connectivity and physical environment standards.' },
+    { label: 'Learning Impact',         value: 88, description: 'Are students improving?' },
+  { label: 'Teaching Discipline',       value: 92, description: 'Are classrooms executing consistently?' },
+  { label: 'Operational Control',          value: 76, description: 'Are systems tight and responsive?' },
+  { label: 'Institutional Health',          value: 83, description: 'Based on all scores is the institution stable and sustainable?' },
 
-    { label: 'Infrastructure Readiness',     value: 71, description: 'Labs, classrooms, connectivity and physical environment standards.' },
-
-      { label: 'Infrastructure Readiness',     value: 71, description: 'Labs, classrooms, connectivity and physical environment standards.' },
 
 ]
 
@@ -163,7 +156,7 @@ export default function KeyEdScoreSection() {
             className="lg:w-2/5 flex-shrink-0"
             style={{ alignSelf: 'flex-start', position: 'sticky', top: '110px' }}
           >
-            {/* Label */}
+            {/* Label 
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -172,9 +165,9 @@ export default function KeyEdScoreSection() {
               className="inline-flex items-center gap-2 bg-primary border border-primary-dark text-white px-4 py-1.5 rounded-full text-xs font-semibold mb-4"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              Your Unique Selling Proposition
+              India’s First Institutional Performance Score
             </motion.div>
-
+*/}
             {/* Heading */}
             <motion.h2
               initial={{ opacity: 0, y: 16 }}
@@ -183,8 +176,7 @@ export default function KeyEdScoreSection() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-4xl font-bold text-primary leading-tight mb-4"
             >
-              Meet India's First{' '}
-              <span className="text-primary-dark">Campus Health Score</span>
+              India’s First Institutional Performance Score
             </motion.h2>
 
             {/* Subtext */}
@@ -195,8 +187,8 @@ export default function KeyEdScoreSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-gray-500 text-md leading-relaxed mb-4"
             >
-              KeyEd Score gives leadership a real-time health indicator of their
-              institution — across academics, operations, finance, people, and growth.
+             A weekly 0–100 performance score reflecting Learning Impact, Teaching Discipline, Operational Control, and Institutional Health.
+
             </motion.p>
 
             {/* Circular progress */}

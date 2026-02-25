@@ -24,21 +24,21 @@ const tools = [
     delay: 0.1,
   },
   {
-    name: "WhatsApp",
+    name: "WhatsApp / Email",
     use: "Parent communication",
     Icon: MessageSquare,
     pos: "top-0 right-[8%]",
     delay: 0.2,
   },
   {
-    name: "Tally / QuickBooks",
+    name: "Tally / QuickBooks / Manual ",
     use: "Fee & accounts",
     Icon: Calculator,
     pos: "top-[38%] left-0",
     delay: 0.3,
   },
   {
-    name: "Paper Registers",
+    name: "Paper Registers / Stand-alone ERP",
     use: "Attendance & grades",
     Icon: ClipboardList,
     pos: "top-[38%] right-0",
@@ -188,13 +188,15 @@ export default function ProblemSection() {
             <AlertTriangle className="w-3.5 h-3.5" />
             The Reality Today
           </div>
-          <h2 className="text-4xl lg:text-5xl font-extrabold text-primary-dark leading-tight mb-4">
+          <h2 className="text-4xl lg:text-5xl font-medium text-primary-dark leading-tight mb-4 font-interTight">
             The Problem Schools 
               Face Today
           
           </h2>
           <p className="text-[#6b7a8d] text-lg max-w-xl mx-auto">
-            Schools run on <strong className="text-gray-700">6+ disconnected tools</strong> that never talk to each other — creating chaos, blind spots, and wasted hours.
+           
+
+            Schools operate on disconnected systems that record activity but fail to measure performance.Data lives in silos. Reports are backward-looking. Leadership reacts after decline becomes visible.
           </p>
         </motion.div>
 
@@ -267,8 +269,8 @@ export default function ProblemSection() {
                 transition={{ duration: 0.5, delay: 0.9 }}
                 className="mt-6 p-4 rounded-xl border-2 border-dashed border-primary/20 bg-gray-100 text-center"
               >
-                <p className="text-sm font-bold text-gray-800">Result: <span className="text-gray-900">No single view of school health.</span></p>
-                <p className="text-xs text-gray-500 mt-1">Leadership makes decisions without reliable data.</p>
+                <p className="text-sm font-bold text-gray-800">Result: <span className="text-gray-900">Leadership makes decisions without reliable data.</span></p>
+               
               </motion.div>
             </motion.div>
           </div>

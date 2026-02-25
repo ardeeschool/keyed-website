@@ -4,13 +4,10 @@ import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
 
 const values = [
-  'Make faster leadership decisions',
-  'Track campus performance in real time',
-  'Improve operational efficiency',
-  'Grow admissions predictably',
-  'Improve student & teacher outcomes',
-  'Create financial visibility',
-  'Standardize multi-campus operations',
+  'Weekly institutional performance visibility',
+  'Clear intervention signals before decline compounds',
+  'Unified workflows feeding measurable intelligence',
+  'Reduced dependency on intuition-based decisions',
 ]
 
 const stats = [
