@@ -16,24 +16,26 @@ const modules = [
     Icon: GraduationCap,
     title: "Academic & Experience Layer",
     description:
-      "Comprehensive curriculum management, lesson planning, assessments, grading, student performance tracking, and classroom intelligence tools.",
+      "Comprehensive curriculum management, lesson planning, generation, assessments, intial AI grading, Year On Year student performance tracking, and classroom intelligence tools.",
     features: [
       "Curriculum & lesson plans",
-      "Assessments & grading",
-      "Student performance analytics",
-      "Teacher collaboration",
+      "AI created assignment & instant feedback",
+      "Student performance & progress analytics",
+      "Intial AI grading based on Rubric",
+      
     ],
   },
   {
     Icon: TrendingUp,
     title: "Admissions & Marketing Growth",
     description:
-      "End-to-end admissions pipeline management, lead tracking, conversion optimization, enrollment forecasting, and marketing analytics.",
+      "End-to-end custom admissions pipeline management, lead tracking, conversion optimization, enrollment forecasting, and marketing analytics.",
     features: [
       "Lead capture & management",
-      "Admissions pipeline tracking",
+      "Inquiry to admission pipeline",
       "Enrollment forecasting",
       "Marketing campaign analytics",
+      "Fee collection"
     ],
   },
   {
@@ -66,7 +68,7 @@ const modules = [
     description:
       "HR management, hiring workflows, attendance tracking, performance reviews, professional development, and retention analytics.",
     features: [
-      "HR management system",
+      "Role-base access",
       "Hiring & onboarding",
       "Performance tracking",
       "Retention analytics",
@@ -78,10 +80,12 @@ const modules = [
     description:
       "Real-time dashboards, predictive intelligence, institutional health monitoring, risk detection, and strategic planning insights.",
     features: [
-      "Live performance dashboards",
+      "Recommendation & insights ",
       "Predictive analytics",
-      "KeyEd Score™ tracking",
-      "Strategic insights",
+      "Assignment creation based on syllabus",
+      "Instant assignment correction",
+      "AI Chatbot",
+      "Risk Alerts based on trend"
     ],
   },
 ];
@@ -163,7 +167,7 @@ export default function SolutionsPortfolio() {
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
         <h2 className="m-0 text-5xl font-bold text-primary-dark tracking-tight leading-tight">
-          Complete  Solutions Portfolio
+          What We Offer
         </h2>
         <p className="m-0 text-base text-gray-500 font-normal">
           Six integrated modules working together as one platform

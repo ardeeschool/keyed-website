@@ -131,8 +131,7 @@ export default function HeroBanner() {
           initial="hidden"
           animate={controls}
         >
-          From admissions to academics, operations to analytics — KeyEd connects
-          every function of your institution into a single intelligent platform.
+          KeyEd runs your school’s core operations across academics, admissions, finance, people, and governance — on a single system.
         </motion.p>
       </div>
 

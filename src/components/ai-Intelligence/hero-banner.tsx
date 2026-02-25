@@ -198,7 +198,7 @@ export default function HeroBanner() {
                 "0 4px 20px rgba(224,123,57,0.35), 0 1px 3px rgba(0,0,0,0.08)";
             }}
           >
-            Book Leadership Demo
+            Request Callback
             <span className="text-lg transition-transform duration-200 ease-out group-hover:translate-x-1">
               →
             </span>

@@ -21,14 +21,40 @@ const cards = [
     image: "/operation.png",
   },
   {
-    title: "Finance &\nCompliance",
+    title: " Admissions &\nMarketing Growth",
     description:
-      "Fee management, collections, budgeting, expense tracking and financial visibility.",
-    deliverables: "Fee collection, Budget management, Financial reporting",
+      "Lead management, admissions funnel, conversion tracking and enrollment forecasting.",
+    deliverables: "Lead pipeline management, Conversion analytics, Enrollment forecasting",
     industry: "Finance",
     image: "/finance.png",
   },
+  {
+    title: "AI &\nAnalytics",
+    description:
+      "Real-time dashboards, predictive insights and institutional health analytics through AI.",
+    deliverables: "Live dashboards, Predictive analytics, weekly scoring with drill-down visiblity across institution pillars",
+    industry: "Technology",
+    image: "/finance.png",
+  },
+  {
+    title: "Finance &\nCompliance",
+    description:
+      "Fee management, collections, budgeting, expense tracking and financial visibility.",
+    deliverables: "Fee collection automation, Budget management, Financial reporting",
+    industry: "Finance",
+    image: "/finance.png",
+  },
+  {
+    title: "People  &\nCulture",
+    description:
+      "HR management, hiring workflows, attendance, performance and retention analytics.",
+    deliverables: "HR management system, Performance tracking, Retention analytics",
+    industry: "Human Resource",
+    image: "/finance.png",
+  },
 ];
+
+const TOTAL_DOTS = cards.length; // 6
 
 function ShowcaseCard({
   title,
@@ -38,6 +64,9 @@ function ShowcaseCard({
   image,
   index,
 }: (typeof cards)[0] & { index: number }) {
+  // Cards are 0-indexed; dot fill count = index + 1
+  const filledDots = index + 1;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -59,35 +88,25 @@ function ShowcaseCard({
           background: "linear-gradient(135deg, #a9acb1 0%, #acafb7 100%)",
         }}
       >
-        
-          <img
-            src={image}
-            alt={title}
-            className="object-cover w-full"
-          />
-        
+        <img src={image} alt={title} className="object-cover w-full" />
       </div>
 
       {/* ── Bottom content ── */}
       <div className="px-10 py-8">
-        {/* Dots */}
+        {/* Progressive dots */}
         <div className="flex items-center gap-2 mb-6">
-          <span
-            className="w-2.5 h-2.5 rounded-full"
-            style={{ background: "#ef4444" }}
-          />
-          <span
-            className="w-2.5 h-2.5 rounded-full"
-            style={{ background: "rgba(0,0,0,0.12)" }}
-          />
-          <span
-            className="w-2.5 h-2.5 rounded-full"
-            style={{ background: "rgba(0,0,0,0.12)" }}
-          />
-          <span
-            className="w-2.5 h-2.5 rounded-full"
-            style={{ background: "rgba(0,0,0,0.12)" }}
-          />
+          {Array.from({ length: TOTAL_DOTS }).map((_, dotIndex) => (
+            <span
+              key={dotIndex}
+              className="w-2.5 h-2.5 rounded-full transition-colors duration-300"
+              style={{
+                background:
+                  dotIndex < filledDots
+                    ? "#ef4444"
+                    : "rgba(0,0,0,0.12)",
+              }}
+            />
+          ))}
         </div>
 
         {/* Info row */}
@@ -96,9 +115,7 @@ function ShowcaseCard({
           style={{ gridTemplateColumns: "1.2fr 1.5fr 1.2fr 0.6fr" }}
         >
           {/* Title */}
-          <h3
-            className="font-interTight text-2xl font-bold text-[#1a1a1c] leading-tight whitespace-pre-line"
-          >
+          <h3 className="font-interTight text-2xl font-bold text-[#1a1a1c] leading-tight whitespace-pre-line">
             {title}
           </h3>
 
@@ -158,12 +175,9 @@ export default function Showcase() {
         >
           <h2 className="font-interTight text-4xl lg:text-5xl font-extrabold text-[#1a1a1c] leading-tight mb-4">
             Everything Your Institution Runs On
-
           </h2>
           <p className="text-lg text-[#6b7a8d] max-w-xl mx-auto">
-           One ecosystem covering academics, operations, finance, and intelligence.
-
-
+            One ecosystem covering academics, operations, finance, and intelligence.
           </p>
         </motion.div>
 

@@ -234,7 +234,7 @@ export default function Featuressection() {
             Human-First AI
           </h3>
           <p className="m-0 leading-relaxed" style={{ fontSize: 15, color: "#6b7a8d" }}>
-            AI provides insights. Leadership makes decisions. Your judgment remains central.
+             AI provides insights. algorithm optimize data. Leadership makes decisions. Your judgment remains central.
           </p>
         </motion.div>
 
