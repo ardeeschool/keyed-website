@@ -308,7 +308,7 @@ const sections: Section[] = [
     number: '04',
     title: 'AI & Analytics',
     subtitle: 'Real-time dashboards, predictive insights and institutional health analytics through AI.',
-    bullets: ['Live dashboards', 'Predictive analytics', 'KeyEd Score™ tracking'],
+    bullets: ['Live dashboards', 'Predictive analytics', 'weekly scoring with drill-down visiblity across institution pillars'],
     mockup: <AnalyticsMockup />,
     accent: 'bg-primary',
   },

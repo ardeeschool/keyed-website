@@ -221,7 +221,7 @@ function CustomSelect({
         style={{
           background: "rgba(255,255,255,0.06)",
           border: "1px solid rgba(255,255,255,0.1)",
-          color: value ? "#fff" : "#000",
+          color: value ? "#000" : "#000",
         }}
       >
         <span>{value || placeholder}</span>
@@ -260,7 +260,7 @@ function CustomSelect({
                   color:
                     value === opt
                       ? "#fff"
-                      : "#000",
+                      : "#fff",
                   background:
                     value === opt
                       ? "rgba(255,255,255,0.08)"
@@ -344,7 +344,6 @@ function FormInput({
 function ApplicationForm() {
   const [form, setForm] = useState({
     profile: "",
-    profileName: "",
     fullName: "",
     email: "",
     mobile: "",
@@ -358,6 +357,8 @@ function ApplicationForm() {
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitted, setSubmitted] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
+ const [submitting, setSubmitting] = useState(false);
+  const [apiError, setApiError] = useState("");
 
   const set = (field: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
     setForm((p) => ({ ...p, [field]: e.target.value }));
@@ -366,7 +367,6 @@ function ApplicationForm() {
     const err: Record<string, string> = {};
 
     if (!form.profile) err.profile = "Please select a profile";
-    if (!form.profileName.trim()) err.profileName = "Profile name is required";
     if (!form.fullName.trim()) err.fullName = "Full name is required";
 
     if (!form.email.trim()) err.email = "Email is required";
@@ -395,12 +395,45 @@ function ApplicationForm() {
     return Object.keys(err).length === 0;
   }
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    if (validate()) {
-      setSubmitted(true);
+  async function handleSubmit(e: React.FormEvent) {
+  e.preventDefault();
+  setApiError("");
+
+  if (!validate()) return;
+
+  setSubmitting(true);
+
+  try {
+    const body = new FormData();
+    body.append("profile", form.profile);
+    body.append("fullName", form.fullName);
+    body.append("email", form.email);
+    body.append("mobile", form.mobile);
+    body.append("experience", form.experience);
+    body.append("dob", form.dob);
+    body.append("city", form.city);
+    body.append("address", form.address);
+    body.append("message", form.message);
+    if (file) body.append("cv", file);
+
+    const res = await fetch("/api/career-apply", {
+      method: "POST",
+      body,
+    });
+
+    if (!res.ok) {
+      const data = await res.json();
+      throw new Error(data.error || "Something went wrong");
     }
+
+    setSubmitted(true);
+  } catch (err: any) {
+    setApiError(err.message || "Failed to submit. Please try again.");
+  } finally {
+    setSubmitting(false);
   }
+}
+
 
   function handleFile(e: React.ChangeEvent<HTMLInputElement>) {
     const f = e.target.files?.[0];
@@ -415,9 +448,9 @@ function ApplicationForm() {
         className="text-center py-20"
       >
         <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
-          <Briefcase className="w-9 h-9 text-white" />
+          <Briefcase className="w-9 h-9 text-primary" />
         </div>
-        <h3 className="font-interTight text-3xl font-bold text-white mb-3">
+        <h3 className="font-interTight text-3xl font-medium text-primary mb-3">
           Application Submitted
         </h3>
         <p className="text-gray-400 text-lg max-w-md mx-auto">
@@ -452,14 +485,7 @@ function ApplicationForm() {
           />
         </div>
 
-        <FormInput
-          label="Profile Name"
-          name="profileName"
-          placeholder="e.g. john_doe"
-          value={form.profileName}
-          onChange={set("profileName")}
-          error={errors.profileName}
-        />
+        
         <FormInput
           label="Full Name"
           name="fullName"
@@ -616,30 +642,43 @@ function ApplicationForm() {
           onChange={(e) =>
             setForm((p) => ({ ...p, message: e.target.value }))
           }
-          className="shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff]  w-full px-5 py-4 rounded-2xl text-base text-white placeholder-black/35 outline-none transition-all focus:ring-2 focus:ring-white/20 resize-none"
+          className="shadow-[inset_4px_4px_10px_#c8d0e0,inset_-4px_-4px_10px_#ffffff]  w-full px-5 py-4 rounded-2xl text-base text-primary placeholder-black/35 outline-none transition-all focus:ring-2 focus:ring-white/20 resize-none"
           style={{
             background: "rgba(255, 255, 255, 0.06)",
             border: "1px solid rgba(255,255,255,0.1)",
           }}
         />
       </div>
+{apiError && (
+  <div className="mt-5 px-5 py-4 rounded-2xl text-sm text-red-500 bg-red-50 border border-red-100">
+    {apiError}
+  </div>
+)}
 
       {/* Submit */}
-      <motion.button
-        whileHover={{ scale: 1.01 }}
-        whileTap={{ scale: 0.98 }}
-        type="submit"
-        className="mt-8 w-full py-4 rounded-2xl text-base font-semibold cursor-pointer transition-all"
-        style={{
-          background:
-            "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%), linear-gradient(0deg, #000000, #000000)",
-          color: "#fff",
-          boxShadow:
-            "0px -3px 0px 0px #080808 inset, 0px 1px 0px 0px rgba(255,255,255,0.302) inset, 0px 2.77px 2.21px 0px rgba(0,0,0,0.122), 0px 6.65px 5.32px 0px rgba(0,0,0,0.129), 0px 12.52px 10.02px 0px rgba(0,0,0,0.133)",
-        }}
-      >
-        Submit Application
-      </motion.button>
+                <motion.button
+            whileHover={{ scale: submitting ? 1 : 1.01 }}
+            whileTap={{ scale: submitting ? 1 : 0.98 }}
+            type="submit"
+            disabled={submitting}
+            className="mt-8 w-full py-4 rounded-2xl text-base font-semibold cursor-pointer transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+            style={{
+              background:
+                "radial-gradient(62.56% 62.56% at 28.14% -10.42%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0) 100%), linear-gradient(0deg, #000000, #000000)",
+              color: "#fff",
+              boxShadow:
+                "0px -3px 0px 0px #080808 inset, 0px 1px 0px 0px rgba(255,255,255,0.302) inset, 0px 2.77px 2.21px 0px rgba(0,0,0,0.122), 0px 6.65px 5.32px 0px rgba(0,0,0,0.129), 0px 12.52px 10.02px 0px rgba(0,0,0,0.133)",
+            }}
+          >
+            {submitting ? (
+              <span className="inline-flex items-center gap-2">
+                Submitting
+                <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+              </span>
+            ) : (
+              "Submit Application"
+            )}
+          </motion.button>
     </form>
   );
 }

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState, useRef } from 'react'
 import { ShieldCheck, ArrowRight, Play } from 'lucide-react'
 
-const cyclingWords = ['Platform.', 'Login.', 'Source of Truth.']
+const cyclingWords = ['Performance made visible', 'Effort measured weekly.', 'Growth you can act on.']
 const stats = [
   { value: 20, suffix: '+', label: 'Years Experience' },
   { value: 100, suffix: '%', label: 'Data Unified' },
@@ -130,21 +130,21 @@ const Homecomp = () => {
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-white shadow-sm border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
               <ShieldCheck className="w-4 h-4" />
-              Trusted by Leading Institutions
+              Built from 20+ years of operating schools across India.
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6">
-              <span className="text-primary">One </span>
+              
               <TypewriterCycle />
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-[#4A5568] text-lg leading-relaxed max-w-lg mb-8">
-              Run your entire institution on a single intelligent platform —
-              academics, operations, finance, admissions, analytics, and growth in one ecosystem.
+              KeyEd is a unified School Operating System with a built-in Performance Engine that measures how efficiently your institution converts effort into measurable growth — week by week.
+
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
@@ -152,7 +152,8 @@ const Homecomp = () => {
               className="flex flex-col sm:flex-row items-start gap-4 mb-6">
               <Link href="/contact-us"
                 className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors">
-                Request Demo <ArrowRight className="w-4 h-4" />
+               Request Walkthrough 
+ <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/solution"
                 className="inline-flex items-center gap-2 px-7 py-4 border-2 border-gray-800 text-gray-800 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all">
