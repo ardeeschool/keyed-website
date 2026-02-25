@@ -1,30 +1,33 @@
-import HeroSection from '@/components/home/HeroSection'
-import EcosystemCircle from '@/components/home/EcosystemCircle'
-import EcosystemCircleCustomIcons from '@/components/home/Ecosystemcirclecustomicons'
-import WhatIsKeyEd from '@/components/home/WhatIsKeyEd'
-import HowKeyEdAddsValues from '@/components/home/Howkeyedaddsvalues'
-import ModuleCategories from '@/components/home/Modulecategories'
-import KeyedLeadership from '@/components/home/KeyedLeadership'
-import KeyEdScore from '@/components/home/Keyedscore'
-import MobileModuleCarousel from '@/components/home/MobileModuleCarousel'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
+import Homecomp2 from '@/components/home/Homecomp2'
+import Header from '@/components/layout/Headertwo'
+import InstitutionModules from "@/components/all-instiutions/all";
+import Features from '@/components/home/Features'
+import WhatIsKeyEds from '@/components/home/WhatIsKeyEds'
+import BuiltByEducators from '@/components/home/BuiltByEducators'
+import KeyEdScoreSection from '@/components/home/Keyedscoresection';
+import ValueSection from '@/components/home/Valuesection';
+import Showcase from '@/components/home/Showcase';
+import Ctatop from '@/components/home/Ctatop';
+
+import Footertop from '@/components/layout/footertop'
 export default function Home() {
   return (
    
     <main>
-    <Header />
-      <HeroSection />
-  
-       <WhatIsKeyEd />
-       <HowKeyEdAddsValues />
-            <EcosystemCircleCustomIcons />
-            <MobileModuleCarousel />
-       <ModuleCategories />
-       <KeyEdScore />
-       <KeyedLeadership />
-
-       <Footer />
+         <Header />
+      <Homecomp2 />
+         <WhatIsKeyEds />
+          <KeyEdScoreSection />
+             <BuiltByEducators />
+              <ValueSection />
+   
+    <Showcase />
+   
+    
+       <InstitutionModules />
+      
+       <Ctatop />
+        <Footertop />
     </main>
   )
 }

@@ -1,5 +1,6 @@
 "use client";
-
+import Link from "next/link";
+import Image from "next/image";
 const navLinks = [
   { label: "Home", href: "/home2" },
   { label: "Solutions", href: "/solution" },
@@ -70,16 +71,19 @@ export default function Footer() {
             <div className="flex flex-col gap-4 max-w-xs">
               {/* Logo */}
               <div className="flex items-baseline gap-0.5">
-                <span
-                  className="font-bold text-[28px] text-primary tracking-tight"
-                >
-                  KeyEd
-                </span>
-                <span
-                  className="font-bold text-[12px] text-orange-400 align-super leading-none ml-0.5"
-                >
-                  ™
-                </span>
+                  <Link
+  href="/"
+  className="flex items-baseline gap-0.5 flex-shrink-0 no-underline"
+>
+  <Image
+    src="/keylogo.svg"
+    alt="KeyEd™"
+    width={110}
+    height={36}
+    priority
+  />
+</Link>
+                
               </div>
 
               <p className="text-[11px] font-semibold tracking-[0.2em] text-primary uppercase">

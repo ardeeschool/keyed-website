@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-
+import Image from "next/image";
 
 const navLinks = [
-  { label: "Home", href: "/home2" },
+  { label: "Home", href: "/" },
   { label: "Who We Are", href: "/who-we-are" },
   { label: "Platform", href: "/solution" },
   { label: "AI & Intelligence", href: "/ai" },
@@ -40,14 +40,18 @@ export default function Navbar() {
       <div className="w-full px-[55px] h-[80px] flex items-center justify-between">
 
         {/* LEFT — Logo */}
-        <Link href="/home2" className="flex items-baseline gap-0.5 flex-shrink-0 no-underline">
-          <span className="font-bold text-[30px] text-[#0d1b35] tracking-tight font-montserrat">
-            KeyEd
-          </span>
-          <span className="font-bold text-[11px] text-primary-dark] align-super leading-none ml-px">
-            ™
-          </span>
-        </Link>
+       <Link
+  href="/"
+  className="flex items-baseline gap-0.5 flex-shrink-0 no-underline"
+>
+  <Image
+    src="/keylogo.svg"
+    alt="KeyEd™"
+    width={110}
+    height={36}
+    priority
+  />
+</Link>
 
         {/* RIGHT — Nav links + CTA (desktop) */}
         {/* Desktop Menu */}
