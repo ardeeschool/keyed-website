@@ -72,7 +72,7 @@ export default function Capabilities() {
       {/* Header */}
       <div className="text-center mb-20">
         <h2 className="text-4xl font-bold text-primary">
-          IntelligenceCapabilities
+          Intelligent Capabilities
         </h2>
         <p className="mt-3 text-#000 text-base">
           AI-powered insights across every aspect of your institution

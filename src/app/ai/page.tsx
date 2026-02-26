@@ -21,7 +21,7 @@ export default function ai() {
      
        <Intelligence />
        <Capabilities />
-       <AIPrinciples />
+       {/* <AIPrinciples /> */}
         <Ctatop />
             <Footertop />
 
