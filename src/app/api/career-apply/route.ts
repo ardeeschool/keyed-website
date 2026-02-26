@@ -1,8 +1,9 @@
 import nodemailer from "nodemailer";
-import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 
-// ── Gmail SMTP transporter ──
+// ─────────────────────────────────────────────
+// Gmail SMTP transporter
+// ─────────────────────────────────────────────
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -10,43 +11,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.GMAIL_APP_PASSWORD,
   },
 });
-
-// ── Google Sheets auth ──
-function getGoogleSheets() {
-  const auth = new google.auth.JWT({
-    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  return google.sheets({ version: "v4", auth });
-}
-
-// ── Append row to Google Sheet ──
-async function appendToSheet(data: string[]) {
-  if (
-    !process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ||
-    !process.env.GOOGLE_PRIVATE_KEY ||
-    !process.env.GOOGLE_SHEET_ID
-  ) {
-    console.log("Google Sheets not configured — skipping");
-    return;
-  }
-
-  try {
-    const sheets = getGoogleSheets();
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: "Career!A:L",
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [data],
-      },
-    });
-  } catch (error) {
-    console.error("Google Sheets error:", error);
-  }
-}
 
 export async function POST(req: NextRequest) {
   try {
@@ -64,12 +28,12 @@ export async function POST(req: NextRequest) {
     const message = (formData.get("message") as string) || "";
     const cvFile = formData.get("cv") as File | null;
 
-    // ── Server-side validation ──
+    // ── Validation ──
     if (
+      !profile ||
       !fullName ||
       !email ||
       !mobile ||
-      !profile ||
       !experience ||
       !dob ||
       !city ||
@@ -89,7 +53,9 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // ── Prepare CV attachment for email ──
+    // ─────────────────────────────────────────────
+    // Prepare CV attachment (for email only)
+    // ─────────────────────────────────────────────
     const attachments: { filename: string; content: Buffer }[] = [];
     let cvFileName = "Not uploaded";
 
@@ -99,42 +65,53 @@ export async function POST(req: NextRequest) {
         filename: cvFile.name,
         content: Buffer.from(bytes),
       });
+
       cvFileName = `${cvFile.name} (${(cvFile.size / 1024 / 1024).toFixed(1)} MB)`;
     }
 
-    // ── 1. Save to Google Sheets ──
     const timestamp = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
     });
 
-    await appendToSheet([
-      timestamp,
-      profile,
-      fullName,
-      email,
-      mobile,
-      experience,
-      dob,
-      city,
-      address,
-      message,
-      cvFileName,
-    ]);
+    // ─────────────────────────────────────────────
+    // 1️⃣ Send data to Google Apps Script (Sheet)
+    // ─────────────────────────────────────────────
+    const sheetResponse = await fetch(process.env.GOOGLE_SCRIPT_URL!, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    sheetName: "Career",
+    timestamp,
+    profile,
+    fullName,
+    email,
+    mobile,
+    experience,
+    dob,
+    city,
+    address,
+    message,
+  }),
+});
 
-    // ── 2. Send email ──
+const sheetResult = await sheetResponse.text();
+console.log("Sheet response:", sheetResult);
+
     const htmlBody = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #09090B; padding: 32px; border-radius: 16px 16px 0 0;">
           <h1 style="color: #ffffff; font-size: 24px; margin: 0 0 4px;">New Job Application</h1>
-          <p style="color: rgba(255,255,255,0.5); font-size: 14px; margin: 0;">KeyEd Career Page &middot; ${profile}</p>
+          <p style="color: rgba(255,255,255,0.5); font-size: 14px; margin: 0;">KeyEd Career Page · ${profile}</p>
         </div>
 
-        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 16px 16px; overflow: hidden;">
+        <div style="background: #ffffff; border: 1px solid #e5e7eb; border-top: none; border-radius: 0 0 16px 16px;">
           <table style="width: 100%; border-collapse: collapse;">
             ${row("Submitted", timestamp)}
             ${row("Applied For", profile)}
             ${row("Full Name", `<strong>${fullName}</strong>`)}
-            ${row("Email", `<a href="mailto:${email}" style="color:#019192;text-decoration:none;">${email}</a>`)}
+            ${row("Email", `<a href="mailto:${email}">${email}</a>`)}
             ${row("Mobile", mobile)}
             ${row("Experience", experience)}
             ${row("Date of Birth", dob)}
@@ -146,7 +123,7 @@ export async function POST(req: NextRequest) {
         </div>
 
         <p style="color: #9ca3af; font-size: 12px; text-align: center; margin-top: 24px;">
-          This email was sent automatically from keyed.in career page
+          This email was sent automatically from keyedsolution.com career page
         </p>
       </div>
     `;
@@ -170,11 +147,13 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// ── Helper: email table row ──
+// ─────────────────────────────────────────────
+// Helper for email rows
+// ─────────────────────────────────────────────
 function row(label: string, value: string) {
   return `
     <tr>
-      <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#6b7a8d;font-size:13px;width:140px;vertical-align:top;">${label}</td>
+      <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#6b7a8d;font-size:13px;width:140px;">${label}</td>
       <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#1a1a1c;font-size:14px;">${value}</td>
     </tr>
   `;
