@@ -87,9 +87,9 @@ export default function HeroBanner() {
         <motion.div
           className="inline-flex items-center gap-2 px-5 py-2 rounded-full backdrop-blur-sm"
           style={{
-            background: "rgba(255,255,255,0.75)",
-            border: "0px solid #f0c9a8",
-            boxShadow: "0 2px 12px rgba(0,0,0,0.06)",
+            background: "",
+            border: "",
+            boxShadow: "",
           }}
           variants={badgeVariants}
           initial="hidden"

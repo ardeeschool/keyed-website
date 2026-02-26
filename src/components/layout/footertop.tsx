@@ -76,7 +76,7 @@ export default function Footer() {
   className="flex items-baseline gap-0.5 flex-shrink-0 no-underline"
 >
   <Image
-    src="/keylogo.svg"
+    src="/key.svg"
     alt="KeyEd™"
     width={110}
     height={36}
