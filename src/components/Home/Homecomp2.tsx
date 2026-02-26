@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { useEffect, useState, useRef } from 'react'
 import { ShieldCheck, ArrowRight, Play } from 'lucide-react'
 
-const cyclingWords = ['Performance made visible', 'Effort measured weekly.', 'Growth you can act on.']
+const cyclingWords = ['Performance made visible', 'Effort measured weekly.', 'Growth you can act on.', 'One Platform.', 'One Login.', 'One Source of Truth.' ]
 const stats = [
   { value: 20, suffix: '+', label: 'Years Experience' },
   { value: 100, suffix: '%', label: 'Data Unified' },
@@ -45,7 +45,7 @@ function TypewriterCycle() {
       to-secondary
       bg-clip-text
       text-transparent
-      min-w-[2ch]">
+      min-w-[1ch]">
       {displayed}
       <span className="inline-block
         ml-0.5
@@ -120,8 +120,8 @@ function FloatCard({
 // ─────────────────────────────────────────────
 const Homecomp = () => {
   return (
-    <section className="pb-20 flex items-center pt-20 overflow-hidden" style={{ background: '#FAF7F2' }}>
-      <div className="container mx-auto px-6 max-w-6xl">
+    <section className="pb-20 flex items-center pt-20 overflow-hidden px-20" style={{ background: '#FAF7F2' }}>
+      <div className="mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
           {/* ── Left ── */}
@@ -161,11 +161,7 @@ const Homecomp = () => {
               </Link>
             </motion.div>
 
-            <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-gray-600 text-sm italic font-semibold mb-10">
-              Built from 20+ years of running real schools.
-            </motion.p>
+           
 
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}

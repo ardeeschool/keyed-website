@@ -1,14 +1,15 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image';
 import { useRef, useEffect, useState } from "react";
 import { Sparkles } from 'lucide-react'
 
 const metrics = [
-    { label: 'Learning Impact',         value: 88, description: 'Are students improving?' },
-  { label: 'Teaching Discipline',       value: 92, description: 'Are classrooms executing consistently?' },
-  { label: 'Operational Control',          value: 76, description: 'Are systems tight and responsive?' },
-  { label: 'Institutional Health',          value: 83, description: 'Based on all scores is the institution stable and sustainable?' },
+    { label: 'Learning Impact',         value: 88, description: 'Are students improving?',  imgurl:'/images/studnt.png' },
+  { label: 'Teaching Discipline',       value: 92, description: 'Are classrooms executing consistently?', imgurl:'/images/teaching.png' },
+  { label: 'Operational Control',          value: 76, description: 'Are systems tight and responsive?', imgurl:'/images/transaction-tracking.svg' },
+  { label: 'Institutional Health',          value: 83, description: 'Based on all scores is the institution stable and sustainable?', imgurl:'/images/institution.png' },
 
 
 ]
@@ -106,9 +107,16 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
       transition={{ duration: 0.75, delay: index * 0.05 }}
       className="bg-white border border-gray-100 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow"
     >
+ <div className="relative mb-4">
+      <img
+                src={metric.imgurl}
+                alt={metric.label}
+                className="rounded-lg"
+              /> 
+             </div>
       {/* Label + score */} 
       <div className="flex items-center justify-between mb-3">
-        <p className="text-lg font-bold text-gray-800 leading-tight">{metric.label}</p>
+        <p className="text-xl font-bold text-gray-800 leading-tight">{metric.label}</p>
         <span className="text-lg font-bold text-primary tabular-nums">{metric.value}</span>
       </div>
 
@@ -134,7 +142,7 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
 
       {/* Description + status pill */}
       <div className="flex items-start justify-between gap-2">
-        <p className="text-sm text-gray-400 leading-relaxed">{metric.description}</p>
+        <p className="text-md text-gray-400 leading-relaxed">{metric.description}</p>
         <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-gray-50 border border-gray-100 rounded-full text-[10px] font-semibold text-gray-500 whitespace-nowrap flex-shrink-0">
           <span className={`w-1.5 h-1.5 rounded-full ${statusDot}`} />
           {status}

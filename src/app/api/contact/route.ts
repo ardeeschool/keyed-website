@@ -1,8 +1,9 @@
 import nodemailer from "nodemailer";
-import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 
-// ── Gmail SMTP transporter ──
+// ─────────────────────────────────────────────
+// Gmail SMTP transporter
+// ─────────────────────────────────────────────
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
@@ -11,80 +12,55 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// ── Google Sheets auth ──
-function getGoogleSheets() {
-  const auth = new google.auth.JWT({
-    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
-    key: process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n"),
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  return google.sheets({ version: "v4", auth });
-}
-
-// ── Append row to Google Sheet ──
-async function appendToSheet(data: string[]) {
-  if (
-    !process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL ||
-    !process.env.GOOGLE_PRIVATE_KEY ||
-    !process.env.GOOGLE_SHEET_ID
-  ) {
-    console.log("Google Sheets not configured — skipping");
-    return;
-  }
-
-  try {
-    const sheets = getGoogleSheets();
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID,
-      range: "Contact!A:F",
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [data],
-      },
-    });
-  } catch (error) {
-    console.error("Google Sheets error:", error);
-  }
-}
-
 export async function POST(req: NextRequest) {
   try {
-    const body = await req.json();
-    const { name, email, phone, subject, message } = body;
+     const body = await req.json();
+        const { name, email, phone, subject, message } = body;
+    
+        // ── Validation ──
+        if (!name || !email || !message) {
+          return NextResponse.json(
+            { error: "Name, email, and message are required" },
+            { status: 400 }
+          );
+        }
+    
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          return NextResponse.json(
+            { error: "Invalid email address" },
+            { status: 400 }
+          );
+        }
+    
 
-    // ── Validation ──
-    if (!name || !email || !message) {
-      return NextResponse.json(
-        { error: "Name, email, and message are required" },
-        { status: 400 }
-      );
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return NextResponse.json(
-        { error: "Invalid email address" },
-        { status: 400 }
-      );
-    }
-
-    // ── 1. Save to Google Sheets (Contact tab) ──
+ 
+    
     const timestamp = new Date().toLocaleString("en-IN", {
       timeZone: "Asia/Kolkata",
     });
 
-    await appendToSheet([
-      timestamp,
-      name,
-      email,
-      phone || "—",
-      subject || "—",
-      message,
-    ]);
+   
+    const sheetResponse = await fetch(process.env.GOOGLE_SCRIPT_URL!, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    sheetName: "Contact",
+    timestamp,
+    name,
+    email,
+    phone,
+    subject,
+    message,
+  }),
+});
 
-    // ── 2. Send email ──
-    const htmlBody = `
+const sheetResult = await sheetResponse.text();
+console.log("Sheet response:", sheetResult);
+
+   const htmlBody = `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto;">
         <div style="background: #09090B; padding: 32px; border-radius: 16px 16px 0 0;">
           <h1 style="color: #ffffff; font-size: 24px; margin: 0 0 4px;">New Contact Message</h1>
@@ -103,12 +79,12 @@ export async function POST(req: NextRequest) {
         </div>
 
         <p style="color: #9ca3af; font-size: 12px; text-align: center; margin-top: 24px;">
-          This email was sent automatically from keyed.in contact page
+          This email was sent automatically from Keyedsolution.com contact page
         </p>
       </div>
     `;
 
-    await transporter.sendMail({
+     await transporter.sendMail({
       from: `"KeyEd Contact" <${process.env.GMAIL_USER}>`,
       to: process.env.CONTACT_EMAIL,
       replyTo: email,
@@ -118,18 +94,19 @@ export async function POST(req: NextRequest) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error("Contact form error:", error);
+    console.error("Submission error:", error);
     return NextResponse.json(
-      { error: "Failed to send message. Please try again." },
+      { error: "Failed to send application. Please try again." },
       { status: 500 }
     );
   }
 }
 
+
 function row(label: string, value: string) {
   return `
     <tr>
-      <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#6b7a8d;font-size:13px;width:140px;vertical-align:top;">${label}</td>
+      <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#6b7a8d;font-size:13px;width:140px;">${label}</td>
       <td style="padding:14px 20px;border-bottom:1px solid #f3f4f6;color:#1a1a1c;font-size:14px;">${value}</td>
     </tr>
   `;
