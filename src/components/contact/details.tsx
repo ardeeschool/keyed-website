@@ -45,7 +45,7 @@ export default function Details() {
             </div>
 
             {/* Title */}
-            <h3 className="text-[#1a1a1a] text-lg font-bold mb-2 tracking-tight">
+            <h3 className="text-[#1a1a1a] text-lg font-medium mb-2 tracking-tight">
               {title}
             </h3>
 
