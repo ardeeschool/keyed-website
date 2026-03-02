@@ -14,20 +14,16 @@ export default function Home() {
   return (
    
     <main>
-         <Header />
-      <Homecomp2 />
-         <WhatIsKeyEds />
+          <Header />
+          <Homecomp2 />
+          <WhatIsKeyEds />
           <KeyEdScoreSection />
-             <BuiltByEducators />
-              <ValueSection />
-   
-    <Showcase />
-   
-    
-       <InstitutionModules />
-      
-       <Ctatop />
-        <Footertop />
+          <BuiltByEducators />
+          <ValueSection />
+          <Showcase />
+          <InstitutionModules />
+          <Ctatop />
+          <Footertop />
     </main>
   )
 }

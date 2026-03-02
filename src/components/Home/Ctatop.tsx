@@ -26,7 +26,7 @@ export default function CTASectiontop() {
     // sticky + z-index so the NEXT section slides over this one
    
       <section
-        className="relative w-full overflow-hidden py-12 flex items-center justify-center max-w-5xl mx-auto mb-[-100px] z-1 rounded-4xl"
+        className="relative w-full overflow-hidden py-12 flex items-center justify-center max-w-5xl mx-auto mb-[-100px] z-1 md:rounded-4xl"
         style={{
           background: 'linear-gradient(135deg, #6f6f6f 0%, #000000 40%, #3c3c3c 70%, #000000 100%)',
          
@@ -58,7 +58,7 @@ export default function CTASectiontop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl lg:text-3xl font-medium text-white leading-tight mb-5 font-interTight"
+            className="text-2xl lg:text-3xl font-medium text-white leading-tight mb-5 font-interTight"
           >
             See How KeyEd Fits Your Institution
           </motion.h2>
@@ -69,7 +69,7 @@ export default function CTASectiontop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-blue-100/60 text-md leading-relaxed mb-10 max-w-2xl mx-auto"
+            className="text-blue-100/60 text-md leading-relaxed md:mb-10 mb-6 max-w-2xl mx-auto"
           >
             Every institution is different. Our leadership demos are tailored to your structure,
             scale and goals.
@@ -81,10 +81,10 @@ export default function CTASectiontop() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="flex flex-wrap items-center justify-center gap-8 mb-10"
+            className="flex flex-wrap items-center justify-center gap-6 md:gap-8 mb-10"
           >
             {perks.map(({ icon: Icon, label }) => (
-              <div key={label} className="flex items-center gap-2">
+              <div key={label} className="flex items-center gap-2 w-full md:w-auto">
                  <div
         className="w-12 h-12 rounded-xl flex items-center justify-center"
         style={iconStyle}

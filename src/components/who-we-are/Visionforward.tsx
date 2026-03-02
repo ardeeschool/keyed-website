@@ -62,7 +62,7 @@ export default function VisionForwards() {
                 transition={{ duration: 0.5, delay: 0.3 }}
                 className="font-interTight text-3xl lg:text-4xl font-medium text-[#1a1a1c] leading-tight mb-2"
               >
-                From School Operators To
+                From Institute Operators To
                 <br />
                 EdTech{" "}
                 <span className="relative inline-block">

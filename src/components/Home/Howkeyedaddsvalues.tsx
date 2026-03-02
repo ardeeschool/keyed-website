@@ -81,7 +81,7 @@ const values: ValueCard[] = [
 const HowKeyEdAddsValues = () => {
   return (
     <section className="py-10  md:py-20 lg:py-20 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-8xl">
+      <div className="mx-auto px-4 max-w-8xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

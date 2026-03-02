@@ -46,7 +46,7 @@
 
 .transform-bg-polygon-top {
     width: 55%;
-    background: #FAFAFA;
+    background: #fff;
     position: absolute;
     height: 58px;
     display: block;
@@ -65,7 +65,14 @@
     left: 50%;
     z-index: 1;
 }
-
+.transform-bg-polygon-top:before {
+    content: "";
+    position: absolute;
+    height: 40px;
+    top: 0;
+    right: 10.1%;
+    border-left: 1px solid #fff;
+}
 .background-overlayscore{
       background-image: url('/keyEdScoretext.svg');
     background-position: 50% 300px;
@@ -249,6 +256,18 @@
     }
 }
 
+@media (max-width:767px){
+    .background-overlayscore {
+    opacity: 1;
+    background-image: url(/keyEdScoretext.svg);
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.transform-bg-polygon-bottom, .transform-bg-polygon-top {
+    height: 24px;
+}
+}
 @layer base {
   body {
     font-synthesis-weight: none;

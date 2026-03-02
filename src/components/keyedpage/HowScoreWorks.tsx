@@ -12,6 +12,7 @@ import {
   TrendingUp,
   Settings2,
   Users2,
+  ChevronDown,
 } from "lucide-react";
 
 // ─── Steps ────────────────────────────────────────────────────────────────────
@@ -49,6 +50,14 @@ const inputs = [
   { Icon: TrendingUp, label: "Admissions" },
   { Icon: Settings2, label: "Operations" },
   { Icon: Users2, label: "People" },
+];
+
+// ─── Pipeline steps (for flow diagram) ────────────────────────────────────────
+const pipeline = [
+  { Icon: Database, label: "Collect", bg: "bg-black" },
+  { Icon: BrainCircuit, label: "Analyse", bg: "bg-secondary" },
+  { Icon: BarChart3, label: "Calculate", bg: "bg-primary-dark" },
+  { Icon: Lightbulb, label: "Insights", bg: "bg-secondary" },
 ];
 
 // ─── Animated travelling dot along a straight horizontal path ─────────────────
@@ -113,7 +122,7 @@ function StepCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: index * 0.12, ease: [0.16, 1, 0.3, 1] }}
-      className="flex flex-col items-start gap-4 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 relative"
+      className="flex flex-col items-start gap-4 bg-white rounded-2xl p-5 md:p-6 border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-200 relative"
     >
       {/* Step number */}
       <div className="flex items-center gap-3 w-full">
@@ -125,15 +134,92 @@ function StepCard({
       </div>
 
       <div>
-        <h3 className="text-[16px] font-medium text-[#1a2b4a] leading-snug mb-2">{title}</h3>
-        <p className="text-[13.5px] text-[#6b7a8d] leading-relaxed">{desc}</p>
+        <h3 className="text-[15px] md:text-[16px] font-medium text-[#1a2b4a] leading-snug mb-2">{title}</h3>
+        <p className="text-[13px] md:text-[13.5px] text-[#6b7a8d] leading-relaxed">{desc}</p>
       </div>
 
-      {/* Connector dot (right edge, for non-last) */}
+      {/* Connector dot (right edge, desktop only) */}
       {n < 4 && (
-        <div className="absolute -right-[9px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-primary z-10" />
+        <div className="hidden lg:block absolute -right-[9px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-white border-2 border-primary z-10" />
       )}
     </motion.div>
+  );
+}
+
+// ─── Mobile Vertical Flow ─────────────────────────────────────────────────────
+function MobileFlow() {
+  return (
+    <div className="flex flex-col items-center gap-0">
+      {/* Input modules - horizontal wrap */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5 }}
+        className="flex flex-wrap justify-center gap-2 mb-4"
+      >
+        {inputs.map(({ Icon, label }, i) => (
+          <motion.div
+            key={label}
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.3, delay: i * 0.06 }}
+            className="flex items-center gap-1.5 bg-primary border border-gray-200 rounded-lg px-2.5 py-1.5"
+          >
+            <Icon className="w-3.5 h-3.5 text-white" strokeWidth={1.6} />
+            <span className="text-[11px] font-medium text-white">{label}</span>
+          </motion.div>
+        ))}
+      </motion.div>
+
+      {/* Converging arrow */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.4, delay: 0.3 }}
+        className="flex flex-col items-center py-1"
+      >
+        <div className="w-px h-6 bg-gray-200" />
+        <ChevronDown className="w-4 h-4 text-gray-300 -mt-1" />
+      </motion.div>
+
+      {/* Pipeline nodes — vertical */}
+      {pipeline.map((step, i) => (
+        <div key={step.label} className="flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.4, delay: 0.1 + i * 0.1 }}
+            className={`w-16 h-16 rounded-2xl ${step.bg} flex flex-col items-center justify-center shadow-lg`}
+          >
+            <step.Icon className="w-6 h-6 text-white" strokeWidth={1.6} />
+            <span className="text-white text-[9px] font-medium mt-1">{step.label}</span>
+          </motion.div>
+
+          {/* Connector between nodes */}
+          {i < pipeline.length - 1 && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
+              className="flex flex-col items-center py-0.5"
+            >
+              <div className="w-px h-4 border-l border-dashed border-gray-300" />
+              <motion.div
+                className="w-1.5 h-1.5 rounded-full bg-primary"
+                animate={{ y: [0, 6, 0], opacity: [0.3, 1, 0.3] }}
+                transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.3 }}
+              />
+              <div className="w-px h-4 border-l border-dashed border-gray-300" />
+            </motion.div>
+          )}
+        </div>
+      ))}
+    </div>
   );
 }
 
@@ -152,7 +238,7 @@ export default function HowScoreWorks() {
   }, []);
 
   return (
-    <section ref={sectionRef} className=" py-24 px-6 overflow-hidden bg-white">
+    <section ref={sectionRef} className="md:py-24 md:px-6 py-12 px-4 overflow-hidden bg-white">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -161,19 +247,19 @@ export default function HowScoreWorks() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55 }}
-          className="text-center mb-16"
+          className="text-center mb-10 md:mb-16"
         >
-          <h2 className="text-4xl lg:text-5xl font-medium font-interTight text-primary leading-tight mb-3">
+          <h2 className="text-2xl sm:text-3xl lg:text-5xl font-medium font-interTight text-primary leading-tight mb-3">
             How the Score Works
           </h2>
-          <p className="text-[#6b7a8d] text-base">Real-time calculation powered by AI</p>
+          <p className="text-[#6b7a8d] text-sm md:text-base">Real-time calculation powered by AI</p>
         </motion.div>
 
-        {/* ── Flow diagram ── */}
-        <div className="bg-white rounded-3xl border border-gray-100 shadow-sm p-10">
+        {/* ── Flow diagram container ── */}
+        <div className="bg-white rounded-2xl md:rounded-3xl border border-gray-100 shadow-sm p-5 sm:p-6 md:p-10">
 
-          {/* ── Top: input modules → converging into Step 1 ── */}
-          <div className="flex items-center justify-between gap-4 mb-2">
+          {/* ── Desktop: horizontal flow (hidden on mobile) ── */}
+          <div className="hidden lg:flex items-center justify-between gap-4 mb-2">
 
             {/* Input nodes */}
             <div className="flex flex-col gap-3 flex-shrink-0">
@@ -187,7 +273,7 @@ export default function HowScoreWorks() {
                   className="flex items-center gap-2.5 bg-primary border border-gray-200 rounded-xl px-3 py-2"
                 >
                   <Icon className="w-4 h-4 text-white" strokeWidth={1.6} />
-                  <span className="text-[12px] font-semimedium text-white">{label}</span>
+                  <span className="text-[12px] font-medium text-white">{label}</span>
                 </motion.div>
               ))}
             </div>
@@ -201,7 +287,6 @@ export default function HowScoreWorks() {
                   preserveAspectRatio="none"
                   className="absolute inset-0"
                 >
-                  {/* Fan-in paths from 5 inputs to centre right */}
                   {[18, 54, 90, 126, 162].map((y, i) => {
                     const d = `M 0 ${y} C 120 ${y} 180 90 300 90`;
                     return (
@@ -221,7 +306,7 @@ export default function HowScoreWorks() {
               <span className="text-white text-[10px] font-medium mt-1">Collect</span>
             </div>
 
-            {/* Straight connecting line + travelling dot to Step 2 */}
+            {/* Connector → Step 2 */}
             <div className="flex-1 relative" style={{ height: 4 }}>
               <div className="absolute inset-y-0 left-0 right-0 flex items-center">
                 <div className="w-full h-px border-t-2 border-dashed border-gray-200" />
@@ -239,7 +324,7 @@ export default function HowScoreWorks() {
               <span className="text-white text-[10px] font-medium mt-1">Analyse</span>
             </div>
 
-            {/* Connector line to Step 3 */}
+            {/* Connector → Step 3 */}
             <div className="flex-1 relative" style={{ height: 4 }}>
               <div className="absolute inset-y-0 left-0 right-0 flex items-center">
                 <div className="w-full h-px border-t-2 border-dashed border-gray-200" />
@@ -257,7 +342,7 @@ export default function HowScoreWorks() {
               <span className="text-white text-[10px] font-medium mt-1">Calculate</span>
             </div>
 
-            {/* Connector to score output */}
+            {/* Connector → Score output */}
             <div className="flex-1 relative" style={{ height: 4 }}>
               <div className="absolute inset-y-0 left-0 right-0 flex items-center">
                 <div className="w-full h-px border-t-2 border-dashed border-gray-200" />
@@ -276,11 +361,16 @@ export default function HowScoreWorks() {
             </div>
           </div>
 
+          {/* ── Mobile: vertical flow (hidden on desktop) ── */}
+          <div className="lg:hidden mb-4">
+            <MobileFlow />
+          </div>
+
           {/* ── Divider ── */}
-          <div className="my-8 border-t border-dashed border-gray-100" />
+          <div className="my-6 md:my-8 border-t border-dashed border-gray-100" />
 
           {/* ── Step cards grid ── */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {steps.map((step, i) => (
               <StepCard key={step.n} {...step} index={i} />
             ))}
@@ -292,9 +382,10 @@ export default function HowScoreWorks() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="mt-8 flex items-center justify-center"
+            className="mt-6 md:mt-8 flex items-center justify-center"
           >
-            <div className="flex items-center gap-4 bg-gray-50 border border-primary-light rounded-2xl px-8 py-4">
+            {/* Desktop: horizontal pill */}
+            <div className="hidden sm:flex items-center gap-4 bg-gray-50 border border-primary-light rounded-2xl px-8 py-4">
               <div className="text-center">
                 <p className="text-[11px] font-medium text-gray-400 uppercase tracking-widest mb-0.5">KeyEd Score™</p>
                 <p className="text-4xl font-black text-primary leading-none">94</p>
@@ -306,7 +397,25 @@ export default function HowScoreWorks() {
                 <p className="text-[12px] text-[#6b7a8d]">Updated every time data changes</p>
                 <div className="flex items-center gap-1.5 mt-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-[11px] text-green-600 font-semimedium">Live · Excellent</span>
+                  <span className="text-[11px] text-green-600 font-medium">Live · Excellent</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Mobile: stacked pill */}
+            <div className="sm:hidden w-full bg-gray-50 border border-primary-light rounded-2xl px-5 py-5">
+              <div className="text-center mb-3">
+                <p className="text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-1">KeyEd Score™</p>
+                <p className="text-4xl font-black text-primary leading-none">94</p>
+                <p className="text-[10px] text-gray-400 mt-1">out of 100</p>
+              </div>
+              <div className="h-px w-full bg-gray-200 mb-3" />
+              <div className="text-center">
+                <p className="text-sm font-medium text-[#1a2b4a] mb-0.5">Institutional Health</p>
+                <p className="text-[12px] text-[#6b7a8d]">Updated every time data changes</p>
+                <div className="flex items-center justify-center gap-1.5 mt-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                  <span className="text-[11px] text-green-600 font-medium">Live · Excellent</span>
                 </div>
               </div>
             </div>

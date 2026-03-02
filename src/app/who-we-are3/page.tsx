@@ -25,8 +25,7 @@ export default function SolutionPage() {
        <Header />
       
        <Hero />
-  
-<Ardeeblack />
+   <Legacyupdated />
 
 <Stats />
 <WhyKeyEdCreated />

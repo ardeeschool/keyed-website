@@ -14,10 +14,7 @@ const navLinks = [
 export default function Footer() {
   return (
     <footer
-      className="relative w-full text-white overflow-hidden pt-24"
-      style={{
-        background: "#F6F6F6",
-      }}
+      className="relative w-full text-white overflow-hidden pt-24 bg-[#F6F6F6]"
     >
 
       {/* Wave top — matches page bg */}
@@ -38,7 +35,7 @@ export default function Footer() {
 
       {/* Decorative background text */}
       <div
-        className="absolute inset-0 flex items-center justify-end pointer-events-none select-none overflow-hidden"
+        className="absolute inset-0 md:flex hidden items-center justify-end pointer-events-none select-none overflow-hidden"
         aria-hidden="true"
       >
         <span
@@ -48,7 +45,6 @@ export default function Footer() {
             opacity: 0.06,
             letterSpacing: "-0.03em",
             whiteSpace: "nowrap",
-            fontFamily: "'Georgia', serif",
           }}
         >
           The Power
@@ -58,40 +54,37 @@ export default function Footer() {
       </div>
 
       {/* Orange accent line */}
-    
+
 
       {/* Main content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-12 pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 pt-4 md:pt-12 pb-4 md:pb-10">
         <div className="flex flex-col lg:flex-row items-start gap-16 flex-wrap">
 
           {/* LEFT — Brand + Quick Links side by side */}
-          <div className="flex flex-row items-start gap-16">
+          <div className="flex flex-col md:flex-row items-start gap-8 md:gap-16">
 
             {/* Brand block */}
             <div className="flex flex-col gap-4 max-w-xs">
               {/* Logo */}
               <div className="flex items-baseline gap-0.5">
-                  <Link
-  href="/"
-  className="flex items-baseline gap-0.5 flex-shrink-0 no-underline"
->
-  <Image
-    src="/key.svg"
-    alt="KeyEd™"
-    width={110}
-    height={36}
-    priority
-  />
-</Link>
-                
+                <Link
+                  href="/"
+                  className="flex items-baseline gap-0.5 flex-shrink-0 no-underline"
+                >
+                  <Image
+                    src="/key.svg"
+                    alt="KeyEd™"
+                    width={110}
+                    height={36}
+                    priority
+                  />
+                </Link>
+
               </div>
 
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-primary uppercase">
-                An Ardee Venture
-              </p>
 
               <p className="text-[14px] text-primary leading-relaxed">
-               The unified operating system for modern educational institutions.
+                The unified operating system for modern educational institutions.
               </p>
 
               <p className="text-[13px] text-black leading-relaxed">
@@ -107,7 +100,7 @@ export default function Footer() {
               </div>
 
 
-               <div className="flex items-center gap-2 mt-1">
+              <div className="flex items-center gap-2 mt-1">
                 <a href="#" aria-label="Instagram"
                   className="w-9 h-9 rounded-lg border border-white/15 flex items-center justify-center text-primary hover:text-white hover:border-orange-400 hover:bg-orange-400/10 transition-all duration-200 no-underline">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -153,33 +146,33 @@ export default function Footer() {
 
             {/* Get In Touch — beside Quick Links */}
             <div className="flex flex-col gap-4">
-          
 
-          
+
+
             </div>
 
           </div>{/* end all columns */}
         </div>
 
         {/* Bottom bar */}
-        
+
       </div>
 
 
 
-<div className="mt-12 p-6 border-t border-white/10  bg-black">
-<div className="relative z-10 max-w-7xl mx-auto px-6  flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[13px] text-white/60">
+      <div className="mt-0 md:mt-12 p-6 border-t border-white/10  bg-black">
+        <div className="relative z-10 max-w-7xl mx-auto px-6  flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p className="text-xs text-white/60">
             © 2026 KeyEd. All rights reserved. Built by educators, for educators.
           </p>
-          <div className="flex items-center gap-1.5">
+          <div className="flex items-center gap-1.5 w-full md:w-auto">
             <div className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-            <span className="text-[12px] text-white/60">
+            <span className="text-xs text-white/60">
               Empowering learners worldwide
             </span>
           </div>
         </div>
-</div>
+      </div>
 
     </footer>
   );

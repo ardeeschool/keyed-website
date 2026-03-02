@@ -7,7 +7,7 @@ import { ShieldCheck, ArrowRight } from 'lucide-react'
 
 export default function Hero() {
   return (
-    <section className="bg-[#FDFDFD]  flex px-20 py-16  items-center overflow-hidden">
+    <section className="bg-[#f3f3f3]  flex px-20 py-16  items-center overflow-hidden">
       <div className="w-full">
         <div className="flex  gap-12 items-center">
 
@@ -15,15 +15,28 @@ export default function Hero() {
            *  LEFT — Text content (50%)
            * ═══════════════════════════════════════════ */}
           <div className="w-5xl m-auto text-center">
-            {/* Small text / badge */}
+            {/* Small text / badge 
          <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
               className="inline-flex items-center gap-2 bg-white shadow-sm border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 relative">
               <ShieldCheck className="w-4 h-4" />
               Trusted by Leading Institutions
             </motion.div>
-
+*/}
             {/* Heading */}
+
+             <div className="flex items-center justify-center mb-6">
+                        <div className="w-24 h-24 rounded-md relative shadow-sm border bg-primary-dark border-primary/30 overflow-hidden">
+                          <Image
+                            src="/agwhite.png"
+                            alt="Ardee Sign"
+                            fill
+                            className="object-contain"
+                          />
+                        </div>
+                      </div>
+
+
             <div className="topheadings relative">
             <div className="pxl-container-border pxl-container-border__style-1">
                 <span className="pxl-container-border__item pxl-container-border__item-top"></span>
@@ -32,9 +45,29 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.15 }}
-              className="font-interTight text-5xl lg:text-5xl font-medium text-[#1a1a1c] leading-[1.08] mt-7 mb-6 py-4"
+              className="font-interTight text-4xl lg:text-6xl font-medium text-primary-dark leading-[1.08] mt-7 mb-6 py-4 pb-0"
+            >The Ardee Legacy </motion.h1>
+
+
+              <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="text-lg text-[#6b7a8d] leading-relaxed w-3xl m-auto mb-10 pb-4"
+            > Over two decades of building institutions — in education and <br/>infrastructure — that stand the test of time.
+             </motion.p>
+             
+            </div>
+
+             <div className="topheadings relative">
+           
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15 }}
+              className="font-interTight text-3xl lg:text-3xl font-medium text-primary/50 leading-[1.08] mt-7 mb-6 py-4"
             >
-             Built From Real Educational Experience
+             Built by knowledge from multiple industries.
 
             </motion.h1>
             </div>
@@ -44,11 +77,8 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
               className="text-lg text-[#6b7a8d] leading-relaxed w-3xl m-auto mb-10"
-            >
-             KeyEd wasn't built in a tech lab. It was born from decades of running real schools, facing real challenges, and finding real solutions.
-
-
-            </motion.p>
+            > KeyEd wasn't built in a tech lab. It was born from decades of running real schools, facing real challenges, and finding real solutions.
+             </motion.p>
 
             {/* CTA Buttons */}
             <motion.div
@@ -60,9 +90,9 @@ export default function Hero() {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
               className="flex flex-col sm:flex-row items-start gap-4 mb-6">
-              <Link href="/contact-us"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors">
-                Request Demo <ArrowRight className="w-4 h-4" />
+              <Link href="https://www.theardeegroup.com/"
+                className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors" target="_blank">
+                Know More <ArrowRight className="w-4 h-4" />
               </Link>
               
             </motion.div>
