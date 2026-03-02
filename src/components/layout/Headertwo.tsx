@@ -136,7 +136,7 @@ export default function Navbar() {
             </Link>
           ))}
           <Link
-            href="/contact"
+            href="/contact-us"
             onClick={() => setMenuOpen(false)}
             className="mt-3 flex items-center justify-center px-5 py-2.5 bg-[#0d1b35] text-white text-[15px] font-semibold rounded-lg hover:bg-[#1a3260] transition-colors duration-150 no-underline"
           >

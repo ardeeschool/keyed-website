@@ -140,7 +140,7 @@ export default function Featuressection() {
     >
       {/* ── Heading ── */}
       <h2
-        className="m-0 font-extrabold leading-tight"
+        className="m-0 font-extramedium leading-tight"
         style={{
           ...font,
           fontSize: "clamp(28px, 4vw, 48px)",
@@ -204,7 +204,7 @@ export default function Featuressection() {
             >
               <IconChart />
             </div>
-            <h3 className="m-0 mb-3 font-bold" style={{ fontSize: 18, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
+            <h3 className="m-0 mb-3 font-medium" style={{ fontSize: 18, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
               Predict, Don&apos;t React
             </h3>
             <p className="m-0 leading-relaxed" style={{ fontSize: 15, color: "#6b7a8d" }}>
@@ -230,7 +230,7 @@ export default function Featuressection() {
           >
             <IconPeople />
           </div>
-          <h3 className="m-0 mb-3 font-bold" style={{ fontSize: 20, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
+          <h3 className="m-0 mb-3 font-medium" style={{ fontSize: 20, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
             Human-First AI
           </h3>
           <p className="m-0 leading-relaxed" style={{ fontSize: 15, color: "#6b7a8d" }}>
@@ -267,7 +267,7 @@ export default function Featuressection() {
             >
               <IconLock />
             </div>
-            <h3 className="m-0 mb-3 font-bold" style={{ fontSize: 18, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
+            <h3 className="m-0 mb-3 font-medium" style={{ fontSize: 18, color: "#1a2b4a", letterSpacing: "-0.01em" }}>
               Secure &amp; Ethical
             </h3>
             <p className="m-0 leading-relaxed" style={{ fontSize: 15, color: "#6b7a8d" }}>
