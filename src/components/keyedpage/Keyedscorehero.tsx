@@ -142,7 +142,7 @@ function HubDiagram() {
             border: "2px solid rgba(249,236,236,0.4)",
           }}
         />
-        <span className="text-white font-extrabold text-md leading-none">KeyEd</span>
+        <span className="text-white font-medium text-md leading-none">KeyEd</span>
         <span className="text-white/70 text-sm mt-0.5">Score</span>
         <span className="text-white font-black text-lg leading-none mt-1">94</span>
       </motion.div>
@@ -184,7 +184,7 @@ function HubDiagram() {
                 <div className="w-7 h-7 rounded-lg flex items-center justify-center flex-shrink-0">
                   <Icon className="w-4 h-4 text-white" strokeWidth={1.8} />
                 </div>
-                <span className="text-white text-[12px] font-bold leading-tight">{n.label}</span>
+                <span className="text-white text-[12px] font-medium leading-tight">{n.label}</span>
               </div>
               <p className="text-white/40 text-xs leading-tight pl-9">{n.sub}</p>
             </div>
@@ -228,7 +228,7 @@ export default function KeyEdScoreHero() {
             className="inline-flex items-center gap-2 mb-6 px-4 py-2 rounded-full border border-white/10 bg-white shadow-sm"
           >
             <Star className="w-3.5 h-3.5 text-primary fill-primary-dark" />
-            <span className="text-primary text-xs font-bold tracking-wide">
+            <span className="text-primary text-xs font-medium tracking-wide">
               India's First Campus Health Score
             </span>
           </motion.div>
@@ -268,7 +268,7 @@ export default function KeyEdScoreHero() {
           >
             <Link
               href="/contact-us"
-              className="inline-flex items-center gap-2.5 px-8 py-4 bg-secondary hover:bg-secondary/70 text-white font-bold text-base rounded-full transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30 no-underline"
+              className="inline-flex items-center gap-2.5 px-8 py-4 bg-secondary hover:bg-secondary/70 text-white font-medium text-base rounded-full transition-all duration-150 hover:-translate-y-0.5 shadow-lg shadow-orange-900/30 no-underline"
             >
               See Your Score
               <ArrowRight className="w-4 h-4" />

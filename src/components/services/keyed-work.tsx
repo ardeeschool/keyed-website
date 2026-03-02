@@ -90,7 +90,7 @@ export default function HowItWorks() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-5xl font-bold text-primary tracking-tight leading-tight">
+        <h2 className="m-0 text-5xl font-medium text-primary tracking-tight leading-tight">
           How KeyEd Works Together
         </h2>
         <p className="mt-3 text-base text-gray-500 font-normal">
@@ -139,7 +139,7 @@ export default function HowItWorks() {
                 <div
                   className={`
                     w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center
-                    text-sm font-bold transition-all duration-200
+                    text-sm font-medium transition-all duration-200
                     ${active === i
                       ? "text-white shadow-md"
                       : "bg-gradient-to-br from-primary-light to-secondary/25 text-white"
@@ -157,7 +157,7 @@ export default function HowItWorks() {
                 {/* Text */}
                 <div className="flex flex-col gap-1.5 pt-0.5">
                   <span
-                    className={`text-[15px] font-bold leading-snug transition-colors duration-200 ${
+                    className={`text-[15px] font-medium leading-snug transition-colors duration-200 ${
                       active === i ? "text-white" : "text-black"
                     }`}
                   >
@@ -195,7 +195,7 @@ export default function HowItWorks() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b4a]/30 via-transparent to-transparent" />
 
                 <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
-                  <span className="text-white text-sm font-semibold bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                  <span className="text-white text-sm font-semimedium bg-black/30 backdrop-blur-sm px-3 py-1.5 rounded-full">
                     {steps[active].title}
                   </span>
 

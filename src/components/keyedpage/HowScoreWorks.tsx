@@ -125,7 +125,7 @@ function StepCard({
       </div>
 
       <div>
-        <h3 className="text-[16px] font-bold text-[#1a2b4a] leading-snug mb-2">{title}</h3>
+        <h3 className="text-[16px] font-medium text-[#1a2b4a] leading-snug mb-2">{title}</h3>
         <p className="text-[13.5px] text-[#6b7a8d] leading-relaxed">{desc}</p>
       </div>
 
@@ -187,7 +187,7 @@ export default function HowScoreWorks() {
                   className="flex items-center gap-2.5 bg-primary border border-gray-200 rounded-xl px-3 py-2"
                 >
                   <Icon className="w-4 h-4 text-white" strokeWidth={1.6} />
-                  <span className="text-[12px] font-semibold text-white">{label}</span>
+                  <span className="text-[12px] font-semimedium text-white">{label}</span>
                 </motion.div>
               ))}
             </div>
@@ -218,7 +218,7 @@ export default function HowScoreWorks() {
             {/* Step 1 node */}
             <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-black flex flex-col items-center justify-center shadow-lg shadow-orange-200">
               <Database className="w-7 h-7 text-white" strokeWidth={1.6} />
-              <span className="text-white text-[10px] font-bold mt-1">Collect</span>
+              <span className="text-white text-[10px] font-medium mt-1">Collect</span>
             </div>
 
             {/* Straight connecting line + travelling dot to Step 2 */}
@@ -236,7 +236,7 @@ export default function HowScoreWorks() {
             {/* Step 2 node */}
             <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-secondary flex flex-col items-center justify-center shadow-lg">
               <BrainCircuit className="w-7 h-7 text-white" strokeWidth={1.6} />
-              <span className="text-white text-[10px] font-bold mt-1">Analyse</span>
+              <span className="text-white text-[10px] font-medium mt-1">Analyse</span>
             </div>
 
             {/* Connector line to Step 3 */}
@@ -254,7 +254,7 @@ export default function HowScoreWorks() {
             {/* Step 3 node */}
             <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-primary-dark flex flex-col items-center justify-center shadow-lg shadow-orange-200 z-10 relative">
               <BarChart3 className="w-7 h-7 text-white" strokeWidth={1.6} />
-              <span className="text-white text-[10px] font-bold mt-1">Calculate</span>
+              <span className="text-white text-[10px] font-medium mt-1">Calculate</span>
             </div>
 
             {/* Connector to score output */}
@@ -272,7 +272,7 @@ export default function HowScoreWorks() {
             {/* Score output */}
             <div className="flex-shrink-0 w-20 h-20 rounded-2xl bg-secondary flex flex-col items-center justify-center shadow-lg z-1 relative">
               <Lightbulb className="w-7 h-7 text-white" strokeWidth={1.6} />
-              <span className="text-white text-[10px] font-bold mt-1">Insights</span>
+              <span className="text-white text-[10px] font-medium mt-1">Insights</span>
             </div>
           </div>
 
@@ -296,17 +296,17 @@ export default function HowScoreWorks() {
           >
             <div className="flex items-center gap-4 bg-gray-50 border border-primary-light rounded-2xl px-8 py-4">
               <div className="text-center">
-                <p className="text-[11px] font-bold text-gray-400 uppercase tracking-widest mb-0.5">KeyEd Score™</p>
+                <p className="text-[11px] font-medium text-gray-400 uppercase tracking-widest mb-0.5">KeyEd Score™</p>
                 <p className="text-4xl font-black text-primary leading-none">94</p>
                 <p className="text-[10px] text-gray-400 mt-0.5">out of 100</p>
               </div>
               <div className="w-px h-12 bg-gray-200" />
               <div className="text-left">
-                <p className="text-sm font-bold text-[#1a2b4a] mb-0.5">Institutional Health</p>
+                <p className="text-sm font-medium text-[#1a2b4a] mb-0.5">Institutional Health</p>
                 <p className="text-[12px] text-[#6b7a8d]">Updated every time data changes</p>
                 <div className="flex items-center gap-1.5 mt-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                  <span className="text-[11px] text-green-600 font-semibold">Live · Excellent</span>
+                  <span className="text-[11px] text-green-600 font-semimedium">Live · Excellent</span>
                 </div>
               </div>
             </div>
