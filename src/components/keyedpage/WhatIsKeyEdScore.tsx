@@ -129,7 +129,7 @@ function DashedCircleProgress({ score = 94 }: { score?: number }) {
     >
       <svg width={SIZE} height={SIZE} className="absolute inset-0">{dashes}</svg>
       <div className="flex flex-col items-center justify-center text-center z-10">
-        <p className="text-gray-400 text-[10px] font-semibold uppercase tracking-widest mb-1">KeyEd Score™</p>
+        <p className="text-gray-400 text-[10px] font-medium uppercase tracking-widest mb-1">KeyEd Score™</p>
         <p className="text-[#1a1a1c] font-black text-6xl leading-none">{score}</p>
         <p className="text-gray-400 text-[11px] mt-2">out of 100</p>
       </div>
@@ -153,7 +153,7 @@ function DimensionCard({
         <Icon className="w-14 h-14 text-[#1a1a1c]" strokeWidth={0.6} />
       </div>
       <div className="flex-1 min-w-0">
-        <h3 className="text-2xl font-normal text-[#1a2b4a] leading-snug mb-1">{title}</h3>
+        <h3 className="text-xl md:text-2xl font-normal text-[#1a2b4a] leading-snug mb-1">{title}</h3>
         <p className="text-sm text-[#6b7a8d] leading-relaxed">{desc}</p>
       </div>
     </motion.div>
@@ -164,11 +164,11 @@ function DimensionCard({
 export default function WhatIsKeyEdScore() {
   return (
     <section className="relative bg-[linear-gradient(180deg,#FFFBFB00_0%,#F5F3F3_100%)]">
-      <div className="mx-auto px-20 pb-32">
-        <div className="flex flex-col lg:flex-row gap-16">
+      <div className="mx-auto px-4 pb-42 md:px-30 md:pb-32">
+        <div className="flex flex-col lg:flex-row gap-4 md:gap-16">
 
           {/* ── LEFT sticky — circle centred ── */}
-          <div className="lg:w-[55%] lg:sticky lg:top-16 lg:h-screen py-20" style={{ display: 'flex', flexDirection: 'column' }}>
+          <div className="lg:w-[55%] lg:sticky lg:top-16 lg:h-screen py-10 pb-0 md:py-20" style={{ display: 'flex', flexDirection: 'column' }}>
 
             <p className="text-xs font-normal text-white bg-[#1a1a1c] w-[150px] p-2 text-center rounded-2xl uppercase tracking-widest mb-4">
               KeyEd Score™
@@ -179,7 +179,7 @@ export default function WhatIsKeyEdScore() {
               <span className="text-[#1a1a1c] p-2 rounded-xl">KeyEd Score™?</span>
             </h2>
 
-            <p className="text-[#6b7a8d] text-md mb-6 mt-6">
+            <p className="text-[#6b7a8d] text-md md:mb-6 md:mt-6 mb-2 mt-2">
               A real-time health indicator for educational institutions
             </p>
 
@@ -202,7 +202,7 @@ export default function WhatIsKeyEdScore() {
           </div>
 
           {/* ── RIGHT scrolling cards ── */}
-          <div className="lg:w-[45%] py-20 lg:py-28 flex flex-col gap-4">
+          <div className="lg:w-[45%] md:py-20 py-4 lg:py-28 flex flex-col gap-4">
 
             {/*<motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -230,7 +230,7 @@ export default function WhatIsKeyEdScore() {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="mt-2 rounded-2xl p-5 text-center border-2 border-dashed border-gray-200 bg-gray-50"
             >
-              <p className="text-sm font-bold text-[#1a2b4a] mb-1">
+              <p className="text-sm font-medium text-[#1a2b4a] mb-1">
                 All 7 dimensions · Weighted & calculated in real-time
               </p>
               <p className="text-xs text-[#6b7a8d]">

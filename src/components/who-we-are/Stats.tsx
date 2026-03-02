@@ -54,7 +54,7 @@ function CountUp({
 
 export default function Stats() {
   return (
-    <section className="bg-white py-12 px-6 dottedbg mt-30">
+    <section className="bg-white py-12 px-6 dottedbg">
       <div className="">
         <div className="grid grid-cols-4 gap-16">
           {stats.map((stat, i) => (

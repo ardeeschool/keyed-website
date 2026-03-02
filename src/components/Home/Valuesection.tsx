@@ -57,11 +57,12 @@ function Globe() {
             </clipPath>
           </defs>
           <g clipPath="url(#globeClip)">
-            {/* Background fill */}
+            {/* Background fill 
             <g transform="matrix(1,0,0,1,748,680.2)">
               <path fill="rgb(10,30,55)" fillOpacity="1"
                 d="M748,-680.2 C748,-680.2 748,680.2 748,680.2 C748,680.2 -748,680.2 -748,680.2 C-748,680.2 -748,-680.2 -748,-680.2z" />
             </g>
+            */}
             {/* Latitude arc lines */}
             {[
               { t: "575.2,282.2", d: "M225.8,-98 C160.3,-51.6 88.1,-10.8 10,23.1 C-68,-57 -147.2,81.8 -225.8,98" },
@@ -118,7 +119,7 @@ function Globe() {
         transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center pointer-events-none"
       >
-        <p className="text-6xl font-bold text-white/50 select-none">KeyEd</p>
+        <p className="text-6xl font-medium text-white/50 select-none">KeyEd</p>
       </motion.div>
 
       {/* Pulsing ring */}
@@ -135,8 +136,8 @@ function Globe() {
 // ── Main Component ────────────────────────────────────────
 export default function ValueSection() {
   return (
-    <section className="relative overflow-hidden bg-[#0A1E37] py-24">
-
+    <section className="relative overflow-hidden bg-[#0A1E37] py-12 md:py-24">
+<div className="transform-bg-polygon-bottom"></div>
       {/* Subtle grid texture */}
       <div
         className="absolute inset-0 opacity-5 pointer-events-none"
@@ -146,7 +147,7 @@ export default function ValueSection() {
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-6">
+      <div className="relative max-w-7xl mx-auto px-4">
 
         {/* ── Top: Left text + Right globe ── */}
         <div className="flex flex-col lg:flex-row items-center gap-12 mb-20">
@@ -162,7 +163,7 @@ export default function ValueSection() {
               className="flex items-center gap-2 mb-6"
             >
               <div className="w-1.5 h-4 bg-secondary rounded-full" />
-              <p className="text-xs font-bold tracking-[0.2em] text-white uppercase">
+              <p className="text-xs font-medium tracking-[0.2em] text-white uppercase">
                 Why KeyEd
               </p>
             </motion.div>
@@ -173,7 +174,7 @@ export default function ValueSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
+              className="text-2xl lg:text-5xl font-medium text-white leading-tight mb-4 relative z-1"
             >
               How KeyEd{' '}
               <span className="text-white">Adds Value</span>
@@ -247,7 +248,7 @@ export default function ValueSection() {
                 className="absolute top-0 left-0 right-0 h-[2px] rounded-t-xl"
                 style={{ background: i % 2 === 0 ? '#0456c9' : '#e77f34' }}
               />
-              <p className="text-[10px] font-bold tracking-[0.18em] text-white/70 uppercase mb-1">
+              <p className="text-[10px] font-medium tracking-[0.18em] text-white/70 uppercase mb-1">
                 {stat.prefix}{' '}
                 <span className="text-white">{stat.highlight}</span>
               </p>
@@ -257,6 +258,7 @@ export default function ValueSection() {
         </div>
 
       </div>
+      <div className="transform-bg-polygon-top"></div>
     </section>
   )
 }

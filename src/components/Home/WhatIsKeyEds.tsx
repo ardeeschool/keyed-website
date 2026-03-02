@@ -232,7 +232,7 @@ function ModuleCard({
           <motion.div
             whileHover={{ scale: 1.07, y: -5, transition: { duration: 0.2 } }}
             className="bg-white rounded-2xl shadow-xl hover:shadow-xl transition-shadow p-5 flex flex-col items-center gap-2 cursor-pointer"
-            style={{ width: '144px' }}
+            style={{ width: 'clamp(120px, 8.5vw, 144px)' }}
           >
             <div className="w-14 h-14 flex items-center justify-center">
              {/* <Image
@@ -286,20 +286,20 @@ export default function WhatIsKeyEds() {
       Pink bg div sits absolute at top — covers header + upper portion of cards
       Cards row breaks out to full viewport width
     */
-   <section className="relative pt-20" style={{ background: '#ffffff' }}>
+   <section className="relative pt-12 md:pt-20 bg-white">
   <div className="absolute top-0 left-0 right-0 h-17/20 bg-primary pointer-events-none" />
   
 
    
 
       {/* ── Header — sits on top of pink bg ── */}
-      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center pb-30">
+      <div className="relative z-10 max-w-3xl mx-auto px-4 text-center pb-12 lg:pb-30">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-white mb-5 leading-tight"
+          className="text-4xl md:text-5xl font-medium text-white mb-5 leading-tight"
         >
          What is <span className='text-gray-50'>KeyEd?</span>
         </motion.h2>
@@ -346,14 +346,51 @@ export default function WhatIsKeyEds() {
         w-screen ensures it spans full viewport.
         overflow is handled by the parent section.
       */}
+      
+
+
+
+
+
+
+      {/* ── Mobile: 2-column grid ── */}
+      <div className="relative z-10 lg:hidden px-5">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mx-auto">
+          {modules.map((module, idx) => (
+            <motion.div
+              key={module.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: idx * 0.04, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Link href={module.href}>
+                <div className="bg-white rounded-2xl shadow-md p-5 flex flex-col items-center gap-2.5">
+                  <div className="w-12 h-12 flex items-center justify-center">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center text-white">
+                      {module.iconsvg}
+                    </div>
+                  </div>
+                  <p className="text-sm font-semibold text-gray-800 text-center leading-snug">
+                    {module.name}
+                  </p>
+                </div>
+              </Link>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+
+      {/* ── Desktop: Arch columns layout ── */}
       <div
-        className="relative z-10"
+        className="relative z-10 hidden lg:block"
         style={{
           width: '100vw',
           marginLeft: 'calc(50% - 50vw)',
         }}
       >
-        <div className="flex items-end justify-center gap-4 px-8">
+    
+        <div className="flex items-end justify-center px-0 gap-4">
           {COLUMNS.map((col, colIdx) => (
             <div
               key={colIdx}
@@ -374,7 +411,8 @@ export default function WhatIsKeyEds() {
             </div>
           ))}
         </div>
-      </div>
+        </div>
+     
 
     </section>
   )

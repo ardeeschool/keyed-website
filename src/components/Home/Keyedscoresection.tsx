@@ -87,7 +87,7 @@ function DashedCircleProgress({ score = 94 }: { score?: number }) {
       <svg width={SIZE} height={SIZE} className="absolute inset-0">{dashes}</svg>
       <div className="flex flex-col items-center justify-center text-center z-10">
         <p className="text-gray-400 text-[10px] font-semibold uppercase tracking-widest mb-1">KeyEd Score™</p>
-        <p className="text-[#1a1a1c] font-black text-6xl leading-none">{score}</p>
+        <p className="text-[#1a1a1c] font-medium font-black text-6xl leading-none">{score}</p>
         <p className="text-gray-400 text-[11px] mt-2">out of 100</p>
       </div>
     </div>
@@ -116,8 +116,8 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
              </div>
       {/* Label + score */} 
       <div className="flex items-center justify-between mb-3">
-        <p className="text-xl font-bold text-gray-800 leading-tight">{metric.label}</p>
-        <span className="text-lg font-bold text-primary tabular-nums">{metric.value}</span>
+        <p className="text-xl font-medium text-gray-800 leading-tight">{metric.label}</p>
+        <span className="text-lg font-medium text-primary tabular-nums">{metric.value}</span>
       </div>
 
       {/* Progress bar */}
@@ -155,14 +155,14 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
 // ── Main Component ────────────────────────────────────────
 export default function KeyEdScoreSection() {
   return (
-    <section className="bg-white p-20 pt-50">
-      <div className="px-4">
+    <section className="bg-white p-4 lg:p-20 pt-20 lg:pt-50 ">
+      <div className="md:px-4">
         <div className="flex flex-col lg:flex-row gap-16">
 
           {/* ── LEFT — sticky ── */}
           <div
-            className="lg:w-2/5 flex-shrink-0"
-            style={{ alignSelf: 'flex-start', position: 'sticky', top: '110px' }}
+            className="lg:w-2/5 flex-shrink-0 lg:sticky md:top-[110px]"
+            style={{ alignSelf: 'flex-start' }}
           >
             {/* Label 
             <motion.div
@@ -182,7 +182,7 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl font-bold text-primary leading-tight mb-4"
+              className="text-2xl md:text-4xl font-medium text-primary leading-tight mb-4"
             >
               India’s First Institutional Performance Score
             </motion.h2>
@@ -193,7 +193,7 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-gray-500 text-md leading-relaxed mb-4"
+              className="text-gray-500 text-sm md:text-md leading-relaxed mb-4"
             >
              A weekly 0–100 performance score reflecting Learning Impact, Teaching Discipline, Operational Control, and Institutional Health.
 
@@ -216,7 +216,7 @@ export default function KeyEdScoreSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.5 }}
-              className="flex items-start gap-3 bg-primary rounded-2xl px-5 py-4 mt-20"
+              className="flex items-start gap-3 bg-primary rounded-2xl px-5 py-4 mt-12 md:mt-20"
             >
               <Sparkles className="w-4 h-4 text-white flex-shrink-0 mt-0.5" />
               <p className="text-xs text-gray-300 leading-relaxed">

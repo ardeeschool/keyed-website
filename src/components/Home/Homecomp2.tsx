@@ -45,6 +45,9 @@ function TypewriterCycle() {
       to-secondary
       bg-clip-text
       text-transparent
+      font-medium
+      text-3xl
+      md:text-6xl
       min-w-[1ch]">
       {displayed}
       <span className="inline-block
@@ -59,7 +62,7 @@ function TypewriterCycle() {
   )
 }
 
-function AnimatedCounter({ target, suffix, delay = 0, className = 'text-2xl font-bold text-primary' }:
+function AnimatedCounter({ target, suffix, delay = 0, className = 'text-2xl font-medium text-primary' }:
   { target: number; suffix: string; delay?: number; className?: string }) {
   const [count, setCount] = useState(0)
   const ref = useRef<HTMLDivElement>(null)
@@ -120,7 +123,7 @@ function FloatCard({
 // ─────────────────────────────────────────────
 const Homecomp = () => {
   return (
-    <section className="pb-20 flex items-center pt-20 overflow-hidden px-20" style={{ background: '#FAF7F2' }}>
+    <section className="pb-12 lg:pb-20 flex items-center pt-12 lg:pt-20 overflow-hidden px-4 lg:px-20">
       <div className="mx-auto w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
@@ -128,35 +131,35 @@ const Homecomp = () => {
           <div>
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
-              className="inline-flex items-center gap-2 bg-white shadow-sm border border-primary/30 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6">
+              className="inline-flex items-center gap-2 bg-white shadow-sm border border-primary/30 text-primary px-4 py-2 rounded-full text-xs md:text-sm font-medium mb-6">
               <ShieldCheck className="w-4 h-4" />
               Built from 20+ years of operating schools across India.
             </motion.div>
 
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-5xl md:text-6xl lg:text-6xl font-bold leading-tight mb-6">
+              className="text-5xl md:text-6xl lg:text-6xl font-medium  mb-6">
               
               <TypewriterCycle />
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-[#4A5568] text-lg leading-relaxed max-w-lg mb-8">
+              className="text-[#4A5568] text-sm md:text-lg leading-relaxed max-w-lg mb-8">
               KeyEd is a unified School Operating System with a built-in Performance Engine that measures how efficiently your institution converts effort into measurable growth — week by week.
 
             </motion.p>
 
             <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-start gap-4 mb-6">
+              className="flex flex-row  sm:flex-row items-start gap-4 mb-6">
               <Link href="/contact-us"
-                className="inline-flex items-center gap-2 px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors">
+                className="inline-flex items-center gap-2 px-4 md:px-7 py-4 bg-primary hover:bg-secondary  text-white font-semibold rounded-lg transition-colors text-xs md:text-lg">
                Request Walkthrough 
- <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" />
               </Link>
               <Link href="/solution"
-                className="inline-flex items-center gap-2 px-7 py-4 border-2 border-gray-800 text-gray-800 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all">
+                className="inline-flex items-center gap-2 px-4 md:px-7 py-4 border-2 border-gray-800 text-gray-800 font-semibold rounded-lg hover:bg-gray-800 hover:text-white transition-all text-xs md:text-lg">
                 <Play className="w-4 h-4 fill-current" /> Watch Overview
               </Link>
             </motion.div>
@@ -165,12 +168,12 @@ const Homecomp = () => {
 
             <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
-              className="inline-flex items-center gap-8 bg-white rounded-2xl px-8 py-5 shadow-sm border border-gray-100">
+              className="inline-flex items-center gap-3 md:gap-8 bg-white rounded-2xl px-4 md:px-8 py-3 md:py-5 shadow-sm border border-gray-100">
               {stats.map((stat, index) => (
                 <div key={stat.label} className="flex items-center gap-8">
                   <div className="text-center">
                     <AnimatedCounter target={stat.value} suffix={stat.suffix} delay={0.6 + index * 0.15} />
-                    <div className="text-xs text-primary mt-0.5 whitespace-nowrap">{stat.label}</div>
+                    <div className="text-[11px] md:text-xs text-primary mt-0.5 whitespace-nowrap">{stat.label}</div>
                   </div>
                   {index < stats.length - 1 && <div className="w-px h-8 bg-gray-200" />}
                 </div>
@@ -199,7 +202,7 @@ const Homecomp = () => {
               <div className="bg-white rounded-2xl shadow-2xl border border-gray-100 p-5 w-52">
                 <p className="text-[10px] font-semibold text-gray-400 uppercase tracking-widest mb-1">Institutional Health</p>
                 <div className="flex items-end gap-1 mb-3">
-                  <span className="text-5xl font-bold text-primary-dark leading-none">94</span>
+                  <span className="text-5xl font-medium text-primary-dark leading-none">94</span>
                   <span className="text-xs font-semibold text-green-600 mb-1">↑ +2.4%</span>
                 </div>
                 <div className="flex items-end gap-1 mb-3" style={{ height: 36 }}>
@@ -218,7 +221,7 @@ const Homecomp = () => {
                   {['M','T','W','T','F','S','S'].map(d => <span key={d}>{d}</span>)}
                 </div>
                 <div className="mt-3 px-3 py-1.5 bg-primary-dark rounded-lg text-center">
-                  <p className="text-[10px] font-bold text-white">KeyEd Score™</p>
+                  <p className="text-[10px] font-medium text-white">KeyEd Score™</p>
                 </div>
               </div>
             </FloatCard>
@@ -232,14 +235,14 @@ const Homecomp = () => {
             >
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44">
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-[10px] font-bold text-gray-700">Attendance</p>
+                  <p className="text-[10px] font-medium text-gray-700">Attendance</p>
                   <span className="text-[8px] bg-green-200 text-green-600 px-1.5 py-0.5 rounded-full font-semibold">Live</span>
                 </div>
                 {[{ label: 'Students', pct: 94 }, { label: 'Teachers', pct: 97 }].map(r => (
                   <div key={r.label} className="mb-2">
                     <div className="flex justify-between mb-0.5">
                       <p className="text-[9px] text-gray-500">{r.label}</p>
-                      <p className="text-[9px] font-bold text-primary">{r.pct}%</p>
+                      <p className="text-[9px] font-medium text-primary">{r.pct}%</p>
                     </div>
                     <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
                       <motion.div
@@ -252,10 +255,10 @@ const Homecomp = () => {
                 ))}
                 <div className="flex items-center gap-1.5 mt-2 bg-gray-50 rounded-lg p-1.5">
                   <div className="w-5 h-5 rounded-full bg-primary-dark flex items-center justify-center">
-                    <span className="text-[8px] font-bold text-white">A</span>
+                    <span className="text-[8px] font-medium text-white">A</span>
                   </div>
                   <div>
-                    <p className="text-[8px] font-bold text-gray-700">Grade 10-A</p>
+                    <p className="text-[8px] font-medium text-gray-700">Grade 10-A</p>
                     <p className="text-[7px] text-gray-400">98% present</p>
                   </div>
                 </div>
@@ -270,8 +273,8 @@ const Homecomp = () => {
               positionStyle={{ top: '5%', right: '2%', zIndex: 7, rotate: '4deg' }}
             >
               <div className="bg-primary-dark rounded-2xl shadow-xl p-4 w-44">
-                <p className="text-[10px] font-bold text-white/60 mb-1">Fee Collection</p>
-                <p className="text-xl font-bold text-white leading-none mb-0.5">₹1,28,400</p>
+                <p className="text-[10px] font-medium text-white/60 mb-1">Fee Collection</p>
+                <p className="text-xl font-medium text-white leading-none mb-0.5">₹1,28,400</p>
                 <p className="text-[9px] text-white/60 mb-3">↑ 12% vs last month</p>
                 <div className="flex items-end gap-0.5" style={{ height: 32 }}>
                   {[40, 60, 35, 75, 55, 88].map((h, i) => (
@@ -287,11 +290,11 @@ const Homecomp = () => {
                 </div>
                 <div className="flex gap-1.5 mt-3">
                   <div className="flex-1 bg-green-100 rounded-lg p-1.5 text-center">
-                    <p className="text-[9px] font-bold text-black">92%</p>
+                    <p className="text-[9px] font-medium text-black">92%</p>
                     <p className="text-[7px] text-black">Collected</p>
                   </div>
                   <div className="flex-1 bg-red-100 rounded-lg p-1.5 text-center">
-                    <p className="text-[9px] font-bold text-red-400">8%</p>
+                    <p className="text-[9px] font-medium text-red-400">8%</p>
                     <p className="text-[7px] text-black">Pending</p>
                   </div>
                 </div>
@@ -307,7 +310,7 @@ const Homecomp = () => {
             >
               <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-4 w-44">
                 <div className="flex items-center justify-between mb-2">
-                  <p className="text-[10px] font-bold text-gray-700">Admissions</p>
+                  <p className="text-[10px] font-medium text-gray-700">Admissions</p>
                   <span className="text-[8px] bg-primary-dark text-white px-1.5 py-0.5 rounded-full font-semibold">2025</span>
                 </div>
                 {[
@@ -318,7 +321,7 @@ const Homecomp = () => {
                   <div key={r.stage} className="mb-1.5">
                     <div className="flex justify-between mb-0.5">
                       <p className="text-[8px] text-gray-500">{r.stage}</p>
-                      <p className="text-[8px] font-bold text-gray-700">{r.n}</p>
+                      <p className="text-[8px] font-medium text-gray-700">{r.n}</p>
                     </div>
                     <div className="h-1 bg-gray-100 rounded-full overflow-hidden">
                       <motion.div
@@ -347,9 +350,9 @@ const Homecomp = () => {
                     transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
                     className="w-6 h-6 rounded-full bg-red-700 flex items-center justify-center flex-shrink-0"
                   >
-                    <span className="text-white text-[10px] font-bold">AI</span>
+                    <span className="text-white text-[10px] font-medium">AI</span>
                   </motion.div>
-                  <p className="text-[9px] font-bold text-gray-700">Smart Alert</p>
+                  <p className="text-[9px] font-medium text-gray-700">Smart Alert</p>
                 </div>
                 <p className="text-[9px] text-gray-500 leading-tight mb-2">Fee default risk rising in Grade 8 · Act now</p>
                 <div className="flex gap-1">
@@ -369,14 +372,14 @@ const Homecomp = () => {
               <div className="bg-gray-50 rounded-xl shadow-lg px-3 py-2 flex items-center gap-2">
                 <div className="flex -space-x-1.5">
                   {['S','R','P'].map((l, i) => (
-                    <div key={i} className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-[7px] font-bold text-white"
+                    <div key={i} className="w-5 h-5 rounded-full border border-primary flex items-center justify-center text-[7px] font-medium text-white"
                       style={{ background: ['#000','#0456c9','#f00'][i] }}>
                       {l}
                     </div>
                   ))}
                 </div>
                 <div>
-                  <p className="text-[8px] font-bold text-primary leading-none">80 Staff</p>
+                  <p className="text-[8px] font-medium text-primary leading-none">80 Staff</p>
                   <p className="text-[7px] text-primary-dark">Active today</p>
                 </div>
               </div>

@@ -1,6 +1,5 @@
 import Header from '@/components/layout/Headertwo'
 import KeyEdScoreHero from '@/components/keyedpage/Keyedscorehero';
-
 import Ctatop from '@/components/home/Ctatop';
 import Footertop from '@/components/layout/footertop'
 import WhatIsKeyEdScore from '@/components/keyedpage/WhatIsKeyEdScore';
@@ -21,5 +20,5 @@ export default function KeyedScrore() {
 
       {/* ── Rest of your Solution page content goes here ── */}
     </main>
-  );
+  );  
 }

@@ -29,7 +29,7 @@ const comingSoon = [
 
 export default function BuiltByEducators() {
   return (
-    <section className="py-20 mt-10" style={{ background: '#f5f5f533' }}>
+    <section className="py-12 lg:py-20 mt-10" style={{ background: '#f5f5f533' }}>
       <div className="max-w-5xl mx-auto px-4">
 
         {/* Heading */}
@@ -38,7 +38,7 @@ export default function BuiltByEducators() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-3xl md:text-4xl font-bold text-center mb-4"
+          className="text-2xl md:text-4xl font-medium text-center mb-4"
         >
           <span className="text-black">Built by Educators. </span>
           <span className="text-primary">Proven in Real Schools.</span>
@@ -62,7 +62,7 @@ export default function BuiltByEducators() {
                 <div className="mb-5">
                   <Icon className="w-12 h-12 text-primary" strokeWidth={1.6} />
                 </div>
-                <h3 className="text-base font-bold text-[#0A2540] mb-2">{card.title}</h3>
+                <h3 className="text-base font-medium text-[#0A2540] mb-2">{card.title}</h3>
                 <p className="text-sm text-gray-400">{card.subtitle}</p>
               </motion.div>
             )
@@ -79,7 +79,7 @@ export default function BuiltByEducators() {
         >
           <div className="flex items-center justify-center gap-2 mb-6">
             <Clock className="w-5 h-5 text-secondary" />
-            <h3 className="text-lg font-bold text-[#0A2540]">Coming Soon</h3>
+            <h3 className="text-lg font-medium text-[#0A2540]">Coming Soon</h3>
           </div>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
             {comingSoon.map((item, i) => {

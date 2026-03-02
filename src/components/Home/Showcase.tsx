@@ -77,14 +77,12 @@ function ShowcaseCard({
         delay: index * 0.12,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="cardstyle rounded-3xl overflow-hidden"
-      style={{ marginBottom: 50 }}
+      className="cardstyle rounded-3xl rounded-xl overflow-hidden mb-12 md:mb-20"
     >
       {/* ── Image area ── */}
       <div
-        className="w-full relative overflow-hidden"
+        className="w-full relative overflow-hidden h-full md:h[460px]"
         style={{
-          height: 460,
           background: "linear-gradient(135deg, #a9acb1 0%, #acafb7 100%)",
         }}
       >
@@ -92,7 +90,7 @@ function ShowcaseCard({
       </div>
 
       {/* ── Bottom content ── */}
-      <div className="px-10 py-8">
+      <div className="px-4 py-8 md:px-10 md:py-8">
         {/* Progressive dots */}
         <div className="flex items-center gap-2 mb-6">
           {Array.from({ length: TOTAL_DOTS }).map((_, dotIndex) => (
@@ -110,12 +108,9 @@ function ShowcaseCard({
         </div>
 
         {/* Info row */}
-        <div
-          className="grid items-start gap-8"
-          style={{ gridTemplateColumns: "1.2fr 1.5fr 1.2fr 0.6fr" }}
-        >
+       <div className="grid grid-cols-1 md:grid-cols-[1.2fr_1.5fr_1.2fr_0.6fr] items-start gap-4 md:gap-8">
           {/* Title */}
-          <h3 className="font-interTight text-2xl font-bold text-[#1a1a1c] leading-tight whitespace-pre-line">
+          <h3 className="font-interTight text-xl md:text-2xl font-medium text-[#1a1a1c] leading-tight md:whitespace-pre-line">
             {title}
           </h3>
 
@@ -163,7 +158,7 @@ function ShowcaseCard({
 
 export default function Showcase() {
   return (
-    <section className="bg-white py-24 px-6">
+    <section className="bg-white py-4 md:py-24 px-4 md:py-12">
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <motion.div
@@ -171,12 +166,12 @@ export default function Showcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8 ldg:mb-16"
         >
-          <h2 className="font-interTight text-4xl lg:text-5xl font-extrabold text-[#1a1a1c] leading-tight mb-4">
+          <h2 className="font-interTight text-2xl lg:text-5xl font-medium text-[#1a1a1c] leading-tight mb-4">
             Everything Your Institution Runs On
           </h2>
-          <p className="text-lg text-[#6b7a8d] max-w-xl mx-auto">
+          <p className="text-sm md:text-lg text-[#6b7a8d] max-w-xl mx-auto">
             One ecosystem covering academics, operations, finance, and intelligence.
           </p>
         </motion.div>

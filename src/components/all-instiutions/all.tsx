@@ -128,7 +128,7 @@ function FeatureCard({
       </div>
 
       {/* Title */}
-      <h3 className="text-[20px] font-bold text-[#0d1b35] leading-snug">
+      <h3 className="text-xl font-medium text-primary leading-snug">
         {feature.title}
       </h3>
 
@@ -144,7 +144,7 @@ export default function BuiltForInstitutions() {
   const { ref: headingRef, inView: headingInView } = useInView(0.2);
 
   return (
-    <section className="w-full  bg-[linear-gradient(180deg,#F5F3F3_100%,FFFBFB00_0)] py-20 px-4 sm:px-8 pb-40">
+    <section className="w-full  bg-[linear-gradient(180deg,#F5F3F3_100%,FFFBFB00_0)] py-6 md:py-20 px-4 sm:px-8 pb-16 md:pb-40">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
@@ -157,7 +157,7 @@ export default function BuiltForInstitutions() {
             transition: "opacity 0.6s ease, transform 0.6s ease",
           }}
         >
-          <h2 className="text-[32px] sm:text-[42px] font-bold text-primary-dark leading-tight">
+          <h2 className="text-[24px] sm:text-[42px] font-medium text-primary-dark leading-tight">
             Built for Institutions
           
           </h2>
@@ -167,7 +167,7 @@ export default function BuiltForInstitutions() {
         </div>
 
         {/* Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {features.map((feature, i) => (
             <FeatureCard key={feature.title} feature={feature} index={i} />
           ))}
