@@ -9,7 +9,7 @@ export default function VisionForwards() {
     <section className="overflow-hidden">
       {/* ── Black header area ── */}
       <div
-        className="pt-24 pb-52 px-6"
+        className="md:pt-24 md:pb-52 md:px-6 px-4 pb-20 pt-12"
         style={{ background: "#09090B" }}
       >
         <div className="max-w-5xl mx-auto text-center">
@@ -18,7 +18,7 @@ export default function VisionForwards() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="font-interTight text-4xl lg:text-5xl font-medium text-white leading-tight mb-4"
+            className="font-interTight text-3xl lg:text-5xl font-medium text-white leading-tight mb-4"
           >
             Our Vision Forward
           </motion.h2>
@@ -35,17 +35,17 @@ export default function VisionForwards() {
       </div>
 
       {/* ── White card overlapping the black ── */}
-      <div className="px-6 -mt-36 pb-24">
+      <div className="md:px-6 md:-mt-36 md:pb-24 pb-12 -mt-12 px-0">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-5xl mx-auto cardstyle rounded-3xl overflow-hidden"
+          className="w-full md:max-w-5xl mx-auto cardstyle rounded-3xl overflow-hidden"
         >
           <div className="flex">
             {/* Left — Text (55%) */}
-            <div className="w-[55%] flex-shrink-0 p-12 lg:p-14">
+            <div className="w-full md:w-[55%] flex-shrink-0 p-6 py-12 md:p-12 lg:p-14">
               {/* Tag */}
                <motion.div initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
@@ -108,7 +108,7 @@ export default function VisionForwards() {
             </div>
 
             {/* Right — Image (45%) */}
-            <div className="w-[45%] flex-shrink-0 relative p-8 flex items-center justify-center">
+            <div className="w-full w-[45%] flex-shrink-0 relative p-8 flex items-center justify-center">
               <motion.div
                 initial={{ opacity: 0, scale: 0.92 }}
                 whileInView={{ opacity: 1, scale: 1 }}

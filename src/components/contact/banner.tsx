@@ -2,7 +2,7 @@
 
 export default function Banner() {
   return (
-    <section className="relative w-full min-h-[480px] flex flex-col items-center justify-center overflow-hidden bg-linear-gradient(135deg, var(--beige) 0%, var(--white) 100%)from-zinc-900 via-neutral-800 to-zinc-900 px-6 py-24">
+    <section className="relative w-full md:min-h-[480px] flex flex-col items-center justify-center overflow-hidden bg-linear-gradient(135deg, var(--beige) 0%, var(--white) 100%)from-zinc-900 via-neutral-800 to-zinc-900 px-4 md:px-6 py-12 md:py-24">
 
       {/* ECG Heartbeat Line — centered behind text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">
@@ -62,13 +62,13 @@ export default function Banner() {
       <div className="absolute bottom-0 right-1/4 w-80 h-80 bg-amber-400/5 rounded-full blur-3xl pointer-events-none" />
 
       {/* Static heading */}
-      <h1 className="relative z-10 text-5xl md:text-6xl lg:text-7xl font-bold  text-center leading-tight text-black tracking-tight">
+      <h1 className="relative z-10 text-3xl md:text-6xl lg:text-7xl font-medium  text-center leading-tight text-black tracking-tight">
        Ready to Transform
       </h1>
 
       {/* Animated orange gradient line — slides in from top */}
       <h1
-        className="relative z-10 text-5xl md:text-6xl lg:text-7xl font-semi-bold text-center leading-tight tracking-tight mb-8 animate-slide-down"
+        className="relative z-10 text-3xl md:text-4xl lg:text-7xl font-medium text-center leading-tight tracking-tight mb-8 animate-slide-down"
         style={{
           background: "linear-gradient(90deg, rgb(29, 29, 31) 0%, rgb(4, 86, 201) 100%) text",
           WebkitBackgroundClip: "text",

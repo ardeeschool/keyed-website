@@ -690,7 +690,7 @@ export default function Career() {
       {/* ═══════════════════════════════════════════════
        *  HERO
        * ═══════════════════════════════════════════════ */}
-      <section className="bg-white pt-16 sm:pt-20 pb-16 sm:pb-20 px-4 sm:px-6">
+      <section className="bg-white pt-12 sm:pt-20 pb-12 sm:pb-20 px-4 sm:px-6">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -722,7 +722,7 @@ export default function Career() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg lg:text-xl text-[#6b7a8d] max-w-2xl mx-auto leading-relaxed"
+            className="text-sm sm:text-lg lg:text-xl text-[#6b7a8d] max-w-2xl mx-auto leading-relaxed"
           >
             KeyEd is looking for the next generation of talent to join its team.
             If you are passionate about your work, check out our opportunities.
@@ -762,7 +762,7 @@ export default function Career() {
        *  APPLICATION FORM
        * ═══════════════════════════════════════════════ */}
       <section
-        className="py-12 sm:py-24 px-4 sm:px-6 mb-10 sm:mb-20 mx-auto mt-8 sm:mt-20 rounded-none sm:rounded-2xl relative bg-primary"
+        className="py-12 sm:py-24 pb-30  sm:px-6 mb-10 sm:mb-20 mx-auto mt-8 sm:mt-20 rounded-none sm:rounded-2xl relative bg-primary"
         style={{ maxWidth: "calc(100% - 0px)" }}
       >
         {/* On md+ screens, constrain width like original w-6xl */}
@@ -771,17 +771,17 @@ export default function Career() {
         </div>
         <div className="light-box sm:block hidden"></div>
         <img
-          className="light-top absolute top-0 w-64 sm:w-96 md:w-auto md:max-w-md left-1/2 -translate-x-1/2 sm:left-1/3 sm:translate-x-0 pointer-events-none"
+          className="light-top absolute top-0 w-md left-1/2 -translate-x-1/2"
           src="/light-top.png"
           alt=""
         />
         <img
-          className="light-top absolute bottom-0 w-64 sm:w-96 md:w-auto md:max-w-md left-1/2 -translate-x-1/2 sm:left-1/3 sm:translate-x-0 pointer-events-none"
+          className="light-top absolute bottom-0 w-md left-1/2 -translate-x-1/2"
           src="/light-bot.png"
           alt=""
         />
 
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="w-full md:max-w-5xl mx-auto relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -811,7 +811,7 @@ export default function Career() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="rounded-2xl sm:rounded-3xl p-5 sm:p-8 lg:p-12 bg-[#eff0f3]"
+            className="sm:rounded-3xl p-5 sm:p-8 lg:p-12 bg-[#eff0f3]"
             style={{
               border: "1px solid rgba(255,255,255,0.06)",
             }}

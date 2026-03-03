@@ -37,7 +37,7 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-white border-b border-[#e7ebf0] sticky top-0 z-50">
       {/* Main bar */}
-      <div className="w-full px-20 h-[80px] flex items-center justify-between">
+      <div className="w-full px-4 md:px-20 h-[80px] flex items-center justify-between">
 
         {/* LEFT — Logo */}
        <Link

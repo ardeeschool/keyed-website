@@ -54,9 +54,9 @@ function CountUp({
 
 export default function Stats() {
   return (
-    <section className="bg-white py-12 px-6 dottedbg">
+    <section className="bg-white py-12 px-4 md:px-6 dottedbg">
       <div className="">
-        <div className="grid grid-cols-4 gap-16">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-8 md:gap-16">
           {stats.map((stat, i) => (
             <motion.div
               key={stat.label}
@@ -70,7 +70,7 @@ export default function Stats() {
               }}
               className="text-center"
             >
-              <p className="font-interTight text-6xl lg:text-7xl font-medium text-[#0a1628] leading-none mb-3">
+              <p className="font-interTight text-3xl lg:text-7xl font-medium text-[#0a1628] leading-none mb-3">
                 {stat.value !== null ? (
                   <CountUp
                     target={stat.value}
@@ -81,7 +81,7 @@ export default function Stats() {
                   stat.text
                 )}
               </p>
-              <p className="font-interTight text-sm text-black uppercase tracking-wide font-medium">
+              <p className="font-interTight text-xs md:text-sm text-black uppercase tracking-wide font-medium">
                 {stat.label}
               </p>
             </motion.div>

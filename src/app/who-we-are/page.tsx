@@ -23,13 +23,10 @@ export default function SolutionPage() {
   return (
     <main>
        <Header />
-      
        <Hero />
-  
-<Ardeeblack />
-
-<Stats />
-<WhyKeyEdCreated />
+        <Ardeeblack />
+        <Stats />
+        <WhyKeyEdCreated />
      
        <VisionForwards />
         <LeadershipPhilosophy />

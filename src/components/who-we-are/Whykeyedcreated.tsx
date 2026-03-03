@@ -21,11 +21,11 @@ const bottomCards = [
 
 export default function WhyKeyEdCreated() {
   return (
-    <section className="bg-[linear-gradient(180deg,#FFFBFB00_0%,#F5F3F3_100%)] py-24 px-6">
+    <section className="bg-[linear-gradient(180deg,#FFFBFB00_0%,#F5F3F3_100%)] py-12 md:py-24 px-4 md:px-6">
       <div className="max-w-5xl mx-auto">
 
         {/* ── Top: Image + Text (50/50) ── */}
-        <div className="flex gap-14 items-start mb-20">
+        <div className="flex flex-wrap md:flex-nowrap gap-14 items-start mb-8 md:mb-20">
 
           {/* Left — Image */}
           <motion.div
@@ -33,7 +33,7 @@ export default function WhyKeyEdCreated() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="w-1/2 flex-shrink-0"
+            className="w-full md:w-1/2 flex-shrink-0"
           >
             <div
               className="rounded-2xl overflow-hidden relative"
@@ -53,13 +53,13 @@ export default function WhyKeyEdCreated() {
           </motion.div>
 
           {/* Right — Text */}
-          <div className="w-1/2 flex-shrink-0">
+          <div className="w-full md:w-1/2 flex-shrink-0">
             <motion.h2
               initial={{ opacity: 0, y: 25 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="font-interTight text-4xl font-medium text-[#1a1a1c] leading-tight mb-5"
+              className="font-interTight text-3xl md:text-4xl font-medium text-[#1a1a1c] leading-tight mb-5"
             >
               Why KeyEd Was Created
             </motion.h2>
@@ -69,7 +69,7 @@ export default function WhyKeyEdCreated() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-              className="font-interTight text-base font-semibold text-[#1a1a1c] mb-5"
+              className="font-interTight text-base font-medium text-[#1a1a1c] mb-5"
             >
               Born from necessity, built with purpose
             </motion.p>
@@ -85,7 +85,7 @@ export default function WhyKeyEdCreated() {
               &ldquo;After years of operating real schools and facing the daily
               complexities of institutional management, we realized that{" "}
               <span
-                className="not-italic font-semibold px-1 py-0.5 rounded"
+                className="not-italic font-medium px-1 py-0.5 rounded"
                 style={{ background: "rgba(0,0,0,0.08)", color: "#1a1a1c" }}
               >
                 schools
@@ -126,7 +126,7 @@ export default function WhyKeyEdCreated() {
         </div>
 
         {/* ── Bottom: 3 Cards ── */}
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {bottomCards.map((card, i) => (
             <motion.div
               key={card.title}
@@ -153,7 +153,7 @@ export default function WhyKeyEdCreated() {
 
               {/* Text */}
               <div>
-                <p className="font-interTight text-base font-bold text-[#1a1a1c] mb-1">
+                <p className="font-interTight text-base font-medium text-[#1a1a1c] mb-1">
                   {card.title}
                 </p>
                 <p className="text-sm text-[#6b7a8d] leading-snug">
