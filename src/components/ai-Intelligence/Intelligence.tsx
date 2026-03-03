@@ -79,7 +79,7 @@ export default function Intelligence() {
 
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-4xl font-bold text-gray-900 mb-3">
+          <h2 className="text-2xl sm:text-4xl font-medium text-gray-900 mb-3">
             Intelligence That Empowers Leadership
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto">
@@ -105,7 +105,7 @@ export default function Intelligence() {
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="p-7 sm:p-10">
-                <h3 className="font-interTight text-2xl sm:text-3xl lg:text-4xl font-bold text-white leading-tight mb-4 sm:mb-6">
+                <h3 className="font-interTight text-2xl sm:text-3xl lg:text-4xl font-medium text-white leading-tight mb-4 sm:mb-6">
                   Human-First{" "}
                   <span className="text-red-500">AI</span>
                 </h3>
@@ -140,7 +140,7 @@ export default function Intelligence() {
             >
               {/* Large bg watermark */}
               <div
-                className="absolute text-6xl sm:text-8xl right-4 bottom-2 font-interTight font-extrabold leading-none select-none pointer-events-none"
+                className="absolute text-6xl sm:text-8xl right-4 bottom-2 font-interTight font-medium leading-none select-none pointer-events-none"
                 style={{ color: "rgba(0,0,0,0.04)" }}
               >
                 Secure

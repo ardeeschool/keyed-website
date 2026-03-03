@@ -16,7 +16,7 @@ export default function ctasection() {
       >
         {/* Title */}
         <motion.h2
-          className="m-0 text-[clamp(28px,4vw,42px)] font-extrabold text-[#1a2b4a] tracking-tight leading-tight"
+          className="m-0 text-[clamp(28px,4vw,42px)] font-medium text-[#1a2b4a] tracking-tight leading-tight"
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -57,7 +57,7 @@ export default function ctasection() {
         >
           <Link
             href="/contact"
-            className="inline-flex items-center gap-3 px-10 py-4 rounded-xl text-white text-[16px] font-bold no-underline"
+            className="inline-flex items-center gap-3 px-10 py-4 rounded-xl text-white text-[16px] font-medium no-underline"
             style={{
               background: "linear-gradient(135deg, #f5a623 0%, #e07b39 100%)",
               boxShadow: "0 6px 20px rgba(240,120,50,0.35)",

@@ -226,7 +226,7 @@ export default function AIPrinciples() {
           className="mb-16"
         >
           <h2
-            className="m-0 font-extrabold leading-tight text-4xl  text-white"
+            className="m-0 font-extramedium leading-tight text-4xl  text-white"
           >
             Responsible AI Principles
             
@@ -297,7 +297,7 @@ export default function AIPrinciples() {
               </motion.div>
 
               <h3
-                className="m-0 mb-3 font-bold leading-snug"
+                className="m-0 mb-3 font-medium leading-snug"
                 style={{ ...font, fontSize: 18, color: "#ffffff", letterSpacing: "-0.01em", maxWidth: 220 }}
               >
                 {title}

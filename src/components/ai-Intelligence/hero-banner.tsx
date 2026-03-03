@@ -65,7 +65,7 @@ export default function HeroBanner() {
 
   return (
     <section
-      className="relative w-full min-h-[360px] sm:min-h-[420px] flex items-center justify-center overflow-hidden px-4 sm:px-6 py-14 sm:py-20"
+      className="relative w-full min-h-[360px] sm:min-h-[420px] flex items-center justify-center overflow-hidden px-4 sm:px-6 py-12 sm:py-12"
       style={{
         background:
           "linear-gradient(135deg, var(--beige) 0%, var(--white) 100%)",
@@ -111,7 +111,7 @@ export default function HeroBanner() {
             🔶
           </span>
           <span
-            className="text-[13px] font-semibold tracking-wide hidden"
+            className="text-[13px] font-semimedium tracking-wide hidden"
             style={{ color: "#c96a28" }}
           >
             Intelligent Decision Support
@@ -206,7 +206,7 @@ export default function HeroBanner() {
           animate={controls}
         >
           <button
-            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] text-white font-bold text-sm sm:text-base tracking-wide border-none cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.99]"
+            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] text-white font-medium text-sm sm:text-base tracking-wide border-none cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.99]"
             style={{
               background: "#0456C9",
               boxShadow:

@@ -127,7 +127,7 @@ function ModuleCard({
       
 
       {/* Title */}
-      <h3 className="text-md font-extrabold text-primary leading-snug tracking-tight m-0">
+      <h3 className="text-md font-medium text-primary leading-snug tracking-tight m-0">
         {title}
       </h3>
 
@@ -166,7 +166,7 @@ export default function SolutionsPortfolio() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-5xl font-bold text-primary-dark tracking-tight leading-tight">
+        <h2 className="m-0 text-5xl font-medium text-primary-dark tracking-tight leading-tight">
           What We Offer
         </h2>
         <p className="m-0 text-base text-gray-500 font-normal">

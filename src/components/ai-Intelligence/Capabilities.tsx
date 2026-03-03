@@ -49,53 +49,63 @@ const capabilities = [
   },
 ];
 
+// Desktop staggered offsets only — ignored on mobile/tablet
 const verticalOffsets = ["mt-0", "mt-12", "mt-0", "mt-12", "mt-0", "mt-12"];
 
 export default function Capabilities() {
   return (
-    <section className="py-24 px-6 bg-white min-h-screen">
+    <section className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 bg-white min-h-screen">
       <style>{`
         @keyframes floatCard {
           0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-12px); }
+          50%       { transform: translateY(-12px); }
         }
-        .card-float:nth-child(1) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 0.5s; }
-        .card-float:nth-child(2) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 1.0s; }
-        .card-float:nth-child(3) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 1.5s; }
-        .card-float:nth-child(4) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 2.0s; }
-        .card-float:nth-child(5) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 2.5s; }
-        .card-float:nth-child(6) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 3.0s; }
-
-        
+        /* Only animate on md+ so mobile stays stable */
+        @media (min-width: 768px) {
+          .card-float:nth-child(1) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 0.5s; }
+          .card-float:nth-child(2) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 1.0s; }
+          .card-float:nth-child(3) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 1.5s; }
+          .card-float:nth-child(4) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 2.0s; }
+          .card-float:nth-child(5) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 2.5s; }
+          .card-float:nth-child(6) { animation: floatCard 3.5s ease-in-out infinite; animation-delay: 3.0s; }
+        }
       `}</style>
 
       {/* Header */}
-      <div className="text-center mb-20">
-        <h2 className="text-4xl font-bold text-primary">
+      <div className="text-center mb-12 sm:mb-16 md:mb-20">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium text-primary">
           Intelligent Capabilities
         </h2>
-        <p className="mt-3 text-#000 text-base">
+        <p className="mt-3 text-base text-black">
           AI-powered insights across every aspect of your institution
         </p>
       </div>
 
-      {/* Cards Grid */}
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 gap-6 items-start">
+      {/* Cards Grid
+          - mobile  (< sm):  1 column, no vertical offsets
+          - tablet  (sm–md): 2 columns, no vertical offsets
+          - desktop (md+):   3 columns, staggered vertical offsets
+      */}
+      <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 items-start">
         {capabilities.map((cap, i) => {
           const { Icon } = cap;
           return (
-            <div key={cap.title} className={`card-float ${verticalOffsets[i]}`}>
-              <div className="relative cardstyle rounded-2xl p-8 flex flex-col gap-4 cursor-default overflow-hidden">
-                {/* Dark icon box */}
-                <div className="iconStyle w-12 h-12 rounded-xl flex items-center justify-center">
-                  <Icon className="text-white w-7 h-7" strokeWidth={1.8} />
+            <div
+              key={cap.title}
+              /* Apply stagger offset only on md+ via responsive class */
+              className={`card-float md:${verticalOffsets[i]}`}
+            >
+              <div className="relative cardstyle rounded-2xl p-6 sm:p-7 md:p-8 flex flex-col gap-3 md:gap-4 cursor-default overflow-hidden">
+                {/* Icon box */}
+                <div className="iconStyle w-11 h-11 md:w-12 md:h-12 rounded-xl flex items-center justify-center">
+                  <Icon className="text-white w-6 h-6 md:w-7 md:h-7" strokeWidth={1.8} />
                 </div>
 
                 {/* Text */}
-                <h3 className="text-[#000] font-semibold text-lg mb-2 leading-snug">
+                <h3 className="text-black font-semibold text-base md:text-lg leading-snug">
                   {cap.title}
                 </h3>
-                <p className="text-#000 text-sm leading-relaxed">
+                <p className="text-black text-sm leading-relaxed">
                   {cap.description}
                 </p>
               </div>
