@@ -60,7 +60,7 @@ export default function MiddleCta() {
             transition={{ duration: 0.45, delay: 0.3 }}
           >
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-flex items-center gap-3 px-10 py-3 bg-secondary text-white text-[15px] font-medium rounded-xl hover:bg-secondary/65 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline shadow-lg shadow-orange-900/30"
             >
               Book Leadership Demo

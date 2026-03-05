@@ -205,27 +205,26 @@ export default function HeroBanner() {
           initial="hidden"
           animate={controls}
         >
-          <button
-            className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] text-white font-medium text-sm sm:text-base tracking-wide border-none cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.99]"
-            style={{
-              background: "#0456C9",
-              boxShadow:
-                "0 4px 20px rgba(4,86,201,0.35), 0 1px 3px rgba(0,0,0,0.08)",
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 8px 28px rgba(4,86,201,0.45), 0 2px 6px rgba(0,0,0,0.1)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.boxShadow =
-                "0 4px 20px rgba(4,86,201,0.35), 0 1px 3px rgba(0,0,0,0.08)";
-            }}
-          >
-            Request Callback
-            <span className="text-lg transition-transform duration-200 ease-out group-hover:translate-x-1">
-              →
-            </span>
-          </button>
+         <a href="/contact-us"
+  className="group inline-flex items-center gap-2.5 px-7 sm:px-9 py-3.5 sm:py-4 rounded-[14px] text-white font-medium text-sm sm:text-base tracking-wide border-none cursor-pointer transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] active:translate-y-0 active:scale-[0.99] no-underline"
+  style={{
+    background: "#0456C9",
+    boxShadow: "0 4px 20px rgba(4,86,201,0.35), 0 1px 3px rgba(0,0,0,0.08)",
+  }}
+  onMouseEnter={(e) => {
+    e.currentTarget.style.boxShadow =
+      "0 8px 28px rgba(4,86,201,0.45), 0 2px 6px rgba(0,0,0,0.1)";
+  }}
+  onMouseLeave={(e) => {
+    e.currentTarget.style.boxShadow =
+      "0 4px 20px rgba(4,86,201,0.35), 0 1px 3px rgba(0,0,0,0.08)";
+  }}
+>
+  Request Callback
+  <span className="text-lg transition-transform duration-200 ease-out group-hover:translate-x-1">
+    →
+  </span>
+</a>
         </motion.div>
       </div>
     </section>

@@ -105,7 +105,7 @@ export default function CTASectiontop() {
             transition={{ duration: 0.45, delay: 0.3 }}
           >
             <Link
-              href="/contact"
+              href="/contact-us"
               className="inline-flex items-center gap-3 px-10 py-4  text-black text-[15px] font-bold rounded-xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-150 no-underline shadow-lg shadow-orange-900/30  bg-[linear-gradient(0deg,#9d9d9d,#ffffff),radial-gradient(62.56%_62.56%_at_28.14%_-10.42%,rgba(255,255,255,0.1)_0%,rgba(255,255,255,0)_100%)]
   shadow-[inset_0px_-3px_0px_#080808,inset_0px_1px_0px_rgba(255,255,255,0.302),0px_2.77px_2.21px_rgba(0,0,0,0.121),0px_6.65px_5.32px_rgba(0,0,0,0.129),0px_12.52px_10.02px_rgba(0,0,0,0.133),0px_22.34px_17.87px_rgba(0,0,0,0.141),0px_41.78px_33.42px_rgba(0,0,0,0.149),0px_100px_80px_rgba(0,0,0,0.149),0px_3px_3px_rgba(0,0,0,0.141),0px_2.77px_2.21px_rgba(0,0,0,0.121)]"
             >

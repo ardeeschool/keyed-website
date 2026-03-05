@@ -192,7 +192,7 @@ export default function WhatIsKeyEds() {
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           <Link
-            href="/features"
+            href="/solution"
             className="inline-flex items-center gap-2 bg-secondary-dark hover:bg-secondary/70 text-white font-bold px-8 py-4 rounded-xl transition-colors uppercase tracking-wide text-sm"
           >
             Explore Modules
