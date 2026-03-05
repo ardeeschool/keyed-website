@@ -112,28 +112,28 @@ function CardContent({
   return (
     <>
       {/* Top bar */}
-      <div className="flex items-center gap-3 mb-8">
+      <div className="flex items-center gap-1 gap-3 mb-8">
         <Icon
           className={isBlack ? "text-gray-400" : "text-[#1a1a1c]"}
           style={{ width: 28, height: 28 }}
           strokeWidth={1.6}
         />
-        <span className={`text-lg font-bold ${textPrimary}`}>{title}</span>
+        <span className={`text-xs lg:text-lg font-bold ${textPrimary}`}>{title}</span>
         <div className="w-px h-5 mx-1" style={{ background: dividerBg }} />
-        <span className={`text-base ${textMuted}`}>{badge}</span>
+        <span className={`text-xs md:text-base ${textMuted}`}>{badge}</span>
       </div>
 
       {/* Module number + Button */}
-      <div className="flex items-end justify-between mb-10">
+      <div className="flex items-end justify-between mb-6 md:mb-10">
         <h3
-          className={`font-interTight text-5xl lg:text-5xl font-normal tracking-tight leading-none ${textPrimary}`}
+          className={`font-interTight text-3xl lg:text-5xl font-normal tracking-tight leading-none ${textPrimary}`}
         >
           {moduleNum}
         </h3>
         <motion.button
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
-          className="px-8 py-4 rounded-full text-white text-base font-semibold cursor-pointer transition-opacity hover:opacity-90 flex-shrink-0"
+          className="px-6 py-2 md:px-8 md:py-4 rounded-full text-white text-xs md:text-base font-semibold cursor-pointer transition-opacity hover:opacity-90 flex-shrink-0"
           style={isBlack ? blackButtonStyle : buttonStyle}
         >
           Get Started
@@ -144,12 +144,12 @@ function CardContent({
       <div className="h-px mb-8" style={{ background: dividerBg }} />
 
       {/* Bottom */}
-      <div className="grid grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div>
           <p className={`text-lg font-bold mb-3 ${textPrimary}`}>
             What&apos;s included
           </p>
-          <p className={`text-[15px] leading-relaxed ${textSecondary}`}>
+          <p className={`text-xs md:text-md leading-relaxed ${textSecondary}`}>
             {desc}
           </p>
         </div>
@@ -172,7 +172,7 @@ function CardContent({
                   />
                 </div>
                 <span
-                  className={`text-base font-medium leading-snug ${
+                  className={`text-xs md:text-base font-medium leading-snug ${
                     isBlack ? "text-gray-200" : "text-[#1a1a1c]"
                   }`}
                 >
@@ -217,7 +217,7 @@ function AnimatedBlackCard({
 
       {/* ── Card body ── */}
       <div
-        className="relative rounded-3xl p-10 flex flex-col overflow-hidden"
+        className="relative rounded-3xl p-6 lg:p-10 flex flex-col overflow-hidden"
         style={{ ...blackCardBg, zIndex: 1 }}
       >
         {/* ── Diagonal light sweep ── */}
@@ -255,7 +255,7 @@ function GreyCard({
         delay: index * 0.1,
         ease: [0.16, 1, 0.3, 1],
       }}
-      className="rounded-3xl p-10 flex flex-col"
+      className="rounded-2xl lg:rounded-3xl p-6 lg:p-10 flex flex-col"
       style={greyCardStyle}
     >
       <CardContent {...module} />
@@ -351,7 +351,7 @@ export default function ModulesAvailable() {
         }
       `}</style>
 
-      <section className="bg-[#EDECEC] py-24 px-20">
+      <section className="bg-[#EDECEC] py-12 px-4 lg:py-24 lg:px-20">
         <div>
           {/* Header */}
           <motion.div
@@ -359,19 +359,19 @@ export default function ModulesAvailable() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-24"
+            className="text-center mb-12 lg:mb-24"
           >
-            <h2 className="text-4xl lg:text-5xl font-medium text-[#1a1a1c] leading-tight mb-4 font-interTight">
+            <h2 className="text-3xl lg:text-5xl font-medium text-[#1a1a1c] leading-tight mb-4 font-interTight">
               Modules Available for <span className="text-[#4a4a4c]">Selection</span>
             </h2>
-            <p className="text-lg text-[#6b7a8d] max-w-2xl mx-auto">
+            <p className="text-lg text-primary/50 max-w-2xl mx-auto">
               Choose the modules that fit your institution&apos;s needs. Start
               with core modules and add more as you grow.
             </p>
           </motion.div>
 
           {/* 2-column Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16">
             {modules.map((module, i) =>
               module.isBlack ? (
                 <AnimatedBlackCard key={module.title} module={module} index={i} />

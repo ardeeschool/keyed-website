@@ -80,17 +80,17 @@ export default function HowItWorks() {
   };
 
   return (
-    <section ref={sectionRef} className="w-full bg-white py-20 px-6 pb-30">
+    <section ref={sectionRef} className="w-full bg-white lg:py-20 lg:px-6 lg:pb-30 py-12 px-4 pb-12">
 
       {/* Header */}
       <motion.div
-        className="text-center mb-14"
+        className="text-center mb-8 md:mb-14"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-5xl font-medium text-primary tracking-tight leading-tight">
+        <h2 className="m-0 text-3xl md:text-5xl font-medium text-primary tracking-tight leading-tight">
           How KeyEd Works Together
         </h2>
         <p className="mt-3 text-base text-gray-500 font-normal">
@@ -109,7 +109,7 @@ export default function HowItWorks() {
                 key={step.number}
                 onClick={() => handleManualClick(i)}
                 className={`
-                  relative w-full text-left px-7 py-6 flex items-start gap-5
+                  relative w-full text-left px-4 md:px-7 py-6 flex items-start gap-5
                   border-b border-gray-100 last:border-b-0
                   transition-colors duration-200 cursor-pointer outline-none
                   ${active === i ? "bg-primary" : "bg-white hover:bg-gray-50"}

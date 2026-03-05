@@ -26,7 +26,7 @@ export default function CTASectiontop() {
     // sticky + z-index so the NEXT section slides over this one
    
       <section
-        className="relative w-full overflow-hidden py-12 flex items-center justify-center max-w-5xl mx-auto mb-[-100px] z-1 md:rounded-4xl"
+        className="relative w-full overflow-hidden py-12 flex items-center justify-center max-w-5xl mx-auto mb-[-100px] z-1 lg:rounded-4xl"
         style={{
           background: 'linear-gradient(135deg, #6f6f6f 0%, #000000 40%, #3c3c3c 70%, #000000 100%)',
          

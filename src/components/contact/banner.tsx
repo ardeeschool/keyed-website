@@ -2,7 +2,7 @@
 
 export default function Banner() {
   return (
-    <section className="relative w-full md:min-h-[480px] flex flex-col items-center justify-center overflow-hidden bg-linear-gradient(135deg, var(--beige) 0%, var(--white) 100%)from-zinc-900 via-neutral-800 to-zinc-900 px-4 md:px-6 py-12 md:py-24">
+    <section className="relative w-full lg:min-h-[480px] flex flex-col items-center justify-center overflow-hidden bg-linear-gradient(135deg, var(--beige) 0%, var(--white) 100%)from-zinc-900 via-neutral-800 to-zinc-900 px-4 lg:px-6 py-12 lg:py-24">
 
       {/* ECG Heartbeat Line — centered behind text */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-0">

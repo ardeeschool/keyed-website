@@ -156,17 +156,17 @@ function ModuleCard({
 // ─── Section ──────────────────────────────────────────────────────────────────
 export default function SolutionsPortfolio() {
   return (
-    <section className="w-full bg-[#F8F9FB] py-20 px-6 box-border">
+    <section className="w-full bg-[#F8F9FB] py-12 px-4 md:py-20 md:px-6 box-border">
 
       {/* Header */}
       <motion.div
-        className="text-center mb-14 flex flex-col items-center gap-3"
+        className="text-center mb-8 md:mb-14 flex flex-col items-center gap-3"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       >
-        <h2 className="m-0 text-5xl font-medium text-primary-dark tracking-tight leading-tight">
+        <h2 className="m-0 text-3xl md:text-5xl font-medium text-primary-dark tracking-tight leading-tight">
           What We Offer
         </h2>
         <p className="m-0 text-base text-gray-500 font-normal">

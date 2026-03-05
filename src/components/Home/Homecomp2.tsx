@@ -53,7 +53,7 @@ function TypewriterCycle() {
       <span className="inline-block
         ml-0.5
         w-[3px]
-        h-[0.85em]
+        h-[1em]
         align-middle
         rounded-sm
         animate-pulse
@@ -218,7 +218,7 @@ const Homecomp = () => {
                   ))}
                 </div>
                 <div className="flex justify-between text-[8px] text-gray-300">
-                  {['M','T','W','T','F','S','S'].map(d => <span key={d}>{d}</span>)}
+                  {['M','T','W','Th','F','S','Sa'].map(d => <span key={d}>{d}</span>)}
                 </div>
                 <div className="mt-3 px-3 py-1.5 bg-primary-dark rounded-lg text-center">
                   <p className="text-[10px] font-medium text-white">KeyEd Score™</p>

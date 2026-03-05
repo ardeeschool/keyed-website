@@ -35,7 +35,7 @@ export default function Footer() {
 
       {/* Decorative background text */}
       <div
-        className="absolute inset-0 md:flex hidden items-center justify-end pointer-events-none select-none overflow-hidden"
+        className="absolute inset-0 lg:flex hidden items-center justify-end pointer-events-none select-none overflow-hidden"
         aria-hidden="true"
       >
         <span

@@ -27,7 +27,7 @@ export default function Details() {
         {contacts.map(({ icon: Icon, title, value }) => (
           <div
             key={title}
-            className="bg-[#f0f0f0] rounded-3xl px-4 md:px-8 pt-6 pb-8 md:pt-10 md:pb-10 flex flex-col items-center text-center"
+            className="bg-[#f0f0f0] rounded-3xl px-4 lg:px-8 pt-6 pb-8 lg:pt-10 md:pb-10 flex flex-col items-center text-center"
             style={{
               boxShadow:
                 "0px 7.77px 16px 0px rgba(0, 0, 0, 0.0588235294), 0px 3px 3px 0px rgba(0, 0, 0, 0.1019607843), 0px -8px 0px 0px rgba(0, 0, 0, 0.0509803922) inset, 0px 4px 0px 0px rgba(255, 255, 255, 0.6) inset",

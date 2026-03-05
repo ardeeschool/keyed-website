@@ -43,7 +43,7 @@ function PricingCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="relative h-full rounded-3xl p-8 flex flex-col"
+      className="relative h-full rounded-3xl p-6 lg:p-8 flex flex-col"
       style={{
         backgroundColor: "#F4F4F5",
         boxShadow: "0px -8px 0px 0px rgba(0, 0, 0, 0.05) inset, 0px 4px 0px 0px rgba(255, 255, 255, 0.6) inset, 0px 7.77px 16px 0px rgba(0, 0, 0, 0.06), 0px 3px 3px 0px rgba(0, 0, 0, 0.1)",
@@ -51,7 +51,7 @@ function PricingCard({
     >
       {/* Icon */}
       <div
-        className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6"
+        className="w-12 h-12 md:w-20 md:h-20 rounded-md md:rounded-2xl flex items-center justify-center mb-2 lg:mb-6"
         style={{
           background: "linear-gradient(180deg, #000000 0%, #847978 100%)",
           boxShadow: `
@@ -59,11 +59,11 @@ function PricingCard({
           `,
         }}
       >
-        <Icon className="w-9 h-9 text-white" strokeWidth={2} />
+        <Icon className="w-7 h-7 md:w-9 md:h-9 text-white" strokeWidth={2} />
       </div>
 
       {/* Title */}
-      <h3 className="text-3xl font-medium font-interTight text-[#1a1a1c] mb-4 leading-tight mt-12">
+      <h3 className="text-xl lg:text-3xl font-medium font-interTight text-[#1a1a1c] mb-4 leading-tight mt-6 lg:mt-12">
         {title}
       </h3>
            <div
@@ -80,12 +80,12 @@ function PricingCard({
       </p>
 
       {/* Step indicator */}
-      <div className="flex justify-end mt-24">
+      <div className="flex justify-end mt-12 lg:mt-24">
         <div className="text-right leading-none">
-          <span className="text-7xl font-black text-gray-200">
+          <span className="text-3xl lg:text-7xl font-black text-gray-200">
             {step}
           </span>
-          <span className="text-4xl font-black text-gray-300">
+          <span className="text-2xl lg:text-4xl font-black text-gray-300">
             /{total}
           </span>
         </div>
@@ -98,10 +98,10 @@ export default function PricingModel() {
   const swiperRef = useRef<SwiperType | null>(null);
 
   return (
-    <section className="bg-white py-24 px-20 overflow-hidden">
+    <section className="bg-white lg:py-24 lg:px-20 px-4 py-12 overflow-hidden">
       <div className="">
 
-        <div className="flex flex-col lg:flex-row gap-12 items-start">
+        <div className="flex flex-col lg:flex-row gap:4 lg:gap-12 items-start">
 
           {/* ── LEFT — Heading & Navigation ── */}
           <div className="lg:w-[35%] lg:sticky lg:top-24">
@@ -123,10 +123,10 @@ export default function PricingModel() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="text-4xl lg:text-5xl font-medium leading-[1.1] mb-3 font-interTight"
+              className="text-3xl lg:text-5xl font-medium leading-[1.1] mb-3 font-interTight"
             >
-              <span className="text-[#1a1a1c] font-interTight">Our </span>
-              <span className="text-[#4a4a4c] font-interTight">Pricing Model</span>
+              <span className="text-primary-bold font-interTight">Our </span>
+              <span className="text-primary-bold font-interTight">Pricing Model</span>
             </motion.h2>
 
             <motion.p
@@ -134,7 +134,7 @@ export default function PricingModel() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base text-[#6b7a8d] mb-10"
+              className="text-base text-primary mb-10"
             >
               Simple, predictable, and built for educational institutions
             </motion.p>
@@ -145,7 +145,7 @@ export default function PricingModel() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="flex items-center gap-3"
+              className="hidden md:flex items-center gap-3"
             >
               <button
                 onClick={() => swiperRef.current?.slidePrev()}

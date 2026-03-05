@@ -110,7 +110,7 @@ function YearNode({ year, gradient, glowColor, size = "default" }: {
       />
       {/* Node */}
       <motion.div
-        initial={{ scale: 0, rotate: -90 }}
+        //initial={{ scale: 0, rotate: -90 }}
         whileInView={{ scale: 1, rotate: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.5, delay: 0.05, ease: [0.16, 1, 0.3, 1] }}
