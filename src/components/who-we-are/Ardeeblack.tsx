@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef } from "react";
@@ -72,7 +72,7 @@ function ParallaxImage({ item, className = "" }: { item: Milestone; className?: 
       style={{ background: item.bg }}
     >
       {item.link ? <Link href={item.link} target="_blank">{img}</Link> : img}
-      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/15 transition-all duration-500" />
+ 
       <motion.div
         initial={{ opacity: 0, y: 12 }}
         whileInView={{ opacity: 1, y: 0 }}

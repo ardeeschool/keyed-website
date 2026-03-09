@@ -144,7 +144,7 @@ export default function BuiltForInstitutions() {
   const { ref: headingRef, inView: headingInView } = useInView(0.2);
 
   return (
-    <section className="w-full  bg-[linear-gradient(180deg,#F5F3F3_100%,FFFBFB00_0)] py-6 md:py-20 px-4 sm:px-8 pb-16 md:pb-40">
+    <section className="w-full  bg-[linear-gradient(180deg,#F5F3F3_100%,FFFBFB00_0)] py-6 md:py-20 md:pt-0 px-4 sm:px-8 pb-8 md:pb-30">
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}

@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Database, Users, Sparkles, Clock, Building2 } from 'lucide-react'
 
 const leaderships = [

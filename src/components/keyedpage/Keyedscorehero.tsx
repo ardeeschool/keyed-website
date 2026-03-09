@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight, Star, GraduationCap, Settings2, BadgeDollarSign, TrendingUp, Users2 } from "lucide-react";
 

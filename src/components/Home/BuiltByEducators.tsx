@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { School, Wrench, BadgeCheck, FileText, MessageCircle, BarChart2, Clock } from 'lucide-react'
 
 const cards = [

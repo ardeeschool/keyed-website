@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Tag, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
@@ -128,7 +128,7 @@ export default function PricingHero() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <Link
-                href="/demo"
+                href="/contact-us"
                 className="inline-flex items-center gap-2 sm:gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 blackbg hover:bg-[#2d2d2f] text-white font-bold rounded-xl transition-all duration-200 hover:-translate-y-1 no-underline text-sm sm:text-base"
               >
                 Get Custom Quote

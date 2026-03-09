@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion, AnimatePresence } from 'motion/react'
 import { Building2, Mail, Phone, CheckCircle2, AlertCircle } from 'lucide-react'
 import { generateMetadata } from '@/lib/seo'
 import Header from '@/components/layout/Header'

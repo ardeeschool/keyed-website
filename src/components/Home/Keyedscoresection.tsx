@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import Image from 'next/image';
 import { useRef, useEffect, useState } from "react";
 import { Sparkles } from 'lucide-react'
@@ -14,6 +14,7 @@ const metrics = [
 
 ]
 
+
 // ── Circular Progress SVG ─────────────────────────────────
 function DashedCircleProgress({ score = 94 }: { score?: number }) {
   const SIZE = 220;
@@ -21,9 +22,13 @@ function DashedCircleProgress({ score = 94 }: { score?: number }) {
   const R = 96;
   const [animFilled, setAnimFilled] = useState(0);
   const [hasStarted, setHasStarted] = useState(false);
+    const [mounted, setMounted] = useState(false); 
   const wrapperRef = useRef<HTMLDivElement>(null);
   const filledDashes = Math.round((score / 100) * DASH_COUNT);
 
+   useEffect(() => {
+    setMounted(true);
+  }, []);
   // ── Trigger only when scrolled into view ──
   useEffect(() => {
     const el = wrapperRef.current;
@@ -57,26 +62,34 @@ function DashedCircleProgress({ score = 94 }: { score?: number }) {
     frame = requestAnimationFrame(tick);
     return () => cancelAnimationFrame(frame);
   }, [hasStarted, filledDashes]);
+  
 
-  const dashes = Array.from({ length: DASH_COUNT }, (_, i) => {
-    const angle = (i / DASH_COUNT) * 360 - 90;
-    const rad = (angle * Math.PI) / 180;
-    const cx = SIZE / 2, cy = SIZE / 2;
-    const inner = R - 7, outer = R + 7;
-    return (
-      <line
-        key={i}
-        x1={cx + inner * Math.cos(rad)}
-        y1={cy + inner * Math.sin(rad)}
-        x2={cx + outer * Math.cos(rad)}
-        y2={cy + outer * Math.sin(rad)}
-        strokeWidth="5"
-        strokeLinecap="round"
-        stroke={i < animFilled ? "#1a1a1c" : "#E5E7EB"}
-        style={{ transition: "stroke 0.05s ease" }}
-      />
-    );
-  });
+const dashes = Array.from({ length: DASH_COUNT }, (_, i) => {
+  const angle = (i / DASH_COUNT) * 360 - 90;
+  const rad = (angle * Math.PI) / 180;
+  const cx = SIZE / 2, cy = SIZE / 2;
+  const inner = R - 7, outer = R + 7;
+
+  // 👇 round to 4 decimal places to prevent SSR/client float mismatch
+  const x1 = parseFloat((cx + inner * Math.cos(rad)).toFixed(4));
+  const y1 = parseFloat((cy + inner * Math.sin(rad)).toFixed(4));
+  const x2 = parseFloat((cx + outer * Math.cos(rad)).toFixed(4));
+  const y2 = parseFloat((cy + outer * Math.sin(rad)).toFixed(4));
+
+  return (
+    <line
+      key={i}
+      x1={x1}
+      y1={y1}
+      x2={x2}
+      y2={y2}
+      strokeWidth="5"
+      strokeLinecap="round"
+      stroke={mounted && i < animFilled ? "#1a1a1c" : "#E5E7EB"}
+      style={{ transition: "stroke 0.05s ease" }}
+    />
+  );
+});
 
   return (
     <div
@@ -93,6 +106,8 @@ function DashedCircleProgress({ score = 94 }: { score?: number }) {
     </div>
   );
 }
+
+
 
 // ── Metric Card — 2-per-row, screenshot style ─────────────
 function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: number }) {
@@ -151,6 +166,8 @@ function MetricCard({ metric, index }: { metric: (typeof metrics)[0]; index: num
     </motion.div>
   )
 }
+
+
 
 // ── Main Component ────────────────────────────────────────
 export default function KeyEdScoreSection() {

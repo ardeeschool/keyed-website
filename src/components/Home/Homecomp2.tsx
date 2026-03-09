@@ -1,6 +1,6 @@
 'use client'
 
-import { motion, animate } from 'framer-motion'
+import { motion, animate } from 'motion/react'
 import Link from 'next/link'
 import { useEffect, useState, useRef } from 'react'
 import { ShieldCheck, ArrowRight, Play } from 'lucide-react'

@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { motion, useInView, useAnimation } from "motion/react";
 import { useEffect } from "react";
 
 // ─── Icon Components ──────────────────────────────────────────────────────────

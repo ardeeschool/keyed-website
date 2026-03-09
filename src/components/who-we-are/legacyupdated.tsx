@@ -6,7 +6,7 @@ import {
   useTransform,
   useMotionValueEvent,
   AnimatePresence,
-} from "framer-motion";
+} from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { useRef, useState, useEffect } from "react";

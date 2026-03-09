@@ -85,7 +85,18 @@
     position: absolute;
 
 }
+.background-overlayscore{
+      background-image: url('/keyEdScoretext.svg');
+    background-position: 50% 400px;
+    background-repeat: no-repeat;
+    opacity: 1;
+        height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
 
+}
    .bluecta{
 
    background-color: #fff0;

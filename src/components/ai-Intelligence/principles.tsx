@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion, Variants } from "motion/react";
 
 const font = { fontFamily: '"DM Sans","Helvetica Neue",sans-serif' };
 

@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
+import { motion } from "motion/react";
 import { View } from 'lucide-react'
 
 export default function VisionForwards() {
@@ -108,26 +107,14 @@ export default function VisionForwards() {
             </div>
 
             {/* Right — Image (45%) */}
-            <div className="w-full w-[45%] flex-shrink-0 relative p-8 flex items-center justify-center">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.92 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                className="relative w-full rounded-2xl overflow-hidden"
-                style={{
-                  height: 340,
-                  boxShadow: "0 12px 40px rgba(0,0,0,0.08)",
-                }}
-              >
-                <Image
-                  src="https://brighthub.casethemes.net/wp-content/uploads/2025/06/story-3.webp"
+            <div className="w-[45%] relative p-8 flex items-center justify-center">
+              
+                <img
+                  src="/story-3.webp"
                   alt="EdTech Innovators"
-                  fill
-                  className="object-cover"
-                  unoptimized
+                  className="object-cover rounded-xl"
                 />
-              </motion.div>
+            
             </div>
           </div>
         </motion.div>

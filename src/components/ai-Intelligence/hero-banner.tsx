@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { motion, useAnimation, Variants } from "framer-motion";
+import { motion, useAnimation, Variants } from "motion/react";
 
 // ─── Words ────────────────────────────────────────────────────────────────────
 const TITLE_LINE_1 = ["AI-Powered", "Intelligence", "for."];

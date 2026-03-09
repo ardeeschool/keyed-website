@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Tag, ArrowRight, GraduationCap, BadgeDollarSign, TrendingUp, Settings2, Users2, BrainCircuit } from "lucide-react";
 import Link from "next/link";
 
