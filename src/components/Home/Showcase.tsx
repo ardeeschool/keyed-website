@@ -62,7 +62,7 @@ const cards = [
 const TOTAL_DOTS = cards.length;
 const BASE_TOP = 90;
 const TOP_INCREMENT = 18;
-const isMobile = window.innerWidth < 768;
+//const isMobile = window.innerWidth < 768;
 
 function ShowcaseCard({
   title,
@@ -185,15 +185,9 @@ export default function Showcase() {
         </div>
 
         {/* Extra space so last card can be scrolled into full sticky view */}
-        
-
-  <div
-  style={{
-    height: isMobile
-      ? cards.length * (TOP_INCREMENT / 2) + 0
-      : cards.length * TOP_INCREMENT + 20
-  }}
-/>
+        <div  style={{ height: cards.length * TOP_INCREMENT + 20 }}
+  className="h-3 md:h-auto"  />
+  
       </div>
     </section>
   );
